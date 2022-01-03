@@ -10,3 +10,11 @@
 #### Examples 
 - [Force directed graph](https://observablehq.com/@d3/force-directed-tree)
 - [Zoomable sunburst](https://observablehq.com/@d3/zoomable-sunburst)
+
+### SVG / javascript libraries
+
+Not specifically for data visualization, just libraries to help with interactive svg/js drawings/animations:
+
+- http://pablojs.com/
+- http://snapsvg.io/
+- https://greensock.com/
