@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .iwr-vis {
   position: relative;
   margin: 0 auto;

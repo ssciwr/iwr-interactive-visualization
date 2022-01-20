@@ -8,7 +8,7 @@ repos:
           - "@prettier/plugin-pug@1.16.5"
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v4.1.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
