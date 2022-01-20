@@ -1,0 +1,44 @@
+.iwr-vis {
+  position: relative;
+  margin: 0 auto;
+  width: 100vmin;
+  height: 100vmin;
+  background: #ffffff;
+}
+
+.iwr-vis-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0) translatez(0px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.iwr-vis-logo {
+  position: relative;
+  margin: 0 auto;
+  transform: scale(0.5) translatez(0px);
+  opacity: 1;
+  transition: transform 1s, opacity 1s;
+}
+
+.iwr-vis:hover .iwr-vis-menu {
+  opacity: 1;
+  transform: scale(1) translatez(0px);
+}
+
+.iwr-vis:hover .iwr-vis-logo {
+  opacity: 0;
+  transform: scale(0) translatez(0px);
+}
+
+.iwr-vis-segment-item:hover {
+  filter: brightness(120%);
+}
+
+.iwr-vis-group-item:hover {
+  filter: brightness(70%);
+}

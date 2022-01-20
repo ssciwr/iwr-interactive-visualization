@@ -90,15 +90,18 @@ function makeSegment(radius, startAngle, endAngle, width) {
 }
 
 var resetGroups = function () {
-  SVG.find(".segment-item").css({ opacity: 1, filter: "grayscale(0)" });
-  SVG.find(".group-item").show();
+  SVG.find(".iwr-vis-segment-item").css({ opacity: 1, filter: "grayscale(0)" });
+  SVG.find(".iwr-vis-group-item").show();
 };
 
 var showGroups = function () {
-  SVG.find(".segment-item").css({ filter: "grayscale(80%)", opacity: "20%" });
+  SVG.find(".iwr-vis-segment-item").css({
+    filter: "grayscale(80%)",
+    opacity: "20%",
+  });
   this.css({ opacity: 1, filter: "grayscale(0)" });
   var groups = this.data("groups");
-  var items = SVG.find(".group-item");
+  var items = SVG.find(".iwr-vis-group-item");
   for (var i = 0; i < groups.length; i++) {
     if (groups[i] == 0) {
       items[i].hide();
@@ -109,34 +112,37 @@ var showGroups = function () {
 };
 
 var resetHighlights = function () {
-  SVG.find(".segment-item").css({ opacity: 1, filter: "grayscale(0)" });
+  SVG.find(".iwr-vis-segment-item").css({ opacity: 1, filter: "grayscale(0)" });
 };
 
+function applyWeightedHighlights(items, weights) {
+  items.css({ filter: "grayscale(80%)", opacity: "20%" });
+  for (var i = 0; i < weights.length; i++) {
+    if (weights[i] > 0) {
+      items[i].css({ filter: "grayscale(0)" });
+      items[i].css({ opacity: weights[i] });
+    }
+  }
+}
+
 var weightHighlights = function () {
-  var weights = this.data("method_weights");
-  var items = SVG.find(".method-item");
-  items.css({ filter: "grayscale(80%)", opacity: "20%" });
-  for (var i = 0; i < weights.length; i++) {
-    if (weights[i] > 0) {
-      items[i].css({ filter: "grayscale(0%)" });
-      items[i].css({ opacity: weights[i] });
-    }
-  }
-  var weights = this.data("application_weights");
-  var items = SVG.find(".application-item");
-  items.css({ filter: "grayscale(80%)", opacity: "20%" });
-  for (var i = 0; i < weights.length; i++) {
-    if (weights[i] > 0) {
-      items[i].css({ filter: "grayscale(0%)" });
-      items[i].css({ opacity: weights[i] });
-    }
-  }
+  applyWeightedHighlights(
+    SVG.find(".iwr-vis-method-item"),
+    this.data("method_weights")
+  );
+  applyWeightedHighlights(
+    SVG.find(".iwr-vis-application-item"),
+    this.data("application_weights")
+  );
 };
 
 function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
   var delta = 360 / names.length;
   for (var i = 0; i < names.length; i++) {
-    var group = svg.group().addClass("segment-item").addClass(segmentClass);
+    var group = svg
+      .group()
+      .addClass("iwr-vis-segment-item")
+      .addClass(segmentClass);
     group.mouseover(showGroups);
     group.mouseout(resetGroups);
     group.data("text", names[i]);
@@ -158,12 +164,11 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
 }
 
 window.onload = function () {
-  var s = SVG("#svg-menu");
-
+  var svg = SVG("#iwr-vis-menu-svg");
   // groups
   var h = 150 / group_names.length;
   for (var i = 0; i < group_names.length; i++) {
-    var group = s.group().addClass("group-item");
+    var group = svg.group().addClass("iwr-vis-group-item");
     group.mouseover(weightHighlights);
     group.mouseout(resetHighlights);
     group.data("text", group_names[i]);
@@ -181,23 +186,24 @@ window.onload = function () {
       .cx(200)
       .cy(145 + h * i);
   }
-
+  // methods
   addSegments(
-    s,
+    svg,
     method_names,
     method_groups,
     method_colors,
     157,
     13,
-    "method-item"
+    "iwr-vis-method-item"
   );
+  // applications
   addSegments(
-    s,
+    svg,
     application_names,
     application_groups,
     application_colors,
     183,
     13,
-    "application-item"
+    "iwr-vis-application-item"
   );
 };
