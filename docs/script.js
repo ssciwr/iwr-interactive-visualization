@@ -48,10 +48,21 @@ function xy(radius, deg) {
 }
 
 // svg path for text inside a segment (single arc)
-function makeArc(radius, startAngle, endAngle) {
+function makeTextArc(radius, startAngle, endAngle, width) {
+  var anticlockwise = startAngle > 70 && endAngle < 290;
+  if (anticlockwise) {
+    radius = radius + Math.floor(width / 2) - 1;
+  } else {
+    radius = radius - Math.floor(width / 2);
+  }
   var p0 = xy(radius, startAngle);
   var p1 = xy(radius, endAngle);
-  return ["M", p0.x, p0.y, "A", rm, rm, 0, 0, 1, p1.x, p1.y].join(" ");
+  if (anticlockwise) {
+    return ["M", p1.x, p1.y, "A", radius, radius, 0, 0, 0, p0.x, p0.y].join(
+      " "
+    );
+  }
+  return ["M", p0.x, p0.y, "A", radius, radius, 0, 0, 1, p1.x, p1.y].join(" ");
 }
 
 // svg path for a segment (two arcs connected by straight lines)
@@ -207,7 +218,7 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
       .stroke("#000000")
       .css({ filter: "drop-shadow(1px 1px 2px)" });
     var strPath = group
-      .path(makeArc(radius - Math.ceil(width / 2), i * delta, (i + 1) * delta))
+      .path(makeTextArc(radius, i * delta, (i + 1) * delta, width))
       .fill("none")
       .stroke("none");
     strPath
