@@ -94,6 +94,8 @@ var updateSegments = function () {
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
+    } else if (segments[i].hasClass("hovered")) {
+      segments[i].css({ opacity: 1, filter: "grayscale(0)" });
     } else {
       segments[i].css({
         filter: "grayscale(80%)",
@@ -120,7 +122,7 @@ function updateGroups(groups) {
 }
 
 var resetAll = function () {
-  SVG.find(".iwr-vis-segment-item").addClass("selected");
+  SVG.find(".iwr-vis-segment-item").addClass("hovered").removeClass("selected");
   updateGroups();
 };
 
@@ -130,10 +132,32 @@ var selectSegment = function () {
   if (this.hasClass("selected") && nSelected == 1) {
     resetAll();
   } else {
+    segments.removeClass("hovered");
     segments.removeClass("selected");
     this.addClass("selected");
     updateGroups(this.data("groups"));
   }
+};
+
+var hoverSegment = function () {
+  var segments = SVG.find(".iwr-vis-segment-item");
+  var nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (nSelected == 1) {
+    return;
+  }
+  segments.removeClass("selected").removeClass("hovered");
+  this.addClass("hovered");
+  updateGroups(this.data("groups"));
+};
+
+var leaveSegment = function () {
+  var segments = SVG.find(".iwr-vis-segment-item");
+  var nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (nSelected == 1) {
+    return;
+  }
+  segments.addClass("hovered");
+  updateGroups();
 };
 
 function applyWeightedHighlights(items, weights) {
@@ -164,8 +188,10 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
       .group()
       .addClass("iwr-vis-segment-item")
       .addClass(segmentClass)
-      .addClass("selected");
+      .addClass("highlighted");
     group.click(selectSegment);
+    group.mouseover(hoverSegment);
+    group.mouseout(leaveSegment);
     group.data("text", names[i]);
     group.data("groups", groups[i]);
     var itemPath = group
