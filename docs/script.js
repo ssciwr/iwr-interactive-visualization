@@ -67,8 +67,8 @@ function makeTextArc(radius, startAngle, endAngle, width) {
 
 // svg path for a segment (two arcs connected by straight lines)
 function makeSegment(radius, startAngle, endAngle, width) {
-  rm = radius - width;
-  rp = radius + width;
+  var rm = radius - width;
+  var rp = radius + width;
   var p0 = xy(rm, startAngle);
   var p1 = xy(rm, endAngle);
   var p2 = xy(rp, endAngle);
@@ -100,8 +100,10 @@ function makeSegment(radius, startAngle, endAngle, width) {
   ].join(" ");
 }
 
+/*global SVG*/
+
 var updateSegments = function () {
-  segments = SVG.find(".iwr-vis-segment-item");
+  var segments = SVG.find(".iwr-vis-segment-item");
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
@@ -212,7 +214,7 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
       "transition-property": "opacity",
       "transition-duration": "0.6s",
     });
-    var itemPath = group
+    group
       .path(makeSegment(radius, i * delta, (i + 1) * delta, width))
       .fill(colors[i])
       .stroke("#000000")
@@ -231,9 +233,9 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
 window.onload = function () {
   var svg = SVG("#iwr-vis-menu-svg");
   // background
-  var group = svg.group().addClass("iwr-vis-bg");
-  group.click(resetAll);
-  group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
+  var bg_group = svg.group().addClass("iwr-vis-bg");
+  bg_group.click(resetAll);
+  bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
 
   // groups
   var h = 150 / group_names.length;
@@ -245,7 +247,7 @@ window.onload = function () {
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
-    var rect = group
+    group
       .rect(160, h)
       .cx(200)
       .cy(145 + h * i)
