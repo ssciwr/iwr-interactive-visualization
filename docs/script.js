@@ -94,13 +94,16 @@ var updateSegments = function () {
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
+      segments[i].attr("stroke-width", 3);
     } else if (segments[i].hasClass("hovered")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
+      segments[i].attr("stroke-width", 1);
     } else {
       segments[i].css({
         filter: "grayscale(80%)",
         opacity: "20%",
       });
+      segments[i].attr("stroke-width", 1);
     }
   }
 };
