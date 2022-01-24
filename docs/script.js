@@ -119,20 +119,21 @@ function updateGroups(groups) {
   }
 }
 
-var selectSegment = function () {
-  var segments = SVG.find(".iwr-vis-segment-item");
-  if (this.hasClass("selected")) {
-    segments.toggleClass("selected");
-  } else {
-    segments.removeClass("selected");
-  }
-  this.addClass("selected");
-  updateGroups(this.data("groups"));
-};
-
 var resetAll = function () {
   SVG.find(".iwr-vis-segment-item").addClass("selected");
   updateGroups();
+};
+
+var selectSegment = function () {
+  var segments = SVG.find(".iwr-vis-segment-item");
+  var nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (this.hasClass("selected") && nSelected == 1) {
+    resetAll();
+  } else {
+    segments.removeClass("selected");
+    this.addClass("selected");
+    updateGroups(this.data("groups"));
+  }
 };
 
 function applyWeightedHighlights(items, weights) {
