@@ -39,6 +39,10 @@ body {
   transform: scale(0) translatez(0px);
 }
 
+.iwr-vis-segment-item {
+  cursor: pointer;
+}
+
 .iwr-vis-segment-item:hover {
   filter: brightness(120%);
 }
