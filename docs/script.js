@@ -89,19 +89,27 @@ function makeSegment(radius, startAngle, endAngle, width) {
   ].join(" ");
 }
 
-var resetGroups = function () {
-  SVG.find(".iwr-vis-segment-item").css({ opacity: 1, filter: "grayscale(0)" });
-  SVG.find(".iwr-vis-group-item").show();
+var updateSegments = function () {
+  segments = SVG.find(".iwr-vis-segment-item");
+  for (var i = 0; i < segments.length; i++) {
+    if (segments[i].hasClass("selected")) {
+      segments[i].css({ opacity: 1, filter: "grayscale(0)" });
+    } else {
+      segments[i].css({
+        filter: "grayscale(80%)",
+        opacity: "20%",
+      });
+    }
+  }
 };
 
-var showGroups = function () {
-  SVG.find(".iwr-vis-segment-item").css({
-    filter: "grayscale(80%)",
-    opacity: "20%",
-  });
-  this.css({ opacity: 1, filter: "grayscale(0)" });
-  var groups = this.data("groups");
+function updateGroups(groups) {
+  updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
+  if (typeof groups === "undefined") {
+    items.show();
+    return;
+  }
   for (var i = 0; i < groups.length; i++) {
     if (groups[i] == 0) {
       items[i].hide();
@@ -109,10 +117,22 @@ var showGroups = function () {
       items[i].show();
     }
   }
+}
+
+var selectSegment = function () {
+  var segments = SVG.find(".iwr-vis-segment-item");
+  if (this.hasClass("selected")) {
+    segments.toggleClass("selected");
+  } else {
+    segments.removeClass("selected");
+  }
+  this.addClass("selected");
+  updateGroups(this.data("groups"));
 };
 
-var resetHighlights = function () {
-  SVG.find(".iwr-vis-segment-item").css({ opacity: 1, filter: "grayscale(0)" });
+var resetAll = function () {
+  SVG.find(".iwr-vis-segment-item").addClass("selected");
+  updateGroups();
 };
 
 function applyWeightedHighlights(items, weights) {
@@ -125,7 +145,7 @@ function applyWeightedHighlights(items, weights) {
   }
 }
 
-var weightHighlights = function () {
+var highlightSegments = function () {
   applyWeightedHighlights(
     SVG.find(".iwr-vis-method-item"),
     this.data("method_weights")
@@ -142,9 +162,9 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
     var group = svg
       .group()
       .addClass("iwr-vis-segment-item")
-      .addClass(segmentClass);
-    group.mouseover(showGroups);
-    group.mouseout(resetGroups);
+      .addClass(segmentClass)
+      .addClass("selected");
+    group.click(selectSegment);
     group.data("text", names[i]);
     group.data("groups", groups[i]);
     var itemPath = group
@@ -165,12 +185,17 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
 
 window.onload = function () {
   var svg = SVG("#iwr-vis-menu-svg");
+  // background
+  var group = svg.group().addClass("iwr-vis-bg");
+  group.click(resetAll);
+  group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
+
   // groups
   var h = 150 / group_names.length;
   for (var i = 0; i < group_names.length; i++) {
     var group = svg.group().addClass("iwr-vis-group-item");
-    group.mouseover(weightHighlights);
-    group.mouseout(resetHighlights);
+    group.mouseover(highlightSegments);
+    group.mouseout(updateSegments);
     group.data("text", group_names[i]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
