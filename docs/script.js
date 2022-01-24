@@ -94,7 +94,7 @@ var updateSegments = function () {
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
-      segments[i].attr("stroke-width", 3);
+      segments[i].animate().attr("stroke-width", 2);
     } else if (segments[i].hasClass("hovered")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
       segments[i].attr("stroke-width", 1);
@@ -112,14 +112,14 @@ function updateGroups(groups) {
   updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
   if (typeof groups === "undefined") {
-    items.show();
+    items.css({ opacity: 1, visibility: "visible" });
     return;
   }
   for (var i = 0; i < groups.length; i++) {
     if (groups[i] == 0) {
-      items[i].hide();
+      items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
-      items[i].show();
+      items[i].css({ opacity: 1, visibility: "visible" });
     }
   }
 }
@@ -197,6 +197,10 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
     group.mouseout(leaveSegment);
     group.data("text", names[i]);
     group.data("groups", groups[i]);
+    group.css({
+      "transition-property": "opacity",
+      "transition-duration": "0.6s",
+    });
     var itemPath = group
       .path(makeSegment(radius, i * delta, (i + 1) * delta, width))
       .fill(colors[i])
@@ -229,6 +233,7 @@ window.onload = function () {
     group.data("text", group_names[i]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
+    group.css({ transition: "opacity 0.6s, visibility 0.6s" });
     var rect = group
       .rect(160, h)
       .cx(200)
