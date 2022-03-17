@@ -13,11 +13,11 @@ var method_weights = [
 
 // methods
 var method_names = [
-  "Numbers",
-  "Counting",
-  "Computing",
-  "Guessing",
-  "Optimizing",
+  "Mathematical and Numerical Analysis",
+  "Numerical Algorithms and Software",
+  "Data Analysis and Graphics",
+  "Machine Learning and Computer Vision",
+  "Arithmetic, Geometry and Topology",
 ];
 var method_colors = ["#ee0000", "#ee3333", "#ee6666", "#bb3333", "#990000"];
 var method_groups = [
