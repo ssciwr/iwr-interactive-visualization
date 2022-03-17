@@ -51,9 +51,9 @@ function xy(radius, deg) {
 function makeTextArc(radius, startAngle, endAngle, width) {
   var anticlockwise = startAngle > 70 && endAngle < 290;
   if (anticlockwise) {
-    radius = radius + Math.floor(width / 2) - 1;
+    radius = radius + Math.floor(width / 2) - 4;
   } else {
-    radius = radius - Math.floor(width / 2);
+    radius = radius - Math.floor(width / 2) + 1;
   }
   var p0 = xy(radius, startAngle);
   var p1 = xy(radius, endAngle);
@@ -226,7 +226,8 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
     strPath
       .text(names[i])
       .attr("startOffset", "50%")
-      .attr("text-anchor", "middle");
+      .attr("text-anchor", "middle")
+      .attr("font-size", "0.55em");
   }
 }
 
