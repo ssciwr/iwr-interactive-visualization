@@ -284,8 +284,9 @@ window.onload = function () {
       .css({ filter: "drop-shadow(1px 1px 2px)" });
     group
       .text(group_names[i])
-      .cx(260) //was 200
-      .cy(145 + h * i);
+      .cx(245) //was 200
+      .cy(145 + h * i)
+      .attr("font-size", "0.55em");
   }
   // methods
   addSegments(
