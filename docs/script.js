@@ -29,7 +29,14 @@ var method_groups = [
 ];
 
 // applications
-var application_names = ["Healthcare", "Science", "Humanities", "Weather"];
+var application_names = [
+  "Molecular Material Science",
+  "Medicine and Bioscience",
+  "Humanities",
+  "Astrophysics",
+  "Environmental Sciences",
+  "Engineering"
+];
 var application_colors = ["#bb0000", "#aa2222", "#880000", "#550000"];
 var application_groups = [
   [0, 0, 1],
