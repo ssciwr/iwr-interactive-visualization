@@ -1,14 +1,30 @@
 // groups
-var group_names = ["group1", "group2", "group3"];
-var application_weights = [
-  [0, 1, 1, 0],
-  [0, 0.8, 0, 0.7],
-  [1, 0, 0, 0],
+var group_names = [
+  "Atmospheric Physics",
+  "Parallel Computing",
+  "Scientific Computing",
+  "Software Engineering",
+  "Symplectic Geometry",
+  "Theoretical Star Formation",
+  "Visual Computing",
 ];
 var method_weights = [
-  [0, 1, 0, 0, 0],
-  [0, 1, 1, 0, 0],
-  [0, 0, 0, 0, 1],
+  [0.00, 0.00, 0.00, 0.00, 0.00], //"Atmospheric Physics",
+  [1.00, 0.50, 0.00, 0.00, 0.00], //"Parallel Computing",
+  [1.00, 0.50, 0.00, 0.00, 0.00], //"Scientific Computing",
+  [0.00, 1.00, 0.00, 0.00, 0.00], //"Software Engineering",
+  [0.00, 0.00, 0.00, 0.00, 1.00], //"Symplectic Geometry",
+  [0.00, 0.50, 0.00, 0.50, 0.00], //"Theoretical Star Formation",
+  [0.00, 0.50, 1.00, 0.00, 0.00], //"Visual Computing",
+];
+var application_weights = [
+  [0.00, 0.00, 0.00, 0.00, 1.00, 0.00], //"Atmospheric Physics",
+  [0.00, 0.00, 0.00, 0.00, 0.50, 0.00], //"Parallel Computing",
+  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Scientific Computing",
+  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Software Engineering",
+  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Symplectic Geometry",
+  [0.00, 0.00, 0.00, 1.00, 0.00, 0.00], //"Theoretical Star Formation",
+  [0.25, 0.50, 0.00, 0.50, 0.25, 0.50], //"Visual Computing",
 ];
 
 // methods
@@ -19,13 +35,14 @@ var method_names = [
   "Machine Learning and Computer Vision",
   "Arithmetic, Geometry and Topology",
 ];
-var method_colors = ["#ee0000", "#ee3333", "#ee6666", "#bb3333", "#990000"];
+//var method_colors = ["#ee0000", "#ee3333", "#ee6666", "#bb3333", "#990000"];
+var method_colors = ["#e13535", "#e13535", "#e13535", "#e13535", "#e13535"];
 var method_groups = [
-  [0, 0, 0],
-  [1, 1, 0],
-  [0, 1, 0],
-  [0, 0, 0],
-  [0, 0, 1],
+  [0, 1, 1, 0, 0, 0, 0],
+  [0, 1, 1, 1, 0, 1, 1],
+  [0, 0, 0, 0, 0, 0, 1],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 1, 0, 0],
 ];
 
 // applications
@@ -37,12 +54,15 @@ var application_names = [
   "Environmental Sciences",
   "Engineering"
 ];
-var application_colors = ["#bb0000", "#aa2222", "#880000", "#550000"];
+//var application_colors = ["#bb0000", "#aa2222", "#880000", "#550000", "#ff0022", "#ffee33"];
+var application_colors = ["#499bce", "#499bce", "#499bce", "#499bce", "#499bce", "#499bce"];
 var application_groups = [
-  [0, 0, 1],
-  [1, 1, 0],
-  [1, 0, 0],
-  [0, 1, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
 ];
 
 // svg circle arc math based on https://stackoverflow.com/a/18473154/6465472
@@ -264,7 +284,7 @@ window.onload = function () {
       .css({ filter: "drop-shadow(1px 1px 2px)" });
     group
       .text(group_names[i])
-      .cx(200)
+      .cx(260) //was 200
       .cy(145 + h * i);
   }
   // methods
