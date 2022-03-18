@@ -1,35 +1,43 @@
 // groups: [professor name, group name, webpage]
 var group_names = [
-  ["Prof XYZ", "Atmospheric Physics", "https://typo.iwr.uni-heidelberg.de/"],
-  ["Prof XYZ", "Parallel Computing", "https://typo.iwr.uni-heidelberg.de/"],
-  ["Prof XYZ", "Scientific Computing", "https://typo.iwr.uni-heidelberg.de/"],
-  ["Prof XYZ", "Software Engineering", "https://typo.iwr.uni-heidelberg.de/"],
-  ["Prof XYZ", "Symplectic Geometry", "https://typo.iwr.uni-heidelberg.de/"],
   [
-    "Prof XYZ",
+    "Prof Alpha Beta",
+    "Atmospheric Physics",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alpha Beta",
+    "Parallel Computing",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alpha Beta",
+    "Scientific Computing",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alpha Beta",
+    "Software Engineering",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alpha Beta",
+    "Symplectic Geometry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alpha Beta",
     "Theoretical Star Formation",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-  ["Prof XYZ", "Visual Computing", "https://typo.iwr.uni-heidelberg.de/"],
+  [
+    "Prof Alpha Beta",
+    "Visual Computing",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
 ];
-var method_weights = [
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Atmospheric Physics",
-  [1.0, 0.5, 0.0, 0.0, 0.0], //"Parallel Computing",
-  [1.0, 0.5, 0.0, 0.0, 0.0], //"Scientific Computing",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Software Engineering",
-  [0.0, 0.0, 0.0, 0.0, 1.0], //"Symplectic Geometry",
-  [0.0, 0.5, 0.0, 0.5, 0.0], //"Theoretical Star Formation",
-  [0.0, 0.5, 1.0, 0.0, 0.0], //"Visual Computing",
-];
-var application_weights = [
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Atmospheric Physics",
-  [0.0, 0.0, 0.0, 0.0, 0.5, 0.0], //"Parallel Computing",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Scientific Computing",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Software Engineering",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Symplectic Geometry",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Theoretical Star Formation",
-  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Visual Computing",
-];
+var group_colour = "#cccccc";
+var group_border_colour = "#ffffff";
 
 // methods
 var method_names = [
@@ -39,7 +47,16 @@ var method_names = [
   "Machine Learning and Computer Vision",
   "Arithmetic, Geometry and Topology",
 ];
-var method_colors = ["#e13535", "#e13535", "#e13535", "#e13535", "#e13535"];
+var method_color = "#e13535";
+var method_weights = [
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Atmospheric Physics",
+  [1.0, 0.5, 0.0, 0.0, 0.0], //"Parallel Computing",
+  [1.0, 0.5, 0.0, 0.0, 0.0], //"Scientific Computing",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Software Engineering",
+  [0.0, 0.0, 0.0, 0.0, 1.0], //"Symplectic Geometry",
+  [0.0, 0.5, 0.0, 0.5, 0.0], //"Theoretical Star Formation",
+  [0.0, 0.5, 1.0, 0.0, 0.0], //"Visual Computing",
+];
 
 // applications
 var application_names = [
@@ -50,13 +67,15 @@ var application_names = [
   "Environmental Sciences",
   "Engineering",
 ];
-var application_colors = [
-  "#499bce",
-  "#499bce",
-  "#499bce",
-  "#499bce",
-  "#499bce",
-  "#499bce",
+var application_color = "#499bce";
+var application_weights = [
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Atmospheric Physics",
+  [0.0, 0.0, 0.0, 0.0, 0.5, 0.0], //"Parallel Computing",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Scientific Computing",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Software Engineering",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Symplectic Geometry",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Theoretical Star Formation",
+  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Visual Computing",
 ];
 
 // https://stackoverflow.com/a/36164530/6465472
@@ -226,7 +245,7 @@ var highlightSegments = function () {
   );
 };
 
-function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
+function addSegments(svg, names, groups, color, radius, width, segmentClass) {
   var delta = 360 / names.length;
   for (var i = 0; i < names.length; i++) {
     var group = svg
@@ -245,7 +264,7 @@ function addSegments(svg, names, groups, colors, radius, width, segmentClass) {
     });
     group
       .path(makeSegment(radius, i * delta, (i + 1) * delta, width))
-      .fill(colors[i])
+      .fill(color)
       .stroke("#000000")
       .css({ filter: "drop-shadow(1px 1px 2px)" });
     var strPath = group
@@ -282,7 +301,12 @@ window.onload = function () {
     // link to group webpage
     var link = group.link(group_names[i][2]);
     // box
-    link.rect(160, h).cx(cx).cy(cy).fill("#cccccc").stroke("#ffffff");
+    link
+      .rect(160, h)
+      .cx(cx)
+      .cy(cy)
+      .fill(group_colour)
+      .stroke(group_border_colour);
     // professor name
     var profNamePath = link
       .path(["M", cx - 80, cy - 4, "L", cx + 80, cy - 4].join(" "))
@@ -311,7 +335,7 @@ window.onload = function () {
     svg,
     method_names,
     method_groups,
-    method_colors,
+    method_color,
     157,
     13,
     "iwr-vis-method-item"
@@ -321,7 +345,7 @@ window.onload = function () {
     svg,
     application_names,
     application_groups,
-    application_colors,
+    application_color,
     183,
     13,
     "iwr-vis-application-item"
