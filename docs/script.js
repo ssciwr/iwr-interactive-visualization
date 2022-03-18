@@ -35,15 +35,7 @@ var method_names = [
   "Machine Learning and Computer Vision",
   "Arithmetic, Geometry and Topology",
 ];
-//var method_colors = ["#ee0000", "#ee3333", "#ee6666", "#bb3333", "#990000"];
 var method_colors = ["#e13535", "#e13535", "#e13535", "#e13535", "#e13535"];
-var method_groups = [
-  [0, 1, 1, 0, 0, 0, 0],
-  [0, 1, 1, 1, 0, 1, 1],
-  [0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 1, 0, 0],
-];
 
 // applications
 var application_names = [
@@ -54,7 +46,6 @@ var application_names = [
   "Environmental Sciences",
   "Engineering",
 ];
-//var application_colors = ["#bb0000", "#aa2222", "#880000", "#550000", "#ff0022", "#ffee33"];
 var application_colors = [
   "#499bce",
   "#499bce",
@@ -63,14 +54,14 @@ var application_colors = [
   "#499bce",
   "#499bce",
 ];
-var application_groups = [
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-];
+
+// https://stackoverflow.com/a/36164530/6465472
+function transpose(m) {
+  return m[0].map((x, i) => m.map((x) => x[i]));
+}
+
+var method_groups = transpose(method_weights);
+var application_groups = transpose(application_weights);
 
 // svg circle arc math based on https://stackoverflow.com/a/18473154/6465472
 function xy(radius, deg) {
@@ -166,7 +157,7 @@ function updateGroups(groups) {
     if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
-      items[i].css({ opacity: 1, visibility: "visible" });
+      items[i].css({ opacity: groups[i], visibility: "visible" });
     }
   }
 }
