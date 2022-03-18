@@ -15,7 +15,7 @@ var group_names = [
     "Parallel Computing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-[
+  [
     "Prof Gebhard Böckle",
     "Computational Arithmetic Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
@@ -40,32 +40,32 @@ var group_names = [
     "Theoretical and Computational Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-    [
+  [
     "Dr Stefan Fischer",
     "Computational Biochemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-    [
+  [
     "Prof Anette Frank",
     "Natural Language Processing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-    [
+  [
     "Prof Frauke Gräter",
     "Molecular Biomechanics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-        [
+  [
     "Dr Frederik Graw",
     "Modelling Infection & Immunity",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-          [
+  [
     "Dr Ganna Gryn'ova",
     "Computational Carbon Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-          [
+  [
     "Prof Eva Gutheil",
     "Modelling Infection & Immunity",
     "https://typo.iwr.uni-heidelberg.de/",
