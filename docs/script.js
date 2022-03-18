@@ -282,18 +282,25 @@ window.onload = function () {
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
+    var cx = 200;
+    var cy = 145 + h * i;
     group
       .rect(160, h)
-      .cx(200)
-      .cy(145 + h * i)
+      .cx(cx)
+      .cy(cy)
       .fill("#cccccc")
       .stroke("#000000")
       .css({ filter: "drop-shadow(1px 1px 2px)" });
-    group
+    var strPath = group
+      .path(["M", cx - 80, cy, "L", cx + 80, cy].join(" "))
+      .fill("none")
+      .stroke("none");
+    strPath
       .text(group_names[i])
-      .cx(245) //was 200
-      .cy(145 + h * i)
-      .attr("font-size", "0.55em");
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "middle")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "0.6em");
   }
   // methods
   addSegments(
