@@ -17,7 +17,7 @@ var group_names = [
   ],
   [
     "Prof Gebhard Böckle",
-    "Computational Arithmetic Geometry",
+    "Computational Arithmetic\nGeometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -32,12 +32,12 @@ var group_names = [
   ],
   [
     "Prof Peter Comba",
-    "Theory and Modeling in Inorganic  and Bioinorganic Chemistry",
+    "Theory and Modeling in Inorganic\nand Bioinorganic Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Andreas Dreuw",
-    "Theoretical and Computational Chemistry",
+    "Theoretical and Computational\nChemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -47,7 +47,7 @@ var group_names = [
   ],
   [
     "Prof Anette Frank",
-    "Natural Language Processing Group",
+    "Natural Language\nProcessing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -204,18 +204,37 @@ var updateSegments = function () {
   }
 };
 
+function nextGroupBoxIndex(p, ncols) {
+  if (p.x + 1 < ncols) {
+    return { x: p.x + 1, y: p.y };
+  }
+  return { x: 0, y: p.y + 1 };
+}
+
 function updateGroups(groups) {
   updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
+  var groupBoxIndex = { x: 0, y: 0 };
+  var ncols = 2;
+  var width = 112;
+  var height = 24;
   if (typeof groups === "undefined") {
-    items.css({ opacity: 1, visibility: "visible" });
-    return;
+    ncols = 4;
+    width = 56;
+    height = 12;
   }
-  for (var i = 0; i < groups.length; i++) {
-    if (groups[i] == 0) {
+  for (var i = 0; i < items.length; i++) {
+    items[i]
+      .size(width, height)
+      .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y);
+    if (typeof groups === "undefined") {
+      items[i].css({ opacity: 1, visibility: "visible" });
+      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
+    } else if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
       items[i].css({ opacity: groups[i], visibility: "visible" });
+      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
   }
 }
@@ -314,6 +333,57 @@ function addSegments(svg, names, groups, color, radius, width, segmentClass) {
   }
 }
 
+function addGroups(
+  svg,
+  names,
+  method_weights,
+  application_weights,
+  color,
+  border_colour
+) {
+  var boxHeight = 28;
+  var boxWidth = 100;
+  for (var i = 0; i < names.length; i++) {
+    var group = svg.group().addClass("iwr-vis-group-item");
+    group.mouseover(highlightSegments);
+    group.mouseout(updateSegments);
+    group.data("text", names[i][1]);
+    group.data("method_weights", method_weights[i]);
+    group.data("application_weights", application_weights[i]);
+    group.css({ transition: "opacity 0.6s, visibility 0.6s" });
+    var link = group.link(names[i][2]);
+    // box
+    link.rect(boxWidth, boxHeight).fill(color).stroke(border_colour);
+    var padding = 3;
+    // group name
+    var groupNamePath = link
+      .path(["M", 0, padding, "L", boxWidth, padding].join(" "))
+      .fill("none")
+      .stroke("none");
+    groupNamePath
+      .text(names[i][1])
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "hanging")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "0.4em");
+    // professor name
+    var profNamePath = link
+      .path(
+        ["M", 0, boxHeight - padding, "L", boxWidth, boxHeight - padding].join(
+          " "
+        )
+      )
+      .fill("none")
+      .stroke("none");
+    profNamePath
+      .text(names[i][0])
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "auto")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "0.35em");
+  }
+}
+
 window.onload = function () {
   var svg = SVG("#iwr-vis-menu-svg");
   // background
@@ -322,49 +392,14 @@ window.onload = function () {
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
 
   // groups
-  var h = 150 / group_names.length;
-  for (var i = 0; i < group_names.length; i++) {
-    var group = svg.group().addClass("iwr-vis-group-item");
-    group.mouseover(highlightSegments);
-    group.mouseout(updateSegments);
-    group.data("text", group_names[i][1]);
-    group.data("method_weights", method_weights[i]);
-    group.data("application_weights", application_weights[i]);
-    group.css({ transition: "opacity 0.6s, visibility 0.6s" });
-    var cx = 200;
-    var cy = 145 + h * i;
-    // link to group webpage
-    var link = group.link(group_names[i][2]);
-    // box
-    link
-      .rect(160, h)
-      .cx(cx)
-      .cy(cy)
-      .fill(group_colour)
-      .stroke(group_border_colour);
-    // professor name
-    var profNamePath = link
-      .path(["M", cx - 80, cy - 4, "L", cx + 80, cy - 4].join(" "))
-      .fill("none")
-      .stroke("none");
-    profNamePath
-      .text(group_names[i][0])
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "middle")
-      .attr("text-anchor", "middle")
-      .attr("font-size", "0.4em");
-    // group name
-    var groupNamePath = link
-      .path(["M", cx - 80, cy + 4, "L", cx + 80, cy + 4].join(" "))
-      .fill("none")
-      .stroke("none");
-    groupNamePath
-      .text(group_names[i][1])
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "middle")
-      .attr("text-anchor", "middle")
-      .attr("font-size", "0.4em");
-  }
+  addGroups(
+    svg,
+    group_names,
+    method_weights,
+    application_weights,
+    group_colour,
+    group_border_colour
+  );
   // methods
   addSegments(
     svg,
@@ -385,8 +420,9 @@ window.onload = function () {
     13,
     "iwr-vis-application-item"
   );
+  updateGroups();
   // iwr logo: animate dot colors
-  for (i = 1; i < 7; ++i) {
+  for (var i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
       .animate({
         duration: 800,
