@@ -26,7 +26,7 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta",
+    "Prof Alpha Beta_Test",
     "Symplectic Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
