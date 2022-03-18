@@ -4,7 +4,7 @@ var group_names = [
     "Prof Peter Albers",
     "Symplectic Dynamics",
     "https://typo.iwr.uni-heidelberg.de/",
-  ],
+  ],  
   [
     "Prof Artur Andrzejak",
     "Parallel and Distributed Systems",
@@ -16,28 +16,28 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Gebhard Böckle",
-    "Computational Arithmetic\nGeometry",
+    "Prof Hans Georg Bock",
+    "Simulation and Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
+    "Prof Gebhard Böckle",
+    "Computational Arithmetic Geometry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+[
     "Prof André Butz",
     "Atmospheric Physics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta_Test",
-    "Symplectic Geometry",
-    "https://typo.iwr.uni-heidelberg.de/",
-  ],
-  [
     "Prof Peter Comba",
-    "Theory and Modeling in Inorganic\nand Bioinorganic Chemistry",
+    "Theory and Modeling in Inorganic  and Bioinorganic Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Andreas Dreuw",
-    "Theoretical and Computational\nChemistry",
+    "Theoretical and Computational Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -47,7 +47,7 @@ var group_names = [
   ],
   [
     "Prof Anette Frank",
-    "Natural Language\nProcessing Group",
+    "Natural Language Processing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -67,7 +67,167 @@ var group_names = [
   ],
   [
     "Prof Eva Gutheil",
-    "Modelling Infection & Immunity",
+    "Multiphase Flows and Combustion",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Roland Herzog",
+    "Scientific Computing and Optimization",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Jürgen Hesser",
+    "Data Analysis and Modeling in Medicine",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Vincent Heuveline",
+    "Engineering Mathematics and Computing Lab (EMCL)",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "PD Dr Ahmad Hujeirat",
+    "Theoretical and Computational Astrophysics",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Bernhard Höfle",
+    "3DGeo – 3D Geospatial Data Processing",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Jan Johannes",
+    "Statistics of Inverse Problems",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Bernd Jähne",
+    "Air-Sea Interactions",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Guido Kanschat",
+    "Mathematical Methods of Simulation",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Ralf Klessen",
+    "Theoretical Star Formation Studies",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Hans Knüpfer",
+    "Applied Analysis (CV/PDE)",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Ekaterina Kostina",
+    "Numerical Optimization",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Kurt Kremer",
+    "Polymer Theory",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Dr Susanne Krömker",
+    "Visualization and Numerical Geometry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Ursula Kummer",
+    "Modeling of Biological Processes",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Anna Marciniak-Czochra",
+    "Applied Analysis and Modelling in Biosciences",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Björn Ommer",
+    "Computer Vision",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Barbara Paech",
+    "Software Engineering",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Jun Prof Maria Beatrice Pozzetti",
+    "Geometric Group Theory",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Ralf Rannacher",
+    "Numerical Methods",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Stefan Riezler",
+    "Statistical Natural Language Processing Group",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Joacim Rocklöv",
+    "Artificial Intelligence in the Research of Infectious Diseases Impacted by Climate Change",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Kurt Roth",
+    "Terrestrial Systems & Chaotic, Complex, and Evolving Environmental Systems",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Carsten Rother",
+    "Computer Vision and Learning Lab",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Filip Sadlo",
+    "Visual Computing",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Robert Scheichl",
+    "Numerical Analysis and Uncertainty Quantification",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Christoph Schnörr",
+    "Image and Pattern Analysis",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Ulrich Schwarz",
+    "Physics of Complex Biosystems",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Oriol Vendrell",
+    "Theoretical Chemistry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Rebecca Wade",
+    "Molecular and Cellular Modeling Group",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Anna Wienhard",
+    "Differential Geometry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Jun Prof Jakob Zech",
+    "Machine Learning",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Alexander Zipf",
+    "GIScience Research Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
