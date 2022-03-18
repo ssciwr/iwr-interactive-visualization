@@ -8,6 +8,7 @@ body {
   width: 100vmin;
   height: 100vmin;
   background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .iwr-vis-menu {
@@ -41,10 +42,6 @@ body {
 
 .iwr-vis-segment-item {
   cursor: pointer;
-}
-
-.iwr-vis-segment-item:hover {
-  filter: brightness(120%);
 }
 
 .iwr-vis-group-item:hover {
