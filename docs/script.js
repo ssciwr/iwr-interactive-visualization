@@ -9,22 +9,22 @@ var group_names = [
   "Visual Computing",
 ];
 var method_weights = [
-  [0.00, 0.00, 0.00, 0.00, 0.00], //"Atmospheric Physics",
-  [1.00, 0.50, 0.00, 0.00, 0.00], //"Parallel Computing",
-  [1.00, 0.50, 0.00, 0.00, 0.00], //"Scientific Computing",
-  [0.00, 1.00, 0.00, 0.00, 0.00], //"Software Engineering",
-  [0.00, 0.00, 0.00, 0.00, 1.00], //"Symplectic Geometry",
-  [0.00, 0.50, 0.00, 0.50, 0.00], //"Theoretical Star Formation",
-  [0.00, 0.50, 1.00, 0.00, 0.00], //"Visual Computing",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Atmospheric Physics",
+  [1.0, 0.5, 0.0, 0.0, 0.0], //"Parallel Computing",
+  [1.0, 0.5, 0.0, 0.0, 0.0], //"Scientific Computing",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Software Engineering",
+  [0.0, 0.0, 0.0, 0.0, 1.0], //"Symplectic Geometry",
+  [0.0, 0.5, 0.0, 0.5, 0.0], //"Theoretical Star Formation",
+  [0.0, 0.5, 1.0, 0.0, 0.0], //"Visual Computing",
 ];
 var application_weights = [
-  [0.00, 0.00, 0.00, 0.00, 1.00, 0.00], //"Atmospheric Physics",
-  [0.00, 0.00, 0.00, 0.00, 0.50, 0.00], //"Parallel Computing",
-  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Scientific Computing",
-  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Software Engineering",
-  [0.00, 0.00, 0.00, 0.00, 0.00, 0.00], //"Symplectic Geometry",
-  [0.00, 0.00, 0.00, 1.00, 0.00, 0.00], //"Theoretical Star Formation",
-  [0.25, 0.50, 0.00, 0.50, 0.25, 0.50], //"Visual Computing",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Atmospheric Physics",
+  [0.0, 0.0, 0.0, 0.0, 0.5, 0.0], //"Parallel Computing",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Scientific Computing",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Software Engineering",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Symplectic Geometry",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Theoretical Star Formation",
+  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Visual Computing",
 ];
 
 // methods
@@ -52,10 +52,17 @@ var application_names = [
   "Humanities",
   "Astrophysics",
   "Environmental Sciences",
-  "Engineering"
+  "Engineering",
 ];
 //var application_colors = ["#bb0000", "#aa2222", "#880000", "#550000", "#ff0022", "#ffee33"];
-var application_colors = ["#499bce", "#499bce", "#499bce", "#499bce", "#499bce", "#499bce"];
+var application_colors = [
+  "#499bce",
+  "#499bce",
+  "#499bce",
+  "#499bce",
+  "#499bce",
+  "#499bce",
+];
 var application_groups = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
