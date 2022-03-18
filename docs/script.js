@@ -1,12 +1,16 @@
-// groups
+// groups: [professor name, group name, webpage]
 var group_names = [
-  "Atmospheric Physics",
-  "Parallel Computing",
-  "Scientific Computing",
-  "Software Engineering",
-  "Symplectic Geometry",
-  "Theoretical Star Formation",
-  "Visual Computing",
+  ["Prof XYZ", "Atmospheric Physics", "https://typo.iwr.uni-heidelberg.de/"],
+  ["Prof XYZ", "Parallel Computing", "https://typo.iwr.uni-heidelberg.de/"],
+  ["Prof XYZ", "Scientific Computing", "https://typo.iwr.uni-heidelberg.de/"],
+  ["Prof XYZ", "Software Engineering", "https://typo.iwr.uni-heidelberg.de/"],
+  ["Prof XYZ", "Symplectic Geometry", "https://typo.iwr.uni-heidelberg.de/"],
+  [
+    "Prof XYZ",
+    "Theoretical Star Formation",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  ["Prof XYZ", "Visual Computing", "https://typo.iwr.uni-heidelberg.de/"],
 ];
 var method_weights = [
   [0.0, 0.0, 0.0, 0.0, 0.0], //"Atmospheric Physics",
@@ -269,29 +273,38 @@ window.onload = function () {
     var group = svg.group().addClass("iwr-vis-group-item");
     group.mouseover(highlightSegments);
     group.mouseout(updateSegments);
-    group.data("text", group_names[i]);
+    group.data("text", group_names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
     var cx = 200;
     var cy = 145 + h * i;
-    group
-      .rect(160, h)
-      .cx(cx)
-      .cy(cy)
-      .fill("#cccccc")
-      .stroke("#000000")
-      .css({ filter: "drop-shadow(1px 1px 2px)" });
-    var strPath = group
-      .path(["M", cx - 80, cy, "L", cx + 80, cy].join(" "))
+    // link to group webpage
+    var link = group.link(group_names[i][2]);
+    // box
+    link.rect(160, h).cx(cx).cy(cy).fill("#cccccc").stroke("#ffffff");
+    // professor name
+    var profNamePath = link
+      .path(["M", cx - 80, cy - 4, "L", cx + 80, cy - 4].join(" "))
       .fill("none")
       .stroke("none");
-    strPath
-      .text(group_names[i])
+    profNamePath
+      .text(group_names[i][0])
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "middle")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.6em");
+      .attr("font-size", "0.4em");
+    // group name
+    var groupNamePath = link
+      .path(["M", cx - 80, cy + 4, "L", cx + 80, cy + 4].join(" "))
+      .fill("none")
+      .stroke("none");
+    groupNamePath
+      .text(group_names[i][1])
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "middle")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "0.4em");
   }
   // methods
   addSegments(
