@@ -1,23 +1,28 @@
 // groups: [professor name, group name, webpage]
 var group_names = [
   [
-    "Prof Alpha Beta",
-    "Atmospheric Physics",
+    "Prof Peter Albers",
+    "Symplectic Dynamics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta",
+    "Prof Artur Andrzejak",
+    "Parallel and Distributed Systems",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Prof Peter Bastian",
     "Parallel Computing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-  [
-    "Prof Alpha Beta",
-    "Scientific Computing",
+[
+    "Prof Gebhard Böckle",
+    "Computational Arithmetic Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta",
-    "Software Engineering",
+    "Prof André Butz",
+    "Atmospheric Physics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -26,13 +31,43 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta",
-    "Theoretical Star Formation",
+    "Prof Peter Comba",
+    "Theory and Modeling in Inorganic  and Bioinorganic Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alpha Beta",
-    "Visual Computing",
+    "Prof Andreas Dreuw",
+    "Theoretical and Computational Chemistry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+    [
+    "Dr Stefan Fischer",
+    "Computational Biochemistry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+    [
+    "Prof Anette Frank",
+    "Natural Language Processing Group",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+    [
+    "Prof Frauke Gräter",
+    "Molecular Biomechanics",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+        [
+    "Dr Frederik Graw",
+    "Modelling Infection & Immunity",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+          [
+    "Dr Ganna Gryn'ova",
+    "Computational Carbon Chemistry",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+          [
+    "Prof Eva Gutheil",
+    "Modelling Infection & Immunity",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
