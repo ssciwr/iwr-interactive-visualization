@@ -250,7 +250,7 @@ var method_weights = [
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Hans Georg Bock",
   [0.0, 0.0, 0.0, 0.0, 1.0], //"Prof Gebhard Böckle",
   [0.0, 1.0, 1.0, 0.0, 0.0], //"Prof André Butz",
-  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Peter Comba",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Comba",
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Andreas Dreuw",
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Dr Stefan Fischer",
   [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Anette Frank",
