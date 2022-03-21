@@ -4,10 +4,10 @@ var group_names = [
     "Prof Peter Albers",
     "Symplectic Dynamics",
     "https://typo.iwr.uni-heidelberg.de/",
-  ],  
+  ],
   [
     "Prof Artur Andrzejak",
-    "Parallel and Distributed Systems",
+    "Parallel and\nDistributed Systems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -22,22 +22,22 @@ var group_names = [
   ],
   [
     "Prof Gebhard Böckle",
-    "Computational Arithmetic Geometry",
+    "Computational Arithmetic\nGeometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-[
+  [
     "Prof André Butz",
     "Atmospheric Physics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Peter Comba",
-    "Theory and Modeling in Inorganic  and Bioinorganic Chemistry",
+    "Theory and Modeling in Inorganic\nand Bioinorganic Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Andreas Dreuw",
-    "Theoretical and Computational Chemistry",
+    "Theoretical and Computational\nChemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -47,7 +47,7 @@ var group_names = [
   ],
   [
     "Prof Anette Frank",
-    "Natural Language Processing Group",
+    "Natural Language\nProcessing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -67,32 +67,32 @@ var group_names = [
   ],
   [
     "Prof Eva Gutheil",
-    "Multiphase Flows and Combustion",
+    "Multiphase Flows\nand Combustion",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Roland Herzog",
-    "Scientific Computing and Optimization",
+    "Scientific Computing\nand Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Jürgen Hesser",
-    "Data Analysis and Modeling in Medicine",
+    "Data Analysis and Modeling\nin Medicine",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Vincent Heuveline",
-    "Engineering Mathematics and Computing Lab (EMCL)",
+    "Engineering Mathematics and\nComputing Lab (EMCL)",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "PD Dr Ahmad Hujeirat",
-    "Theoretical and Computational Astrophysics",
+    "Theoretical and Computational\nAstrophysics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Bernhard Höfle",
-    "3DGeo – 3D Geospatial Data Processing",
+    "3DGeo – 3D Geospatial\nData Processing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -107,17 +107,17 @@ var group_names = [
   ],
   [
     "Prof Guido Kanschat",
-    "Mathematical Methods of Simulation",
+    "Mathematical Methods\nof Simulation",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Ralf Klessen",
-    "Theoretical Star Formation Studies",
+    "Theoretical Star\nFormation Studies",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Hans Knüpfer",
-    "Applied Analysis (CV/PDE)",
+    "Applied Analysis\n(CV/PDE)",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -125,24 +125,20 @@ var group_names = [
     "Numerical Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-  [
-    "Prof Kurt Kremer",
-    "Polymer Theory",
-    "https://typo.iwr.uni-heidelberg.de/",
-  ],
+  ["Prof Kurt Kremer", "Polymer Theory", "https://typo.iwr.uni-heidelberg.de/"],
   [
     "Dr Susanne Krömker",
-    "Visualization and Numerical Geometry",
+    "Visualization and\nNumerical Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Ursula Kummer",
-    "Modeling of Biological Processes",
+    "Modeling of\nBiological Processes",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Anna Marciniak-Czochra",
-    "Applied Analysis and Modelling in Biosciences",
+    "Applied Analysis and\nModelling in Biosciences",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -167,17 +163,17 @@ var group_names = [
   ],
   [
     "Prof Stefan Riezler",
-    "Statistical Natural Language Processing Group",
+    "Statistical Natural Language\nProcessing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Joacim Rocklöv",
-    "Artificial Intelligence in the Research of Infectious Diseases Impacted by Climate Change",
+    "Artificial Intelligence in the\nResearch of Infectious Diseases\nImpacted by Climate Change",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
     "Prof Kurt Roth",
-    "Terrestrial Systems & Chaotic, Complex, and Evolving Environmental Systems",
+    "Terrestrial Systems & Chaotic,\nComplex, and Evolving\nEnvironmental Systems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -192,7 +188,7 @@ var group_names = [
   ],
   [
     "Prof Robert Scheichl",
-    "Numerical Analysis and Uncertainty Quantification",
+    "Numerical Analysis and\nUncertainty Quantification",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -212,7 +208,7 @@ var group_names = [
   ],
   [
     "Prof Rebecca Wade",
-    "Molecular and Cellular Modeling Group",
+    "Molecular and Cellular\nModeling Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -266,7 +262,7 @@ var method_weights = [
   [1.0, 0.0, 1.0, 0.0, 0.0], //"Prof Jan Johannes",
   [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Bernd Jähne",
   [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Guido Kanschat",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ralf Klessen", 
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ralf Klessen",
   [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Hans Knüpfer",
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ekaterina Kostina",
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Kurt Kremer",
@@ -280,7 +276,7 @@ var method_weights = [
   [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Stefan Riezler",
   [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Joacim Rocklöv",
   [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Kurt Roth",
-  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Carsten Rother",  
+  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Carsten Rother",
   [0.0, 0.5, 1.0, 0.0, 1.0], //"Prof Filip Sadlo",
   [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Robert Scheichl",
   [1.0, 0.0, 0.0, 1.0, 0.0], //"Prof Christoph Schnörr",
@@ -303,52 +299,52 @@ var application_names = [
 ];
 var application_color = "#499bce";
 var application_weights = [
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Peter Albers",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Artur Andrzejak",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Peter Bastian",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 1,0], //"Prof Hans Georg Bock",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Gebhard Böckle",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof André Butz",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Peter Comba",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Andreas Dreuw",
-  [1.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Dr Stefan Fischer",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0,0], //"Prof Anette Frank",
-  [1.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Frauke Gräter",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Dr Frederik Graw",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Dr Ganna Gryn'ova",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Eva Gutheil",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 1,0], //"Prof Roland Herzog",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Jürgen Hesser",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Vincent Heuveline",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0,0], //"PD Dr Ahmad Hujeirat",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Bernhard Höfle",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Jan Johannes",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Bernd Jähne",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0,0], //"Prof Guido Kanschat",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0,0], //"Prof Ralf Klessen", 
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Hans Knüpfer",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 1,0], //"Prof Ekaterina Kostina",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Kurt Kremer",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0,0], //"Dr Susanne Krömker",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Ursula Kummer",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Anna Marciniak-Czochra",
-  [0.0, 1.0, 1.0, 0.0, 0.0, 0,0], //"Prof Björn Ommer",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Barbara Paech",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Jun Prof Maria Beatrice Pozzetti",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Rolf Rannacher",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0,0], //"Prof Stefan Riezler",
-  [0.0, 1.0, 0.0, 0.0, 1.0, 0,0], //"Prof Joacim Rocklöv",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Kurt Roth",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Carsten Rother",  
-  [0.25, 0.5, 0.0, 0.5, 0.25, 0,5], //"Prof Filip Sadlo",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Robert Scheichl",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Christoph Schnörr",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Ulrich Schwarz",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Oriol Vendrell",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0,0], //"Prof Rebecca Wade",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Prof Anna Wienhard",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0,0], //"Jun Prof Jakob Zech",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0,0], //"Prof Alexander Zipf",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Albers",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Artur Andrzejak",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Peter Bastian",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof Hans Georg Bock",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Gebhard Böckle",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof André Butz",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Comba",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Andreas Dreuw",
+  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr Stefan Fischer",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Anette Frank",
+  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Frauke Gräter",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr Frederik Graw",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Dr Ganna Gryn'ova",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Eva Gutheil",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], //"Prof Roland Herzog",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Jürgen Hesser",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Vincent Heuveline",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"PD Dr Ahmad Hujeirat",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Bernhard Höfle",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Jan Johannes",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Bernd Jähne",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Guido Kanschat",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Ralf Klessen",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Hans Knüpfer",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof Ekaterina Kostina",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Kurt Kremer",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Dr Susanne Krömker",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Ursula Kummer",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Anna Marciniak-Czochra",
+  [0.0, 1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Björn Ommer",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Barbara Paech",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof Maria Beatrice Pozzetti",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Rolf Rannacher",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Stefan Riezler",
+  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0], //"Prof Joacim Rocklöv",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Kurt Roth",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Carsten Rother",
+  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Prof Filip Sadlo",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Robert Scheichl",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Christoph Schnörr",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Ulrich Schwarz",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Oriol Vendrell",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Rebecca Wade",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Anna Wienhard",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof Jakob Zech",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Alexander Zipf",
 ];
 
 // https://stackoverflow.com/a/36164530/6465472
@@ -452,26 +448,34 @@ function nextGroupBoxIndex(p, ncols) {
 function updateGroups(groups) {
   updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
+  if (typeof groups != "undefined") {
+    console.assert(items.length == groups.length, items, groups);
+  }
   var groupBoxIndex = { x: 0, y: 0 };
   var ncols = 2;
   var width = 112;
   var height = 24;
-  if (typeof groups === "undefined") {
+  if (typeof groups == "undefined") {
     ncols = 4;
     width = 56;
     height = 12;
+    for (var j = 0; j < items.length; j++) {
+      items[j]
+        .size(width, height)
+        .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y)
+        .css({ opacity: 1, visibility: "visible" });
+      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
+    }
+    return;
   }
   for (var i = 0; i < items.length; i++) {
-    items[i]
-      .size(width, height)
-      .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y);
-    if (typeof groups === "undefined") {
-      items[i].css({ opacity: 1, visibility: "visible" });
-      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
-    } else if (groups[i] == 0) {
+    if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
-      items[i].css({ opacity: groups[i], visibility: "visible" });
+      items[i]
+        .size(width, height)
+        .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y)
+        .css({ opacity: groups[i], visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
   }
@@ -517,6 +521,7 @@ var leaveSegment = function () {
 };
 
 function applyWeightedHighlights(items, weights) {
+  console.assert(items.length == weights.length, items, weights);
   items.css({ filter: "grayscale(80%)", opacity: "20%" });
   for (var i = 0; i < weights.length; i++) {
     if (weights[i] > 0) {
@@ -546,8 +551,8 @@ function addSegments(svg, names, groups, color, radius, width, segmentClass) {
       .addClass(segmentClass)
       .addClass("highlighted");
     group.click(selectSegment);
-    group.mouseover(hoverSegment);
-    group.mouseout(leaveSegment);
+    group.on("mouseenter", hoverSegment);
+    group.on("mouseleave", leaveSegment);
     group.data("text", names[i]);
     group.data("groups", groups[i]);
     group.css({
@@ -592,7 +597,7 @@ function addGroups(
     var link = group.link(names[i][2]);
     // box
     link.rect(boxWidth, boxHeight).fill(color).stroke(border_colour);
-    var padding = 3;
+    var padding = 2;
     // group name
     var groupNamePath = link
       .path(["M", 0, padding, "L", boxWidth, padding].join(" "))
@@ -603,7 +608,7 @@ function addGroups(
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "hanging")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.4em");
+      .attr("font-size", "0.37em");
     // professor name
     var profNamePath = link
       .path(
@@ -618,7 +623,7 @@ function addGroups(
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.35em");
+      .attr("font-size", "0.32em");
   }
 }
 
@@ -658,7 +663,7 @@ window.onload = function () {
     13,
     "iwr-vis-application-item"
   );
-  updateGroups();
+  resetAll();
   // iwr logo: animate dot colors
   for (var i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
