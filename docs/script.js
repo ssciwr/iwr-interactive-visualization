@@ -453,28 +453,44 @@ function updateGroups(groups) {
   }
   var groupBoxIndex = { x: 0, y: 0 };
   var ncols = 2;
-  var width = 112;
   var height = 24;
+  var width = 112;
+  var x0 = 0;
+  var y0 = 0;
   if (typeof groups == "undefined") {
     ncols = 4;
     width = 56;
     height = 12;
+    x0 = 200 - (width * ncols) / 2;
+    y0 = 200 - (height * Math.floor((items.length + 1) / 2)) / ncols;
     for (var j = 0; j < items.length; j++) {
       items[j]
         .size(width, height)
-        .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y)
+        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y)
         .css({ opacity: 1, visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
     return;
   }
+  var nGroups = 0;
+  for (var k = 0; k < items.length; k++) {
+    if (groups[k] != 0) {
+      ++nGroups;
+    }
+  }
+  if (nGroups > 12) {
+    height = 21;
+    width = 98;
+  }
+  x0 = 200 - (width * ncols) / 2;
+  y0 = 200 - (height * Math.floor((nGroups + 1) / 2)) / ncols;
   for (var i = 0; i < items.length; i++) {
     if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
       items[i]
         .size(width, height)
-        .move(88 + width * groupBoxIndex.x, 120 + height * groupBoxIndex.y)
+        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y)
         .css({ opacity: groups[i], visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
@@ -588,15 +604,15 @@ function addGroups(
   var boxWidth = 100;
   for (var i = 0; i < names.length; i++) {
     var group = svg.group().addClass("iwr-vis-group-item");
-    group.mouseover(highlightSegments);
-    group.mouseout(updateSegments);
+    group.on("mouseenter", highlightSegments);
+    group.on("mouseleave", updateSegments);
     group.data("text", names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
     var link = group.link(names[i][2]);
     // box
-    link.rect(boxWidth, boxHeight).fill(color).stroke(border_colour);
+    link.rect(boxWidth, boxHeight).radius(2).fill(color).stroke(border_colour);
     var padding = 2;
     // group name
     var groupNamePath = link
