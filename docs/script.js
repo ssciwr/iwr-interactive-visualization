@@ -460,17 +460,27 @@ function updateGroups(groups) {
   var y0 = 0;
   if (typeof groups == "undefined") {
     ncols = 4;
-    width = 56;
-    height = 12;
+    width = 65;
+    height = 18;
+    // for now just hard-code indices of boxes in grid
+    var xs = [
+      1.5, 1, 2, 0.5, 1.5, 2.5, 0.5, 1.5, 2.5, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2,
+      3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0.5, 1.5, 2.5, 0.5,
+      1.5, 2.5, 1, 2, 1.5,
+    ];
+    var ys = [
+      0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
+      8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13,
+      14,
+    ];
     x0 = 200 - (width * ncols) / 2;
-    y0 = 200 - (height * Math.floor((items.length + 1) / 2)) / ncols;
+    y0 = 200 - (height * ys.length) / 2;
     for (var j = 0; j < items.length; j++) {
       items[j].animate(method_anim_ms, 0, "now").size(width, height);
       items[j]
         .animate(method_anim_ms, 0, "now")
-        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
+        .move(x0 + width * xs[j], y0 + height * ys[j]);
       items[j].css({ opacity: 1, visibility: "visible" });
-      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
     return;
   }

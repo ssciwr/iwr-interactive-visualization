@@ -37,7 +37,7 @@ body {
 
 .iwr-vis:hover .iwr-vis-logo {
   opacity: 0;
-  transform: scale(0.25) translatez(0px);
+  transform: scale(0) translatez(0px);
 }
 
 .iwr-vis-segment-item {
