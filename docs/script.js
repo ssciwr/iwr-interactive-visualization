@@ -460,6 +460,7 @@ function updateGroups(groups) {
   var y0 = 0;
   if (typeof groups == "undefined") {
     ncols = 4;
+    var nrows = 15;
     width = 65;
     height = 18;
     // for now just hard-code indices of boxes in grid
@@ -474,7 +475,7 @@ function updateGroups(groups) {
       14,
     ];
     x0 = 200 - (width * ncols) / 2;
-    y0 = 200 - (height * ys.length) / 2;
+    y0 = 200 - (height * nrows) / 2;
     for (var j = 0; j < items.length; j++) {
       items[j].animate(method_anim_ms, 0, "now").size(width, height);
       items[j]
