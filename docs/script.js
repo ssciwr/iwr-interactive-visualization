@@ -238,6 +238,7 @@ var method_names = [
   "Machine Learning and Computer Vision",
   "Arithmetic, Geometry and Topology",
 ];
+var method_anim_ms = 1000;
 var method_color = "#e13535";
 var method_weights = [
   [1.0, 0.0, 1.0, 0.0, 1.0], //"Prof Peter Albers",
@@ -464,10 +465,11 @@ function updateGroups(groups) {
     x0 = 200 - (width * ncols) / 2;
     y0 = 200 - (height * Math.floor((items.length + 1) / 2)) / ncols;
     for (var j = 0; j < items.length; j++) {
+      items[j].animate(method_anim_ms, 0, "now").size(width, height);
       items[j]
-        .size(width, height)
-        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y)
-        .css({ opacity: 1, visibility: "visible" });
+        .animate(method_anim_ms, 0, "now")
+        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
+      items[j].css({ opacity: 1, visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
     return;
@@ -488,10 +490,11 @@ function updateGroups(groups) {
     if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
+      items[i].animate(method_anim_ms, 0, "now").size(width, height);
       items[i]
-        .size(width, height)
-        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y)
-        .css({ opacity: groups[i], visibility: "visible" });
+        .animate(method_anim_ms, 0, "now")
+        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
+      items[i].css({ opacity: groups[i], visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
     }
   }
