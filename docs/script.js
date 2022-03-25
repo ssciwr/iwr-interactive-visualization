@@ -425,16 +425,16 @@ var updateSegments = function () {
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
-      segments[i].animate().attr("stroke-width", 2);
+      segments[i].animate().attr("stroke-width", 1);
     } else if (segments[i].hasClass("hovered")) {
       segments[i].css({ opacity: 1, filter: "grayscale(0)" });
-      segments[i].attr("stroke-width", 1);
+      segments[i].attr("stroke-width", 0);
     } else {
       segments[i].css({
         filter: "grayscale(80%)",
         opacity: "20%",
       });
-      segments[i].attr("stroke-width", 1);
+      segments[i].attr("stroke-width", 0);
     }
   }
 };
@@ -593,7 +593,7 @@ function addSegments(svg, names, groups, color, radius, width, segmentClass) {
       .path(makeSegment(radius, i * delta, (i + 1) * delta, width))
       .fill(color)
       .stroke("#000000")
-      .css({ filter: "drop-shadow(1px 1px 2px)" });
+      .css({ filter: "drop-shadow(0px 0px 2px)" });
     var strPath = group
       .path(makeTextArc(radius, i * delta, (i + 1) * delta, width))
       .fill("none")
