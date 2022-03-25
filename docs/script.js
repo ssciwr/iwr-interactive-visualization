@@ -366,12 +366,10 @@ function xy(radius, deg) {
 }
 
 // svg path for text inside a segment (single arc)
-function makeTextArc(radius, startAngle, endAngle, width) {
+function makeTextArc(radius, startAngle, endAngle) {
   var anticlockwise = startAngle > 70 && endAngle < 290;
-  if (anticlockwise) {
-    radius = radius + Math.floor(width / 2) - 4;
-  } else {
-    radius = radius - Math.floor(width / 2) + 1;
+  if (!anticlockwise) {
+    radius = radius - 1;
   }
   var p0 = xy(radius, startAngle);
   var p1 = xy(radius, endAngle);
@@ -454,15 +452,15 @@ function updateGroups(groups) {
   }
   var groupBoxIndex = { x: 0, y: 0 };
   var ncols = 2;
-  var height = 24;
-  var width = 112;
+  var height = 28;
+  var width = 122;
   var x0 = 0;
   var y0 = 0;
   if (typeof groups == "undefined") {
     ncols = 4;
     var nrows = 15;
-    width = 65;
-    height = 18;
+    width = 70;
+    height = 20.5;
     // for now just hard-code indices of boxes in grid
     var xs = [
       1.5, 1, 2, 0.5, 1.5, 2.5, 0.5, 1.5, 2.5, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2,
@@ -477,7 +475,7 @@ function updateGroups(groups) {
     x0 = 200 - (width * ncols) / 2;
     y0 = 200 - (height * nrows) / 2;
     for (var j = 0; j < items.length; j++) {
-      items[j].animate(method_anim_ms, 0, "now").size(width, height);
+      items[j].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
       items[j]
         .animate(method_anim_ms, 0, "now")
         .move(x0 + width * xs[j], y0 + height * ys[j]);
@@ -492,8 +490,8 @@ function updateGroups(groups) {
     }
   }
   if (nGroups > 12) {
-    height = 21;
-    width = 98;
+    height = 22;
+    width = 100;
   }
   x0 = 200 - (width * ncols) / 2;
   y0 = 200 - (height * Math.floor((nGroups + 1) / 2)) / ncols;
@@ -501,7 +499,7 @@ function updateGroups(groups) {
     if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
-      items[i].animate(method_anim_ms, 0, "now").size(width, height);
+      items[i].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
       items[i]
         .animate(method_anim_ms, 0, "now")
         .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
@@ -572,8 +570,17 @@ var highlightSegments = function () {
   );
 };
 
-function addSegments(svg, names, groups, color, radius, width, segmentClass) {
-  var delta = 360 / names.length;
+function addSegments(
+  svg,
+  label,
+  names,
+  groups,
+  color,
+  radius,
+  width,
+  segmentClass
+) {
+  var delta = 360 / (names.length + 1);
   for (var i = 0; i < names.length; i++) {
     var group = svg
       .group()
@@ -590,20 +597,39 @@ function addSegments(svg, names, groups, color, radius, width, segmentClass) {
       "transition-duration": "0.6s",
     });
     group
-      .path(makeSegment(radius, i * delta, (i + 1) * delta, width))
+      .path(makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width))
       .fill(color)
       .stroke("#000000")
+      // .attr("stroke-width", 0)
       .css({ filter: "drop-shadow(0px 0px 2px)" });
     var strPath = group
-      .path(makeTextArc(radius, i * delta, (i + 1) * delta, width))
+      .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
       .fill("none")
       .stroke("none");
     strPath
       .text(names[i])
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
       .attr("font-size", "0.55em");
   }
+  var groupLabel = svg.group();
+  groupLabel
+    .path(makeSegment(radius, -delta / 2, delta / 2, width))
+    .fill(color)
+    .css({ filter: "drop-shadow(0px 0px 2px)" });
+  var labelPath = groupLabel
+    .path(makeTextArc(radius, -delta / 2, delta / 2))
+    .fill("none")
+    .stroke("none");
+  labelPath
+    .text(label)
+    .attr("startOffset", "50%")
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", "0.66em")
+    .attr("fill", "#ffffff")
+    .attr("font-weight", "bold");
 }
 
 function countLines(str) {
@@ -641,6 +667,7 @@ function addGroups(
     var padding = 2;
     link
       .rect(boxWidth, boxHeight)
+      .radius(10)
       .fill(linear)
       .stroke({ color: border_colour, width: padding });
     // group name
@@ -711,21 +738,23 @@ window.onload = function () {
   // methods
   addSegments(
     svg,
+    "METHODS",
     method_names,
     method_groups,
     method_color,
-    157,
-    13,
+    168,
+    10,
     "iwr-vis-method-item"
   );
   // applications
   addSegments(
     svg,
+    "APPLICATIONS",
     application_names,
     application_groups,
     application_color,
-    183,
-    13,
+    188,
+    10,
     "iwr-vis-application-item"
   );
   resetAll();
