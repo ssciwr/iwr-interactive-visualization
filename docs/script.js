@@ -178,7 +178,7 @@ var group_names = [
   ],
   [
     "Prof Carsten Rother",
-    "Computer Vision and Learning Lab",
+    "Computer Vision\nand Learning Lab",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
@@ -606,6 +606,10 @@ function addSegments(svg, names, groups, color, radius, width, segmentClass) {
   }
 }
 
+function countLines(str) {
+  return (str.match(/\n/g) || "").length + 1;
+}
+
 function addGroups(
   svg,
   names,
@@ -616,6 +620,13 @@ function addGroups(
 ) {
   var boxHeight = 60;
   var boxWidth = 200;
+  var linear = svg
+    .gradient("linear", function (add) {
+      add.stop({ offset: 0, color: application_color, opacity: 0.3 });
+      add.stop({ offset: 1, color: method_color, opacity: 0.1 });
+    })
+    .from(0, 0)
+    .to(0, 1);
   for (var i = 0; i < names.length; i++) {
     var group = svg.group().addClass("iwr-vis-group-item");
     group.on("mouseenter", highlightSegments);
@@ -630,33 +641,21 @@ function addGroups(
     var padding = 2;
     link
       .rect(boxWidth, boxHeight)
-      .fill(color)
+      .fill(linear)
       .stroke({ color: border_colour, width: padding });
-    link
-      .polyline([
-        padding,
-        boxHeight - padding,
-        padding,
-        padding,
-        boxWidth - padding,
-        padding,
-      ])
-      .fill("none")
-      .stroke("#aaaaaa");
-    link
-      .polyline([
-        padding,
-        boxHeight - padding,
-        boxWidth - padding,
-        boxHeight - padding,
-        boxWidth - padding,
-        padding,
-      ])
-      .fill("none")
-      .stroke("#cccccc");
     // group name
+    const numLines = countLines(names[i][1]);
+    var txtTop = 2 * padding;
+    var txtBottom = 2 * padding;
+    if (numLines == 1) {
+      txtTop = 15;
+      txtBottom = 15;
+    } else if (numLines == 2) {
+      txtTop = 10;
+      txtBottom = 10;
+    }
     var groupNamePath = link
-      .path(["M", 0, 2 * padding, "L", boxWidth, 2 * padding].join(" "))
+      .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
       .fill("none")
       .stroke("none");
     groupNamePath
@@ -665,7 +664,8 @@ function addGroups(
       .attr("dominant-baseline", "hanging")
       .attr("text-anchor", "middle")
       .fill("#0000ff")
-      .attr("font-size", "0.74em")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em")
       .linkTo(names[i][2]);
     // professor name
     var profNamePath = link
@@ -673,10 +673,10 @@ function addGroups(
         [
           "M",
           0,
-          boxHeight - 2 * padding,
+          boxHeight - txtBottom,
           "L",
           boxWidth,
-          boxHeight - 2 * padding,
+          boxHeight - txtBottom,
         ].join(" ")
       )
       .fill("none")
@@ -686,7 +686,8 @@ function addGroups(
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.64em");
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.68em");
   }
 }
 
