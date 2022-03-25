@@ -227,7 +227,7 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
-var group_colour = "#cccccc";
+var group_colour = "#ffffff";
 var group_border_colour = "#ffffff";
 
 // methods
@@ -614,23 +614,49 @@ function addGroups(
   color,
   border_colour
 ) {
-  var boxHeight = 28;
-  var boxWidth = 100;
+  var boxHeight = 60;
+  var boxWidth = 200;
   for (var i = 0; i < names.length; i++) {
     var group = svg.group().addClass("iwr-vis-group-item");
     group.on("mouseenter", highlightSegments);
+    group.on("mouseclick", highlightSegments);
     group.on("mouseleave", updateSegments);
     group.data("text", names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
-    var link = group.link(names[i][2]);
+    var link = group.group();
     // box
-    link.rect(boxWidth, boxHeight).radius(2).fill(color).stroke(border_colour);
     var padding = 2;
+    link
+      .rect(boxWidth, boxHeight)
+      .fill(color)
+      .stroke({ color: border_colour, width: padding });
+    link
+      .polyline([
+        padding,
+        boxHeight - padding,
+        padding,
+        padding,
+        boxWidth - padding,
+        padding,
+      ])
+      .fill("none")
+      .stroke("#aaaaaa");
+    link
+      .polyline([
+        padding,
+        boxHeight - padding,
+        boxWidth - padding,
+        boxHeight - padding,
+        boxWidth - padding,
+        padding,
+      ])
+      .fill("none")
+      .stroke("#cccccc");
     // group name
     var groupNamePath = link
-      .path(["M", 0, padding, "L", boxWidth, padding].join(" "))
+      .path(["M", 0, 2 * padding, "L", boxWidth, 2 * padding].join(" "))
       .fill("none")
       .stroke("none");
     groupNamePath
@@ -638,13 +664,20 @@ function addGroups(
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "hanging")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.37em");
+      .fill("#0000ff")
+      .attr("font-size", "0.74em")
+      .linkTo(names[i][2]);
     // professor name
     var profNamePath = link
       .path(
-        ["M", 0, boxHeight - padding, "L", boxWidth, boxHeight - padding].join(
-          " "
-        )
+        [
+          "M",
+          0,
+          boxHeight - 2 * padding,
+          "L",
+          boxWidth,
+          boxHeight - 2 * padding,
+        ].join(" ")
       )
       .fill("none")
       .stroke("none");
@@ -653,7 +686,7 @@ function addGroups(
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.32em");
+      .attr("font-size", "0.64em");
   }
 }
 
@@ -665,8 +698,9 @@ window.onload = function () {
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
 
   // groups
+  var groups = svg.group();
   addGroups(
-    svg,
+    groups,
     group_names,
     method_weights,
     application_weights,
