@@ -732,6 +732,7 @@ function addGroups(
       .stroke("none");
     groupNamePath
       .text(names[i][1])
+      .leading(1.1)
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "hanging")
       .attr("text-anchor", "middle")
@@ -759,7 +760,7 @@ function addGroups(
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
       .attr("font-weight", "bold")
-      .attr("font-size", "0.68em");
+      .attr("font-size", "0.75em");
   }
 }
 
