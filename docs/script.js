@@ -466,10 +466,10 @@ function nextGroupBoxIndex(p, ncols) {
   return { x: 0, y: p.y + 1 };
 }
 
-function updateGroups(groups) {
+function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
   updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
-  if (typeof groups != "undefined") {
+  if (groups != null) {
     console.assert(items.length == groups.length, items, groups);
   }
   var groupBoxIndex = { x: 0, y: 0 };
@@ -478,11 +478,11 @@ function updateGroups(groups) {
   var width = 122;
   var x0 = 0;
   var y0 = 0;
-  if (typeof groups == "undefined") {
+  if (groups == null) {
     ncols = 4;
     var nrows = 15;
-    width = 70;
-    height = 20.5;
+    width = 70 * zoom;
+    height = 20.5 * zoom;
     // for now just hard-code indices of boxes in grid
     var xs = [
       1.5, 1, 2, 0.5, 1.5, 2.5, 0.5, 1.5, 2.5, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2,
@@ -494,8 +494,8 @@ function updateGroups(groups) {
       8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13,
       14,
     ];
-    x0 = 200 - (width * ncols) / 2;
-    y0 = 200 - (height * nrows) / 2;
+    x0 = cx - (width * ncols) / 2;
+    y0 = cy - (height * nrows) / 2;
     for (var j = 0; j < items.length; j++) {
       items[j].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
       items[j]
@@ -512,11 +512,11 @@ function updateGroups(groups) {
     }
   }
   if (nGroups > 12) {
-    height = 22;
-    width = 100;
+    height = 22 * zoom;
+    width = 100 * zoom;
   }
-  x0 = 200 - (width * ncols) / 2;
-  y0 = 200 - (height * Math.floor((nGroups + 1) / 2)) / ncols;
+  x0 = cx - (width * ncols) / 2;
+  y0 = cy - (height * Math.floor((nGroups + 1) / 2)) / ncols;
   for (var i = 0; i < items.length; i++) {
     if (groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
@@ -764,6 +764,27 @@ function addGroups(
   }
 }
 
+var zoomGroups = function (e) {
+  // only zoom in/out if all groups are displayed
+  var segments = SVG.find(".iwr-vis-segment-item");
+  var nHovered = segments.hasClass("hovered").filter(Boolean).length;
+  if (nHovered != segments.length) {
+    return;
+  }
+  var p = this.point(e.clientX, e.clientY);
+  var z = 2;
+  if (e.deltaY < 0) {
+    updateGroups(
+      null,
+      z,
+      200 + (1 - z) * (p.x - 200),
+      200 + (1 - z) * (p.y - 200)
+    );
+  } else {
+    updateGroups(null, 1, 200, 200);
+  }
+};
+
 window.onload = function () {
   var svg = SVG("#iwr-vis-menu-svg");
   // background
@@ -771,8 +792,17 @@ window.onload = function () {
   bg_group.click(resetAll);
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
 
+  var inner_circle = svg
+    .circle(316)
+    .cx(200)
+    .cy(200)
+    .fill("none")
+    .stroke("none");
+  svg.on("mousewheel DOMMouseScroll", zoomGroups);
+
   // groups
   var groups = svg.group();
+  groups.clipWith(inner_circle);
   addGroups(
     groups,
     group_names,
@@ -804,6 +834,7 @@ window.onload = function () {
     "iwr-vis-application-item"
   );
   resetAll();
+
   // iwr logo: animate dot colors
   for (var i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
