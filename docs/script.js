@@ -381,6 +381,28 @@ function makeTextArc(radius, startAngle, endAngle) {
   return ["M", p0.x, p0.y, "A", radius, radius, 0, 0, 1, p1.x, p1.y].join(" ");
 }
 
+function makeArrowArc(radius, startAngle, endAngle) {
+  var p0 = xy(radius, startAngle);
+  var p1 = xy(radius, endAngle);
+  var clockwise = 1;
+  if (endAngle < startAngle) {
+    clockwise = 0;
+  }
+  return [
+    "M",
+    p0.x,
+    p0.y,
+    "A",
+    radius,
+    radius,
+    0,
+    0,
+    clockwise,
+    p1.x,
+    p1.y,
+  ].join(" ");
+}
+
 // svg path for a segment (two arcs connected by straight lines)
 function makeSegment(radius, startAngle, endAngle, width) {
   var rm = radius - width;
@@ -528,6 +550,7 @@ var selectSegment = function () {
 };
 
 var hoverSegment = function () {
+  this.findOne(".iwr-vis-segment-item-text").fill("#0000ff");
   var segments = SVG.find(".iwr-vis-segment-item");
   var nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected == 1) {
@@ -539,6 +562,7 @@ var hoverSegment = function () {
 };
 
 var leaveSegment = function () {
+  this.findOne(".iwr-vis-segment-item-text").fill("#000000");
   var segments = SVG.find(".iwr-vis-segment-item");
   var nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected == 1) {
@@ -600,24 +624,24 @@ function addSegments(
       .path(makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width))
       .fill(color)
       .stroke("#000000")
-      // .attr("stroke-width", 0)
-      .css({ filter: "drop-shadow(0px 0px 2px)" });
+      .css({ filter: "drop-shadow(0px 0px 1px)" });
     var strPath = group
       .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
       .fill("none")
       .stroke("none");
     strPath
       .text(names[i])
+      .addClass("iwr-vis-segment-item-text")
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "middle")
       .attr("font-size", "0.55em");
   }
+  // label
   var groupLabel = svg.group();
   groupLabel
-    .path(makeSegment(radius, -delta / 2, delta / 2, width))
-    .fill(color)
-    .css({ filter: "drop-shadow(0px 0px 2px)" });
+    .path(makeSegment(radius, -delta / 2.05, delta / 2.05, width))
+    .fill("#ffffff");
   var labelPath = groupLabel
     .path(makeTextArc(radius, -delta / 2, delta / 2))
     .fill("none")
@@ -628,8 +652,29 @@ function addSegments(
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "middle")
     .attr("font-size", "0.66em")
-    .attr("fill", "#ffffff")
+    .attr("fill", color)
     .attr("font-weight", "bold");
+  var arrow = groupLabel.marker(4, 4, function (add) {
+    add.polyline([0, 0, 4, 2, 0, 4]).fill(color).stroke("none");
+  });
+  const txtAngle = 4 + label.length / 2;
+  const arrowPadding = 3;
+  groupLabel
+    .path(
+      makeArrowArc(radius, arrowPadding + txtAngle, delta / 2 - arrowPadding)
+    )
+    .fill("none")
+    .stroke(color)
+    .attr({ "stroke-width": 2 })
+    .marker("end", arrow);
+  groupLabel
+    .path(
+      makeArrowArc(radius, -arrowPadding - txtAngle, -delta / 2 + arrowPadding)
+    )
+    .fill("none")
+    .stroke(color)
+    .attr({ "stroke-width": 2 })
+    .marker("end", arrow);
 }
 
 function countLines(str) {
