@@ -459,11 +459,26 @@ var updateSegments = function () {
   }
 };
 
-function nextGroupBoxIndex(p, ncols) {
-  if (p.x + 1 < ncols) {
+function nextGroupBoxIndex(p, ncols, nrows = 0) {
+  var x_max = ncols - 1;
+  var x_min = 0;
+  if (ncols == 4) {
+    // first 2, last 3 have 2 columns
+    if (p.y <= 1 || p.y >= nrows - 4) {
+      x_max = 2;
+      x_min = 1;
+    }
+    if (p.y == 1) {
+      x_min = 0;
+    }
+    if (p.y == nrows - 4) {
+      x_max = ncols - 1;
+    }
+  }
+  if (p.x < x_max) {
     return { x: p.x + 1, y: p.y };
   }
-  return { x: 0, y: p.y + 1 };
+  return { x: x_min, y: p.y + 1 };
 }
 
 function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
@@ -473,60 +488,48 @@ function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
     console.assert(items.length == groups.length, items, groups);
   }
   var groupBoxIndex = { x: 0, y: 0 };
-  var ncols = 2;
-  var height = 28;
-  var width = 122;
-  var x0 = 0;
-  var y0 = 0;
-  if (groups == null) {
-    ncols = 4;
-    var nrows = 15;
-    width = 70 * zoom;
-    height = 20.5 * zoom;
-    // for now just hard-code indices of boxes in grid
-    var xs = [
-      1.5, 1, 2, 0.5, 1.5, 2.5, 0.5, 1.5, 2.5, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2,
-      3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0.5, 1.5, 2.5, 0.5,
-      1.5, 2.5, 1, 2, 1.5,
-    ];
-    var ys = [
-      0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
-      8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 12, 12, 12, 13, 13,
-      14,
-    ];
-    x0 = cx - (width * ncols) / 2;
-    y0 = cy - (height * nrows) / 2;
-    for (var j = 0; j < items.length; j++) {
-      items[j].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
-      items[j]
-        .animate(method_anim_ms, 0, "now")
-        .move(x0 + width * xs[j], y0 + height * ys[j]);
-      items[j].css({ opacity: 1, visibility: "visible" });
-    }
-    return;
-  }
   var nGroups = 0;
-  for (var k = 0; k < items.length; k++) {
-    if (groups[k] != 0) {
-      ++nGroups;
+  if (groups == null) {
+    nGroups = items.length;
+  } else {
+    for (var k = 0; k < items.length; k++) {
+      if (groups[k] != 0) {
+        ++nGroups;
+      }
     }
   }
+  var ncols = 2;
+  var height = 30 * zoom;
+  var width = 122 * zoom;
   if (nGroups > 12) {
-    height = 22 * zoom;
+    ncols = 3;
+    height = 26 * zoom;
     width = 100 * zoom;
   }
-  x0 = cx - (width * ncols) / 2;
-  y0 = cy - (height * Math.floor((nGroups + 1) / 2)) / ncols;
+  var nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
+  if (nGroups > 21) {
+    ncols = 4;
+    groupBoxIndex.x = 1;
+    nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
+    width = 65 * zoom;
+    height = (280 * zoom) / nrows;
+  }
+  var x0 = cx - (width * ncols) / 2;
+  var y0 = cy - (height * nrows) / 2;
   for (var i = 0; i < items.length; i++) {
-    if (groups[i] == 0) {
+    if (groups != null && groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
+      var opac = 1;
+      if (groups != null) {
+        opac = groups[i];
+      }
       items[i].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
       items[i]
         .animate(method_anim_ms, 0, "now")
         .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
-      items[i].css({ opacity: groups[i], visibility: "visible" });
-      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols);
+      items[i].css({ opacity: opac, visibility: "visible" });
+      groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols, nrows);
     }
   }
 }
