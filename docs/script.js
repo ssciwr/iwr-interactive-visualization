@@ -524,10 +524,12 @@ function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
       if (groups != null) {
         opac = groups[i];
       }
-      items[i].animate(method_anim_ms, 0, "now").size(width - 1, height - 1);
-      items[i]
-        .animate(method_anim_ms, 0, "now")
-        .move(x0 + width * groupBoxIndex.x, y0 + height * groupBoxIndex.y);
+      items[i].animate(method_anim_ms, 0, "now").transform({
+        scaleX: (width - 1) / items[i].width(),
+        scaleY: (height - 1) / items[i].height(),
+        positionX: x0 + width * (groupBoxIndex.x + 0.5),
+        positionY: y0 + height * (groupBoxIndex.y + 0.5),
+      });
       items[i].css({ opacity: opac, visibility: "visible" });
       groupBoxIndex = nextGroupBoxIndex(groupBoxIndex, ncols, nrows);
     }
