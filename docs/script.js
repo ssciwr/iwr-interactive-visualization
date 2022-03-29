@@ -356,6 +356,26 @@ function transpose(m) {
 var method_groups = transpose(method_weights);
 var application_groups = transpose(application_weights);
 
+// get indices of sorted array of arrays, sorted by given sub-array index
+function sorted_indices(array, index) {
+  var len = array.length;
+  var indices = new Array(len);
+  for (var i = 0; i < len; ++i) {
+    indices[i] = i;
+  }
+  indices.sort(function (a, b) {
+    return array[a][index] < array[b][index]
+      ? -1
+      : array[a][index] > array[b][index]
+      ? 1
+      : 0;
+  });
+  return indices;
+}
+
+var sorted_group_indices = sorted_indices(group_names, 1);
+var sort_by_group = false;
+
 // svg circle arc math based on https://stackoverflow.com/a/18473154/6465472
 function xy(radius, deg) {
   var rad = ((deg - 90) * Math.PI) / 180.0;
@@ -516,7 +536,11 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
   }
   var x0 = cx - (width * ncols) / 2;
   var y0 = cy - (height * nrows) / 2;
-  for (var i = 0; i < items.length; i++) {
+  for (var i0 = 0; i0 < items.length; i0++) {
+    var i = i0;
+    if (sort_by_group) {
+      i = sorted_group_indices[i0];
+    }
     if (groups != null && show_all == false && groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
@@ -791,6 +815,94 @@ var zoomGroups = function (e) {
   }
 };
 
+var sortGroupsByProf = function () {
+  var group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
+  var prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
+  if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
+    prof.fill("#777777");
+    group.fill("#ffffff");
+    sort_by_group = false;
+  } else {
+    group.fill("#777777");
+    prof.fill("#ffffff");
+    sort_by_group = true;
+  }
+  resetAll();
+};
+
+function addSettings(svg) {
+  const line_colour = "#777777";
+  const bg_colour = "#ffffff";
+  const width = 100;
+  const height = 60;
+  const padding = 4;
+  const radius = 2;
+  var settings = svg.group().addClass("iwr-vis-settings-menu");
+  settings.on("mouseenter", function () {
+    this.findOne(".iwr-vis-settings-menu-large").show();
+  });
+  settings.on("mouseleave", function () {
+    this.findOne(".iwr-vis-settings-menu-large").hide();
+  });
+  // button
+  var settings_button = settings
+    .group()
+    .addClass("iwr-vis-settings-menu-button");
+  settings_button
+    .rect(16, 16)
+    .radius(radius)
+    .stroke(line_colour)
+    .fill(bg_colour);
+  settings_button.line(4, 12, 12, 12);
+  settings_button.line(4, 8, 12, 8);
+  settings_button.line(4, 4, 12, 4);
+  settings_button.stroke(line_colour).fill("none");
+  settings_button.move(400 - 16 - padding, padding);
+  // menu
+  var settings_menu = settings.group().addClass("iwr-vis-settings-menu-large");
+  settings_menu
+    .rect(width, height)
+    .radius(radius)
+    .stroke(line_colour)
+    .fill(bg_colour);
+  settings_menu.hide();
+  // group sorting options
+  settings_menu
+    .text("Sort by")
+    .attr("font-size", "0.5em")
+    .fill(line_colour)
+    .move(6, 6);
+  var sort_by_group = settings_menu.group();
+  sort_by_group
+    .rect(8, 8)
+    .radius(1)
+    .stroke(line_colour)
+    .fill(bg_colour)
+    .move(12, 24)
+    .addClass("iwr-vis-settings-menu-sort-by-group");
+  sort_by_group
+    .text("group name")
+    .attr("font-size", "0.5em")
+    .fill(line_colour)
+    .move(24, 24);
+  sort_by_group.click(sortGroupsByProf);
+  var sort_by_prof = settings_menu.group();
+  sort_by_prof
+    .rect(8, 8)
+    .radius(1)
+    .stroke(line_colour)
+    .fill(line_colour)
+    .move(12, 24 + 12)
+    .addClass("iwr-vis-settings-menu-sort-by-prof");
+  sort_by_prof
+    .text("professor name")
+    .attr("font-size", "0.5em")
+    .fill(line_colour)
+    .move(24, 24 + 12);
+  sort_by_prof.click(sortGroupsByProf);
+  settings_menu.move(400 - width - padding, padding);
+}
+
 window.onload = function () {
   var svg = SVG("#iwr-vis-menu-svg");
   // background
@@ -840,7 +952,7 @@ window.onload = function () {
     "iwr-vis-application-item"
   );
   resetAll();
-
+  addSettings(svg);
   // iwr logo: animate dot colors
   for (var i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
