@@ -481,7 +481,7 @@ function nextGroupBoxIndex(p, ncols, nrows = 0) {
   return { x: x_min, y: p.y + 1 };
 }
 
-function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
+function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
   updateSegments();
   var items = SVG.find(".iwr-vis-group-item");
   if (groups != null) {
@@ -489,7 +489,7 @@ function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
   }
   var groupBoxIndex = { x: 0, y: 0 };
   var nGroups = 0;
-  if (groups == null) {
+  if (groups == null || show_all == true) {
     nGroups = items.length;
   } else {
     for (var k = 0; k < items.length; k++) {
@@ -517,12 +517,12 @@ function updateGroups(groups, zoom = 1, cx = 200, cy = 200) {
   var x0 = cx - (width * ncols) / 2;
   var y0 = cy - (height * nrows) / 2;
   for (var i = 0; i < items.length; i++) {
-    if (groups != null && groups[i] == 0) {
+    if (groups != null && show_all == false && groups[i] == 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
       var opac = 1;
       if (groups != null) {
-        opac = groups[i];
+        opac = groups[i] + 0.2;
       }
       items[i].animate(method_anim_ms, 0, "now").transform({
         scaleX: (width - 1) / items[i].width(),
@@ -563,7 +563,7 @@ var hoverSegment = function () {
   }
   segments.removeClass("selected").removeClass("hovered");
   this.addClass("hovered");
-  updateGroups(this.data("groups"));
+  updateGroups(this.data("groups"), true);
 };
 
 var leaveSegment = function () {
@@ -781,12 +781,13 @@ var zoomGroups = function (e) {
   if (e.deltaY < 0) {
     updateGroups(
       null,
+      true,
       z,
       200 + (1 - z) * (p.x - 200),
       200 + (1 - z) * (p.y - 200)
     );
   } else {
-    updateGroups(null, 1, 200, 200);
+    updateGroups(null, true, 1, 200, 200);
   }
 };
 
