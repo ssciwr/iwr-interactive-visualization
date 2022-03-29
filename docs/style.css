@@ -11,6 +11,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.iwr-vis-group-card-html {
+  font-size: 0.2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .iwr-vis-menu {
   position: absolute;
   left: 0;
@@ -41,6 +46,10 @@ body {
 }
 
 .iwr-vis-segment-item {
+  cursor: pointer;
+}
+
+.iwr-vis-group-item {
   cursor: pointer;
 }
 

@@ -227,7 +227,6 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
-var group_colour = "#ffffff";
 var group_border_colour = "#ffffff";
 
 // methods
@@ -347,6 +346,8 @@ var application_weights = [
   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof Jakob Zech",
   [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Alexander Zipf",
 ];
+
+var group_cards = new SVG.List();
 
 // https://stackoverflow.com/a/36164530/6465472
 function transpose(m) {
@@ -715,18 +716,11 @@ function addGroups(
   names,
   method_weights,
   application_weights,
-  color,
+  gradient,
   border_colour
 ) {
   var boxHeight = 60;
   var boxWidth = 200;
-  var linear = svg
-    .gradient("linear", function (add) {
-      add.stop({ offset: 0, color: application_color, opacity: 0.3 });
-      add.stop({ offset: 1, color: method_color, opacity: 0.1 });
-    })
-    .from(0, 0)
-    .to(0, 1);
   for (var i = 0; i < names.length; i++) {
     var group = svg.group().addClass("iwr-vis-group-item");
     group.on("mouseenter", highlightSegments);
@@ -736,13 +730,18 @@ function addGroups(
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
+    group.data({ card: i });
+    group.click(function () {
+      console.log(group_cards[this.data("card")]);
+      group_cards[this.data("card")].css({ opacity: 1, visibility: "visible" });
+    });
     var link = group.group();
     // box
     var padding = 2;
     link
       .rect(boxWidth, boxHeight)
       .radius(10)
-      .fill(linear)
+      .fill(gradient)
       .stroke({ color: border_colour, width: padding });
     // group name
     const numLines = countLines(names[i][1]);
@@ -767,8 +766,7 @@ function addGroups(
       .attr("text-anchor", "middle")
       .fill("#0000ff")
       .attr("font-weight", "bold")
-      .attr("font-size", "0.75em")
-      .linkTo(names[i][2]);
+      .attr("font-size", "0.75em");
     // professor name
     var profNamePath = link
       .path(
@@ -790,6 +788,67 @@ function addGroups(
       .attr("text-anchor", "middle")
       .attr("font-weight", "bold")
       .attr("font-size", "0.75em");
+    group.size(65, 20);
+    group.move(200 - boxWidth / 2, 200 - boxHeight / 2);
+  }
+}
+
+function addGroupCards(svg, names, gradient, border_colour) {
+  for (var i = 0; i < names.length; i++) {
+    var group_card = svg.group().addClass("iwr-vis-group-card");
+    group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
+    group_card
+      .rect(210, 210)
+      .cx(200)
+      .cy(200)
+      .fill(gradient)
+      .radius(5)
+      .stroke(border_colour)
+      .attr("stroke-width", 0.4);
+    group_card.css({
+      "transition-property": "opacity",
+      "transition-duration": "0.6s",
+    });
+    group_card.click(function () {
+      this.css({ opacity: 0, visibility: "hidden" });
+    });
+    var groupNamePath = group_card
+      .path(["M", 100, 105, "L", 300, 105].join(" "))
+      .fill("none")
+      .stroke("none");
+    groupNamePath
+      .text(names[i][1])
+      .leading(1.1)
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "hanging")
+      .attr("text-anchor", "middle")
+      .fill("#0000ff")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em")
+      .linkTo(names[i][2]);
+    group_card.css({ opacity: 0, visibility: "hidden" });
+    var blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
+    blurb.add(
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>'
+    );
+    if (names[i][1] == "Visual Computing") {
+      group_card
+        .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
+        .size(80, 80)
+        .move(160, 190);
+    }
+    var profNamePath = group_card
+      .path(["M", 100, 290, "L", 300, 290].join(" "))
+      .fill("none")
+      .stroke("none");
+    profNamePath
+      .text(names[i][0])
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "auto")
+      .attr("text-anchor", "middle")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em");
+    group_cards.push(group_card);
   }
 }
 
@@ -909,6 +968,14 @@ window.onload = function () {
   var bg_group = svg.group().addClass("iwr-vis-bg");
   bg_group.click(resetAll);
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
+  // gradient
+  var gradient = svg
+    .gradient("linear", function (add) {
+      add.stop({ offset: 0, color: application_color, opacity: 0.3 });
+      add.stop({ offset: 1, color: method_color, opacity: 0.1 });
+    })
+    .from(0, 0)
+    .to(0, 1);
 
   var inner_circle = svg
     .circle(316)
@@ -916,7 +983,7 @@ window.onload = function () {
     .cy(200)
     .fill("none")
     .stroke("none");
-  svg.on("mousewheel DOMMouseScroll", zoomGroups);
+  svg.on("wheel", zoomGroups);
 
   // groups
   var groups = svg.group();
@@ -926,9 +993,10 @@ window.onload = function () {
     group_names,
     method_weights,
     application_weights,
-    group_colour,
+    gradient,
     group_border_colour
   );
+  addGroupCards(svg, group_names, gradient, group_border_colour);
   // methods
   addSegments(
     svg,
@@ -952,7 +1020,9 @@ window.onload = function () {
     "iwr-vis-application-item"
   );
   resetAll();
+  // settings menu
   addSettings(svg);
+
   // iwr logo: animate dot colors
   for (var i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
