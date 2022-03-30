@@ -347,8 +347,6 @@ var application_weights = [
   [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Alexander Zipf",
 ];
 
-var group_cards = new SVG.List();
-
 // https://stackoverflow.com/a/36164530/6465472
 function transpose(m) {
   return m[0].map((x, i) => m.map((x) => x[i]));
@@ -462,6 +460,8 @@ function makeSegment(radius, startAngle, endAngle, width) {
 /*global SVG*/
 
 var updateSegments = function () {
+  SVG.find(".iwr-vis-group-card").css({ opacity: 0, visibility: "hidden" });
+  SVG.find(".iwr-vis-group-item").show();
   var segments = SVG.find(".iwr-vis-segment-item");
   for (var i = 0; i < segments.length; i++) {
     if (segments[i].hasClass("selected")) {
@@ -722,18 +722,27 @@ function addGroups(
   var boxHeight = 60;
   var boxWidth = 200;
   for (var i = 0; i < names.length; i++) {
-    var group = svg.group().addClass("iwr-vis-group-item");
+    var groupContainer = svg.group();
+    var group = groupContainer.group().addClass("iwr-vis-group-item");
     group.on("mouseenter", highlightSegments);
     group.on("mouseclick", highlightSegments);
-    group.on("mouseleave", updateSegments);
+    group.on("mouseleave", function () {
+      if (!this.hasClass("frozenSegments")) {
+        updateSegments();
+      }
+      return;
+    });
     group.data("text", names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({ transition: "opacity 0.6s, visibility 0.6s" });
-    group.data({ card: i });
     group.click(function () {
-      console.log(group_cards[this.data("card")]);
-      group_cards[this.data("card")].css({ opacity: 1, visibility: "visible" });
+      this.addClass("frozenSegments");
+      SVG.find(".iwr-vis-group-item").hide();
+      this.parent()
+        .findOne(".iwr-vis-group-card")
+        .front()
+        .css({ opacity: 1, visibility: "visible" });
     });
     var link = group.group();
     // box
@@ -790,66 +799,62 @@ function addGroups(
       .attr("font-size", "0.75em");
     group.size(65, 20);
     group.move(200 - boxWidth / 2, 200 - boxHeight / 2);
+    addGroupCard(groupContainer, names[i], gradient, border_colour);
   }
 }
 
-function addGroupCards(svg, names, gradient, border_colour) {
-  for (var i = 0; i < names.length; i++) {
-    var group_card = svg.group().addClass("iwr-vis-group-card");
-    group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
+function addGroupCard(svg, name, gradient, border_colour) {
+  var group_card = svg.group().addClass("iwr-vis-group-card");
+  group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
+  group_card
+    .rect(210, 210)
+    .cx(200)
+    .cy(200)
+    .fill(gradient)
+    .radius(5)
+    .stroke(border_colour)
+    .attr("stroke-width", 0.4);
+  group_card.click(function () {
+    this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
+    this.css({ opacity: 0, visibility: "hidden" });
+    SVG.find(".iwr-vis-group-item").show();
+  });
+  var groupNamePath = group_card
+    .path(["M", 100, 105, "L", 300, 105].join(" "))
+    .fill("none")
+    .stroke("none");
+  groupNamePath
+    .text(name[1])
+    .leading(1.1)
+    .attr("startOffset", "50%")
+    .attr("dominant-baseline", "hanging")
+    .attr("text-anchor", "middle")
+    .fill("#0000ff")
+    .attr("font-weight", "bold")
+    .attr("font-size", "0.75em")
+    .linkTo(name[2]);
+  group_card.css({ opacity: 0, visibility: "hidden" });
+  var blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
+  blurb.add(
+    '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>'
+  );
+  if (name[1] == "Visual Computing") {
     group_card
-      .rect(210, 210)
-      .cx(200)
-      .cy(200)
-      .fill(gradient)
-      .radius(5)
-      .stroke(border_colour)
-      .attr("stroke-width", 0.4);
-    group_card.css({
-      "transition-property": "opacity",
-      "transition-duration": "0.6s",
-    });
-    group_card.click(function () {
-      this.css({ opacity: 0, visibility: "hidden" });
-    });
-    var groupNamePath = group_card
-      .path(["M", 100, 105, "L", 300, 105].join(" "))
-      .fill("none")
-      .stroke("none");
-    groupNamePath
-      .text(names[i][1])
-      .leading(1.1)
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "hanging")
-      .attr("text-anchor", "middle")
-      .fill("#0000ff")
-      .attr("font-weight", "bold")
-      .attr("font-size", "0.75em")
-      .linkTo(names[i][2]);
-    group_card.css({ opacity: 0, visibility: "hidden" });
-    var blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
-    blurb.add(
-      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>'
-    );
-    if (names[i][1] == "Visual Computing") {
-      group_card
-        .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
-        .size(80, 80)
-        .move(160, 190);
-    }
-    var profNamePath = group_card
-      .path(["M", 100, 290, "L", 300, 290].join(" "))
-      .fill("none")
-      .stroke("none");
-    profNamePath
-      .text(names[i][0])
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "auto")
-      .attr("text-anchor", "middle")
-      .attr("font-weight", "bold")
-      .attr("font-size", "0.75em");
-    group_cards.push(group_card);
+      .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
+      .size(80, 80)
+      .move(160, 190);
   }
+  var profNamePath = group_card
+    .path(["M", 100, 290, "L", 300, 290].join(" "))
+    .fill("none")
+    .stroke("none");
+  profNamePath
+    .text(name[0])
+    .attr("startOffset", "50%")
+    .attr("dominant-baseline", "auto")
+    .attr("text-anchor", "middle")
+    .attr("font-weight", "bold")
+    .attr("font-size", "0.75em");
 }
 
 var zoomGroups = function (e) {
@@ -996,7 +1001,6 @@ window.onload = function () {
     gradient,
     group_border_colour
   );
-  addGroupCards(svg, group_names, gradient, group_border_colour);
   // methods
   addSegments(
     svg,
