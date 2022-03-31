@@ -1,5 +1,7 @@
+"use strict";
+
 // groups: [professor name, group name, webpage]
-var group_names = [
+const group_names = [
   [
     "Prof Peter Albers",
     "Symplectic Dynamics",
@@ -227,19 +229,19 @@ var group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
-var group_border_colour = "#ffffff";
+const group_border_colour = "#ffffff";
 
 // methods
-var method_names = [
+const method_names = [
   "Mathematical and Numerical Analysis",
   "Numerical Algorithms and Software",
   "Data Analysis and Graphics",
   "Machine Learning and Computer Vision",
   "Arithmetic, Geometry and Topology",
 ];
-var method_anim_ms = 1000;
-var method_color = "#e13535";
-var method_weights = [
+const method_anim_ms = 1000;
+const method_color = "#e13535";
+const method_weights = [
   [1.0, 0.0, 1.0, 0.0, 1.0], //"Prof Peter Albers",
   [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Artur Andrzejak",
   [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Peter Bastian",
@@ -289,7 +291,7 @@ var method_weights = [
 ];
 
 // applications
-var application_names = [
+const application_names = [
   "Molecular Material Science",
   "Medicine and Bioscience",
   "Humanities",
@@ -297,8 +299,8 @@ var application_names = [
   "Environmental Sciences",
   "Engineering",
 ];
-var application_color = "#499bce";
-var application_weights = [
+const application_color = "#499bce";
+const application_weights = [
   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Albers",
   [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Artur Andrzejak",
   [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Peter Bastian",
@@ -352,14 +354,14 @@ function transpose(m) {
   return m[0].map((x, i) => m.map((x) => x[i]));
 }
 
-var method_groups = transpose(method_weights);
-var application_groups = transpose(application_weights);
+const method_groups = transpose(method_weights);
+const application_groups = transpose(application_weights);
 
 // get indices of sorted array of arrays, sorted by given sub-array index
 function sorted_indices(array, index) {
-  var len = array.length;
-  var indices = new Array(len);
-  for (var i = 0; i < len; ++i) {
+  const len = array.length;
+  const indices = new Array(len);
+  for (let i = 0; i < len; ++i) {
     indices[i] = i;
   }
   indices.sort(function (a, b) {
@@ -372,12 +374,12 @@ function sorted_indices(array, index) {
   return indices;
 }
 
-var sorted_group_indices = sorted_indices(group_names, 1);
-var sort_by_group = false;
+const sorted_group_indices = sorted_indices(group_names, 1);
+let sort_by_group = false;
 
 // svg circle arc math based on https://stackoverflow.com/a/18473154/6465472
 function xy(radius, deg) {
-  var rad = ((deg - 90) * Math.PI) / 180.0;
+  let rad = ((deg - 90) * Math.PI) / 180.0;
   return {
     x: 200 + radius * Math.cos(rad),
     y: 200 + radius * Math.sin(rad),
@@ -386,12 +388,12 @@ function xy(radius, deg) {
 
 // svg path for text inside a segment (single arc)
 function makeTextArc(radius, startAngle, endAngle) {
-  var anticlockwise = startAngle > 70 && endAngle < 290;
+  const anticlockwise = startAngle > 70 && endAngle < 290;
   if (!anticlockwise) {
     radius = radius - 1;
   }
-  var p0 = xy(radius, startAngle);
-  var p1 = xy(radius, endAngle);
+  const p0 = xy(radius, startAngle);
+  const p1 = xy(radius, endAngle);
   if (anticlockwise) {
     return ["M", p1.x, p1.y, "A", radius, radius, 0, 0, 0, p0.x, p0.y].join(
       " "
@@ -401,12 +403,9 @@ function makeTextArc(radius, startAngle, endAngle) {
 }
 
 function makeArrowArc(radius, startAngle, endAngle) {
-  var p0 = xy(radius, startAngle);
-  var p1 = xy(radius, endAngle);
-  var clockwise = 1;
-  if (endAngle < startAngle) {
-    clockwise = 0;
-  }
+  const p0 = xy(radius, startAngle);
+  const p1 = xy(radius, endAngle);
+  const clockwise = endAngle < startAngle ? 0 : 1;
   return [
     "M",
     p0.x,
@@ -424,12 +423,12 @@ function makeArrowArc(radius, startAngle, endAngle) {
 
 // svg path for a segment (two arcs connected by straight lines)
 function makeSegment(radius, startAngle, endAngle, width) {
-  var rm = radius - width;
-  var rp = radius + width;
-  var p0 = xy(rm, startAngle);
-  var p1 = xy(rm, endAngle);
-  var p2 = xy(rp, endAngle);
-  var p3 = xy(rp, startAngle);
+  const rm = radius - width;
+  const rp = radius + width;
+  const p0 = xy(rm, startAngle);
+  const p1 = xy(rm, endAngle);
+  const p2 = xy(rp, endAngle);
+  const p3 = xy(rp, startAngle);
   return [
     "M",
     p0.x,
@@ -459,40 +458,40 @@ function makeSegment(radius, startAngle, endAngle, width) {
 
 /*global SVG*/
 
-var updateSegments = function () {
+let updateSegments = function () {
   SVG.find(".iwr-vis-group-card").css({ opacity: 0, visibility: "hidden" });
   SVG.find(".iwr-vis-group-item").show();
-  var segments = SVG.find(".iwr-vis-segment-item");
-  for (var i = 0; i < segments.length; i++) {
-    if (segments[i].hasClass("selected")) {
-      segments[i].css({ opacity: 1, filter: "grayscale(0)" });
-      segments[i].animate().attr("stroke-width", 1);
-    } else if (segments[i].hasClass("hovered")) {
-      segments[i].css({ opacity: 1, filter: "grayscale(0)" });
-      segments[i].attr("stroke-width", 0);
+  const segments = SVG.find(".iwr-vis-segment-item");
+  for (let segment of segments) {
+    if (segment.hasClass("selected")) {
+      segment.css({ opacity: 1, filter: "grayscale(0)" });
+      segment.animate().attr("stroke-width", 1);
+    } else if (segment.hasClass("hovered")) {
+      segment.css({ opacity: 1, filter: "grayscale(0)" });
+      segment.attr("stroke-width", 0);
     } else {
-      segments[i].css({
+      segment.css({
         filter: "grayscale(80%)",
         opacity: "20%",
       });
-      segments[i].attr("stroke-width", 0);
+      segment.attr("stroke-width", 0);
     }
   }
 };
 
 function nextGroupBoxIndex(p, ncols, nrows = 0) {
-  var x_max = ncols - 1;
-  var x_min = 0;
-  if (ncols == 4) {
+  let x_max = ncols - 1;
+  let x_min = 0;
+  if (ncols === 4) {
     // first 2, last 3 have 2 columns
     if (p.y <= 1 || p.y >= nrows - 4) {
       x_max = 2;
       x_min = 1;
     }
-    if (p.y == 1) {
+    if (p.y === 1) {
       x_min = 0;
     }
-    if (p.y == nrows - 4) {
+    if (p.y === nrows - 4) {
       x_max = ncols - 1;
     }
   }
@@ -504,30 +503,30 @@ function nextGroupBoxIndex(p, ncols, nrows = 0) {
 
 function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
   updateSegments();
-  var items = SVG.find(".iwr-vis-group-item");
+  const items = SVG.find(".iwr-vis-group-item");
   if (groups != null) {
-    console.assert(items.length == groups.length, items, groups);
+    console.assert(items.length === groups.length, items, groups);
   }
-  var groupBoxIndex = { x: 0, y: 0 };
-  var nGroups = 0;
-  if (groups == null || show_all == true) {
+  let groupBoxIndex = { x: 0, y: 0 };
+  let nGroups = 0;
+  if (groups == null || show_all === true) {
     nGroups = items.length;
   } else {
-    for (var k = 0; k < items.length; k++) {
+    for (let k = 0; k < items.length; k++) {
       if (groups[k] != 0) {
         ++nGroups;
       }
     }
   }
-  var ncols = 2;
-  var height = 30 * zoom;
-  var width = 122 * zoom;
+  let ncols = 2;
+  let height = 30 * zoom;
+  let width = 122 * zoom;
   if (nGroups > 12) {
     ncols = 3;
     height = 26 * zoom;
     width = 100 * zoom;
   }
-  var nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
+  let nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
   if (nGroups > 21) {
     ncols = 4;
     groupBoxIndex.x = 1;
@@ -535,17 +534,17 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     width = 65 * zoom;
     height = (280 * zoom) / nrows;
   }
-  var x0 = cx - (width * ncols) / 2;
-  var y0 = cy - (height * nrows) / 2;
-  for (var i0 = 0; i0 < items.length; i0++) {
-    var i = i0;
+  const x0 = cx - (width * ncols) / 2;
+  const y0 = cy - (height * nrows) / 2;
+  for (let i0 = 0; i0 < items.length; i0++) {
+    let i = i0;
     if (sort_by_group) {
       i = sorted_group_indices[i0];
     }
-    if (groups != null && show_all == false && groups[i] == 0) {
+    if (groups != null && show_all === false && groups[i] === 0) {
       items[i].css({ opacity: 0, visibility: "hidden" });
     } else {
-      var opac = 1;
+      let opac = 1;
       if (groups != null) {
         opac = groups[i] + 0.2;
       }
@@ -561,15 +560,15 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
   }
 }
 
-var resetAll = function () {
+const resetAll = function () {
   SVG.find(".iwr-vis-segment-item").addClass("hovered").removeClass("selected");
   updateGroups();
 };
 
-var selectSegment = function () {
-  var segments = SVG.find(".iwr-vis-segment-item");
-  var nSelected = segments.hasClass("selected").filter(Boolean).length;
-  if (this.hasClass("selected") && nSelected == 1) {
+const selectSegment = function () {
+  const segments = SVG.find(".iwr-vis-segment-item");
+  const nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (this.hasClass("selected") && nSelected === 1) {
     resetAll();
   } else {
     segments.removeClass("hovered");
@@ -579,11 +578,11 @@ var selectSegment = function () {
   }
 };
 
-var hoverSegment = function () {
+const hoverSegment = function () {
   this.findOne(".iwr-vis-segment-item-text").fill("#0000ff");
-  var segments = SVG.find(".iwr-vis-segment-item");
-  var nSelected = segments.hasClass("selected").filter(Boolean).length;
-  if (nSelected == 1) {
+  const segments = SVG.find(".iwr-vis-segment-item");
+  const nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (nSelected === 1) {
     return;
   }
   segments.removeClass("selected").removeClass("hovered");
@@ -591,11 +590,11 @@ var hoverSegment = function () {
   updateGroups(this.data("groups"), true);
 };
 
-var leaveSegment = function () {
+const leaveSegment = function () {
   this.findOne(".iwr-vis-segment-item-text").fill("#000000");
-  var segments = SVG.find(".iwr-vis-segment-item");
-  var nSelected = segments.hasClass("selected").filter(Boolean).length;
-  if (nSelected == 1) {
+  const segments = SVG.find(".iwr-vis-segment-item");
+  const nSelected = segments.hasClass("selected").filter(Boolean).length;
+  if (nSelected === 1) {
     return;
   }
   segments.addClass("hovered");
@@ -603,9 +602,9 @@ var leaveSegment = function () {
 };
 
 function applyWeightedHighlights(items, weights) {
-  console.assert(items.length == weights.length, items, weights);
+  console.assert(items.length === weights.length, items, weights);
   items.css({ filter: "grayscale(80%)", opacity: "20%" });
-  for (var i = 0; i < weights.length; i++) {
+  for (let i = 0; i < weights.length; i++) {
     if (weights[i] > 0) {
       items[i].css({ filter: "grayscale(0)" });
       items[i].css({ opacity: weights[i] });
@@ -613,7 +612,7 @@ function applyWeightedHighlights(items, weights) {
   }
 }
 
-var highlightSegments = function () {
+const highlightSegments = function () {
   applyWeightedHighlights(
     SVG.find(".iwr-vis-method-item"),
     this.data("method_weights")
@@ -634,9 +633,9 @@ function addSegments(
   width,
   segmentClass
 ) {
-  var delta = 360 / (names.length + 1);
-  for (var i = 0; i < names.length; i++) {
-    var group = svg
+  const delta = 360 / (names.length + 1);
+  for (let i = 0; i < names.length; i++) {
+    let group = svg
       .group()
       .addClass("iwr-vis-segment-item")
       .addClass(segmentClass)
@@ -655,7 +654,7 @@ function addSegments(
       .fill(color)
       .stroke("#000000")
       .css({ filter: "drop-shadow(0px 0px 1px)" });
-    var strPath = group
+    let strPath = group
       .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
       .fill("none")
       .stroke("none");
@@ -668,11 +667,11 @@ function addSegments(
       .attr("font-size", "0.55em");
   }
   // label
-  var groupLabel = svg.group();
+  let groupLabel = svg.group();
   groupLabel
     .path(makeSegment(radius, -delta / 2.05, delta / 2.05, width))
     .fill("#ffffff");
-  var labelPath = groupLabel
+  let labelPath = groupLabel
     .path(makeTextArc(radius, -delta / 2, delta / 2))
     .fill("none")
     .stroke("none");
@@ -684,7 +683,7 @@ function addSegments(
     .attr("font-size", "0.66em")
     .attr("fill", color)
     .attr("font-weight", "bold");
-  var arrow = groupLabel.marker(4, 4, function (add) {
+  let arrow = groupLabel.marker(4, 4, function (add) {
     add.polyline([0, 0, 4, 2, 0, 4]).fill(color).stroke("none");
   });
   const txtAngle = 4 + label.length / 2;
@@ -719,11 +718,12 @@ function addGroups(
   gradient,
   border_colour
 ) {
-  var boxHeight = 60;
-  var boxWidth = 200;
-  for (var i = 0; i < names.length; i++) {
-    var groupContainer = svg.group();
-    var group = groupContainer.group().addClass("iwr-vis-group-item");
+  const boxHeight = 60;
+  const boxWidth = 200;
+  const padding = 2;
+  for (let i = 0; i < names.length; i++) {
+    let groupContainer = svg.group();
+    let group = groupContainer.group().addClass("iwr-vis-group-item");
     group.on("mouseenter", highlightSegments);
     group.on("mouseclick", highlightSegments);
     group.on("mouseleave", function () {
@@ -744,9 +744,8 @@ function addGroups(
         .front()
         .css({ opacity: 1, visibility: "visible" });
     });
-    var link = group.group();
+    let link = group.group();
     // box
-    var padding = 2;
     link
       .rect(boxWidth, boxHeight)
       .radius(10)
@@ -754,16 +753,16 @@ function addGroups(
       .stroke({ color: border_colour, width: padding });
     // group name
     const numLines = countLines(names[i][1]);
-    var txtTop = 2 * padding;
-    var txtBottom = 2 * padding;
-    if (numLines == 1) {
+    let txtTop = 2 * padding;
+    let txtBottom = 2 * padding;
+    if (numLines === 1) {
       txtTop = 15;
       txtBottom = 15;
-    } else if (numLines == 2) {
+    } else if (numLines === 2) {
       txtTop = 10;
       txtBottom = 10;
     }
-    var groupNamePath = link
+    let groupNamePath = link
       .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
       .fill("none")
       .stroke("none");
@@ -777,7 +776,7 @@ function addGroups(
       .attr("font-weight", "bold")
       .attr("font-size", "0.75em");
     // professor name
-    var profNamePath = link
+    let profNamePath = link
       .path(
         [
           "M",
@@ -804,7 +803,7 @@ function addGroups(
 }
 
 function addGroupCard(svg, name, gradient, border_colour) {
-  var group_card = svg.group().addClass("iwr-vis-group-card");
+  let group_card = svg.group().addClass("iwr-vis-group-card");
   group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
   group_card
     .rect(210, 210)
@@ -819,7 +818,7 @@ function addGroupCard(svg, name, gradient, border_colour) {
     this.css({ opacity: 0, visibility: "hidden" });
     SVG.find(".iwr-vis-group-item").show();
   });
-  var groupNamePath = group_card
+  let groupNamePath = group_card
     .path(["M", 100, 105, "L", 300, 105].join(" "))
     .fill("none")
     .stroke("none");
@@ -834,20 +833,20 @@ function addGroupCard(svg, name, gradient, border_colour) {
     .attr("font-size", "0.75em")
     .linkTo(name[2]);
   group_card.css({ opacity: 0, visibility: "hidden" });
-  var blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
+  let blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
   blurb.add(
     SVG(
       '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
       true
     )
   );
-  if (name[1] == "Visual Computing") {
+  if (name[1] === "Visual Computing") {
     group_card
       .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
       .size(80, 80)
       .move(160, 190);
   }
-  var profNamePath = group_card
+  let profNamePath = group_card
     .path(["M", 100, 290, "L", 300, 290].join(" "))
     .fill("none")
     .stroke("none");
@@ -860,15 +859,15 @@ function addGroupCard(svg, name, gradient, border_colour) {
     .attr("font-size", "0.75em");
 }
 
-var zoomGroups = function (e) {
+const zoomGroups = function (e) {
   // only zoom in/out if all groups are displayed
-  var segments = SVG.find(".iwr-vis-segment-item");
-  var nHovered = segments.hasClass("hovered").filter(Boolean).length;
+  const segments = SVG.find(".iwr-vis-segment-item");
+  const nHovered = segments.hasClass("hovered").filter(Boolean).length;
   if (nHovered != segments.length) {
     return;
   }
-  var p = this.point(e.clientX, e.clientY);
-  var z = 2;
+  const p = this.point(e.clientX, e.clientY);
+  const z = 2;
   if (e.deltaY < 0) {
     updateGroups(
       null,
@@ -882,9 +881,9 @@ var zoomGroups = function (e) {
   }
 };
 
-var sortGroupsByProf = function () {
-  var group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
-  var prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
+const sortGroupsByProf = function () {
+  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
+  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
   if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
     prof.fill("#777777");
     group.fill("#ffffff");
@@ -904,7 +903,7 @@ function addSettings(svg) {
   const height = 60;
   const padding = 4;
   const radius = 2;
-  var settings = svg.group().addClass("iwr-vis-settings-menu");
+  let settings = svg.group().addClass("iwr-vis-settings-menu");
   settings.on("mouseenter", function () {
     this.findOne(".iwr-vis-settings-menu-large").show();
   });
@@ -912,7 +911,7 @@ function addSettings(svg) {
     this.findOne(".iwr-vis-settings-menu-large").hide();
   });
   // button
-  var settings_button = settings
+  let settings_button = settings
     .group()
     .addClass("iwr-vis-settings-menu-button");
   settings_button
@@ -926,7 +925,7 @@ function addSettings(svg) {
   settings_button.stroke(line_colour).fill("none");
   settings_button.move(400 - 16 - padding, padding);
   // menu
-  var settings_menu = settings.group().addClass("iwr-vis-settings-menu-large");
+  let settings_menu = settings.group().addClass("iwr-vis-settings-menu-large");
   settings_menu
     .rect(width, height)
     .radius(radius)
@@ -942,7 +941,7 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .attr("font-size", "0.5em")
     .fill(line_colour);
-  var sort_by_group = settings_menu.group();
+  let sort_by_group = settings_menu.group();
   sort_by_group
     .rect(8, 8)
     .radius(1)
@@ -959,7 +958,7 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
-  var sort_by_prof = settings_menu.group();
+  let sort_by_prof = settings_menu.group();
   sort_by_prof
     .rect(8, 8)
     .radius(1)
@@ -983,13 +982,13 @@ function addSettings(svg) {
 }
 
 window.onload = function () {
-  var svg = SVG("#iwr-vis-menu-svg");
+  let svg = SVG("#iwr-vis-menu-svg");
   // background
-  var bg_group = svg.group().addClass("iwr-vis-bg");
+  let bg_group = svg.group().addClass("iwr-vis-bg");
   bg_group.click(resetAll);
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
   // gradient
-  var gradient = svg
+  let gradient = svg
     .gradient("linear", function (add) {
       add.stop({ offset: 0, color: application_color, opacity: 0.3 });
       add.stop({ offset: 1, color: method_color, opacity: 0.1 });
@@ -997,7 +996,7 @@ window.onload = function () {
     .from(0, 0)
     .to(0, 1);
 
-  var inner_circle = svg
+  let inner_circle = svg
     .circle(316)
     .cx(200)
     .cy(200)
@@ -1006,7 +1005,7 @@ window.onload = function () {
   svg.on("wheel", zoomGroups);
 
   // groups
-  var groups = svg.group();
+  let groups = svg.group();
   groups.clipWith(inner_circle);
   addGroups(
     groups,
@@ -1043,7 +1042,7 @@ window.onload = function () {
   addSettings(svg);
 
   // iwr logo: animate dot colors
-  for (var i = 1; i < 7; ++i) {
+  for (let i = 1; i < 7; ++i) {
     SVG("#iwr-logo-dot" + i)
       .animate({
         duration: 800,
