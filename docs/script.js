@@ -836,7 +836,10 @@ function addGroupCard(svg, name, gradient, border_colour) {
   group_card.css({ opacity: 0, visibility: "hidden" });
   var blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
   blurb.add(
-    '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>'
+    SVG(
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
+      true
+    )
   );
   if (name[1] == "Visual Computing") {
     group_card
@@ -932,10 +935,13 @@ function addSettings(svg) {
   settings_menu.hide();
   // group sorting options
   settings_menu
+    .path(["M", 6, 6, "L", 100, 6].join(" "))
+    .fill("none")
+    .stroke("none")
     .text("Sort by")
+    .attr("dominant-baseline", "hanging")
     .attr("font-size", "0.5em")
-    .fill(line_colour)
-    .move(6, 6);
+    .fill(line_colour);
   var sort_by_group = settings_menu.group();
   sort_by_group
     .rect(8, 8)
@@ -945,10 +951,13 @@ function addSettings(svg) {
     .move(12, 24)
     .addClass("iwr-vis-settings-menu-sort-by-group");
   sort_by_group
+    .path(["M", 24, 24, "L", 100, 24].join(" "))
+    .fill("none")
+    .stroke("none")
     .text("group name")
     .attr("font-size", "0.5em")
-    .fill(line_colour)
-    .move(24, 24);
+    .attr("dominant-baseline", "hanging")
+    .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
   var sort_by_prof = settings_menu.group();
   sort_by_prof
@@ -959,12 +968,18 @@ function addSettings(svg) {
     .move(12, 24 + 12)
     .addClass("iwr-vis-settings-menu-sort-by-prof");
   sort_by_prof
+    .path(["M", 24, 24 + 12, "L", 100, 24 + 12].join(" "))
+    .fill("none")
+    .stroke("none")
     .text("professor name")
     .attr("font-size", "0.5em")
-    .fill(line_colour)
-    .move(24, 24 + 12);
+    .attr("dominant-baseline", "hanging")
+    .fill(line_colour);
   sort_by_prof.click(sortGroupsByProf);
-  settings_menu.move(400 - width - padding, padding);
+  settings_menu.transform({
+    translateX: 400 - width - padding,
+    translateY: padding,
+  });
 }
 
 window.onload = function () {
