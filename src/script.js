@@ -994,7 +994,9 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .attr("font-size", "0.5em")
     .fill(line_colour);
-  let sort_by_group = settings_menu.group().addClass("iwr-vis-settings-menu-sort-by-group");
+  let sort_by_group = settings_menu
+    .group()
+    .addClass("iwr-vis-settings-menu-sort-by-group");
   sort_by_group
     .rect(8, 8)
     .radius(1)
@@ -1011,7 +1013,9 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
-  let sort_by_prof = settings_menu.group().addClass("iwr-vis-settings-menu-sort-by-prof");
+  let sort_by_prof = settings_menu
+    .group()
+    .addClass("iwr-vis-settings-menu-sort-by-prof");
   sort_by_prof
     .rect(8, 8)
     .radius(1)
