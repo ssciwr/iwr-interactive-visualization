@@ -235,7 +235,7 @@ const group_names = [
 ];
 const group_colour = "#ffffff";
 
-function shortenName(full_name) {
+function shortenName(full_name, newline) {
   const words = full_name.split(" ");
   const short_name = [];
   for (const word of words.slice(0, -1)) {
@@ -246,6 +246,10 @@ function shortenName(full_name) {
       // name: keep only first initial & add .
       short_name.push(word[0] + ".");
     }
+  }
+  // optionally add a newline before surname
+  if (newline === true) {
+    short_name.push("\n");
   }
   // surname: keep full word
   short_name.push(words.slice(-1));
@@ -542,9 +546,11 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
       }
     }
   }
+  items.findOne(".iwr-vis-group-item-groupname").show();
+  items.findOne(".iwr-vis-group-item-profname-small").show();
+  items.findOne(".iwr-vis-group-item-profname-large").hide();
   let ncols = 2;
-  let width = 100 * zoom;
-  let height = 26 * zoom;
+  let scaleFactor = 0.43 * zoom;
   if (nGroups > 12) {
     ncols = 3;
   }
@@ -553,9 +559,13 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     ncols = 4;
     groupBoxIndex.x = 1;
     nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
-    width = 65 * zoom;
-    height = (280 * zoom) / nrows;
+    scaleFactor = (4.3 / nrows) * zoom;
+    items.findOne(".iwr-vis-group-item-groupname").hide();
+    items.findOne(".iwr-vis-group-item-profname-small").hide();
+    items.findOne(".iwr-vis-group-item-profname-large").show();
   }
+  const width = 200 * scaleFactor;
+  const height = 60 * scaleFactor;
   const x0 = cx - (width * ncols) / 2;
   const y0 = cy - (height * nrows) / 2;
   for (let i0 = 0; i0 < items.length; i0++) {
@@ -682,6 +692,7 @@ function addSegments(
       .addClass("iwr-vis-segment-item-arc")
       .fill(color)
       .stroke("#ffffff")
+      .attr("stroke-width", 0)
       .css({ filter: "drop-shadow(0px 0px 1px)" });
     let strPath = group
       .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
@@ -793,15 +804,17 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       .stroke("none");
     groupNamePath
       .text(names[i][1])
+      .addClass("iwr-vis-group-item-groupname")
       .leading(1.1)
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "hanging")
       .attr("text-anchor", "middle")
       .fill("#0000ff")
       .attr("font-weight", "bold")
-      .attr("font-size", "0.75em");
-    // professor name
-    let profNamePath = link
+      .attr("font-size", "0.75em")
+      .hide();
+    // small professor name
+    let profNameSmallPath = link
       .path(
         [
           "M",
@@ -814,15 +827,31 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       )
       .fill("none")
       .stroke("none");
-    profNamePath
-      .text(shortenName(names[i][0]))
+    profNameSmallPath
+      .text(shortenName(names[i][0], false))
+      .addClass("iwr-vis-group-item-profname-small")
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
       .attr("font-weight", "bold")
-      .attr("font-size", "0.75em");
+      .attr("font-size", "0.75em")
+      .hide();
+    // large professor name
+    let profNameLargePath = link
+      .path(
+        ["M", 0, boxHeight / 2 - 6, "L", boxWidth, boxHeight / 2 - 6].join(" ")
+      )
+      .fill("none")
+      .stroke("none");
+    profNameLargePath
+      .text(shortenName(names[i][0], true))
+      .addClass("iwr-vis-group-item-profname-large")
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "auto")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "1.25em");
     group.size(65, 20);
-    group.move(200 - boxWidth / 2, 200 - boxHeight / 2);
+    group.move(200 - 65 / 2, 200 - 20 / 2);
     addGroupCard(groupContainer, names[i], colour);
   }
 }
