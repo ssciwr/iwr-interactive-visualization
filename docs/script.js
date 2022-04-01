@@ -833,21 +833,14 @@ function addGroupCard(svg, name, colour) {
     .attr("font-size", "0.75em")
     .linkTo(name[2]);
   group_card.css({ opacity: 0, visibility: "hidden" });
-  let blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 150 });
-  blurb.add(
-    SVG(
-      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
-      true
-    )
-  );
   if (name[1] === "Visual Computing") {
     group_card
       .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
       .size(80, 80)
-      .move(160, 190);
+      .move(160, 120);
   }
   let profNamePath = group_card
-    .path(["M", 100, 290, "L", 300, 290].join(" "))
+    .path(["M", 100, 220, "L", 300, 220].join(" "))
     .fill("none")
     .stroke("none");
   profNamePath
@@ -857,6 +850,13 @@ function addGroupCard(svg, name, colour) {
     .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
     .attr("font-size", "0.75em");
+  let blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 230 });
+  blurb.add(
+    SVG(
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
+      true
+    )
+  );
 }
 
 const zoomGroups = function (e) {
