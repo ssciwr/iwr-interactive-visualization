@@ -3,233 +3,258 @@
 // groups: [professor name, group name, webpage]
 const group_names = [
   [
-    "Prof Peter Albers",
+    "Prof. Peter Albers",
     "Symplectic Dynamics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Artur Andrzejak",
+    "Prof. Artur Andrzejak",
     "Parallel and\nDistributed Systems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Peter Bastian",
+    "Prof. Peter Bastian",
     "Parallel Computing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Hans Georg Bock",
+    "Prof. Hans Georg Bock",
     "Simulation and Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Gebhard Böckle",
+    "Prof. Gebhard Böckle",
     "Computational Arithmetic\nGeometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof André Butz",
+    "Prof. André Butz",
     "Atmospheric Physics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Peter Comba",
+    "Prof. Peter Comba",
     "Theory and Modeling in Inorganic\nand Bioinorganic Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Andreas Dreuw",
+    "Prof. Andreas Dreuw",
     "Theoretical and Computational\nChemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Dr Stefan Fischer",
+    "Dr. Stefan Fischer",
     "Computational Biochemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Anette Frank",
+    "Prof. Anette Frank",
     "Natural Language\nProcessing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Frauke Gräter",
+    "Prof. Frauke Gräter",
     "Molecular Biomechanics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Dr Frederik Graw",
+    "Dr. Frederik Graw",
     "Modelling Infection & Immunity",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Dr Ganna Gryn'ova",
+    "Dr. Ganna Gryn'ova",
     "Computational Carbon Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Eva Gutheil",
+    "Prof. Eva Gutheil",
     "Multiphase Flows\nand Combustion",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Roland Herzog",
+    "Prof. Roland Herzog",
     "Scientific Computing\nand Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Jürgen Hesser",
+    "Prof. Jürgen Hesser",
     "Data Analysis and Modeling\nin Medicine",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Vincent Heuveline",
+    "Prof. Vincent Heuveline",
     "Engineering Mathematics and\nComputing Lab (EMCL)",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "PD Dr Ahmad Hujeirat",
+    "PD Dr. Ahmad Hujeirat",
     "Theoretical and Computational\nAstrophysics",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Bernhard Höfle",
+    "Prof. Bernhard Höfle",
     "3DGeo – 3D Geospatial\nData Processing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Jan Johannes",
+    "Prof. Jan Johannes",
     "Statistics of Inverse Problems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Bernd Jähne",
+    "Prof. Bernd Jähne",
     "Air-Sea Interactions",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Guido Kanschat",
+    "Prof. Guido Kanschat",
     "Mathematical Methods\nof Simulation",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Ralf Klessen",
+    "Prof. Ralf Klessen",
     "Theoretical Star\nFormation Studies",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Hans Knüpfer",
+    "Prof. Hans Knüpfer",
     "Applied Analysis\n(CV/PDE)",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Ekaterina Kostina",
+    "Prof. Ekaterina Kostina",
     "Numerical Optimization",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
-  ["Prof Kurt Kremer", "Polymer Theory", "https://typo.iwr.uni-heidelberg.de/"],
   [
-    "Dr Susanne Krömker",
+    "Prof. Kurt Kremer",
+    "Polymer Theory",
+    "https://typo.iwr.uni-heidelberg.de/",
+  ],
+  [
+    "Dr. Susanne Krömker",
     "Visualization and\nNumerical Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Ursula Kummer",
+    "Prof. Ursula Kummer",
     "Modeling of\nBiological Processes",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Anna Marciniak-Czochra",
+    "Prof. Anna Marciniak-Czochra",
     "Applied Analysis and\nModelling in Biosciences",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Björn Ommer",
+    "Prof. Björn Ommer",
     "Computer Vision",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Barbara Paech",
+    "Prof. Barbara Paech",
     "Software Engineering",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Jun Prof Maria Beatrice Pozzetti",
+    "Jun. Prof. Maria Beatrice Pozzetti",
     "Geometric Group Theory",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Ralf Rannacher",
+    "Prof. Ralf Rannacher",
     "Numerical Methods",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Stefan Riezler",
+    "Prof. Stefan Riezler",
     "Statistical Natural Language\nProcessing Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Joacim Rocklöv",
+    "Prof. Joacim Rocklöv",
     "Artificial Intelligence in the\nResearch of Infectious Diseases\nImpacted by Climate Change",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Kurt Roth",
+    "Prof. Kurt Roth",
     "Terrestrial Systems & Chaotic,\nComplex, and Evolving\nEnvironmental Systems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Carsten Rother",
+    "Prof. Carsten Rother",
     "Computer Vision\nand Learning Lab",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Filip Sadlo",
+    "Prof. Filip Sadlo",
     "Visual Computing",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Robert Scheichl",
+    "Prof. Robert Scheichl",
     "Numerical Analysis and\nUncertainty Quantification",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Christoph Schnörr",
+    "Prof. Christoph Schnörr",
     "Image and Pattern Analysis",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Ulrich Schwarz",
+    "Prof. Ulrich Schwarz",
     "Physics of Complex Biosystems",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Oriol Vendrell",
+    "Prof. Oriol Vendrell",
     "Theoretical Chemistry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Rebecca Wade",
+    "Prof. Rebecca Wade",
     "Molecular and Cellular\nModeling Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Anna Wienhard",
+    "Prof. Anna Wienhard",
     "Differential Geometry",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Jun Prof Jakob Zech",
+    "Jun. Prof. Jakob Zech",
     "Machine Learning",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
   [
-    "Prof Alexander Zipf",
+    "Prof. Alexander Zipf",
     "GIScience Research Group",
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
-const group_border_colour = "#ffffff";
+const group_colour = "#ffffff";
+
+function shortenName(full_name, newline) {
+  const words = full_name.split(" ");
+  const short_name = [words[0]];
+  for (const word of words.slice(1, -1)) {
+    if (word.slice(-1) === ".") {
+      // title: keep full word
+      short_name.push(word);
+    } else {
+      // name: keep only first initial & add .
+      short_name.push(word[0] + ".");
+    }
+  }
+  // optionally add a newline before surname
+  if (newline === true) {
+    short_name.push("\n");
+  }
+  // surname: keep full word
+  short_name.push(words.slice(-1));
+  return short_name.join(" ");
+}
 
 // methods
 const method_names = [
@@ -242,52 +267,52 @@ const method_names = [
 const method_anim_ms = 1000;
 const method_color = "#e13535";
 const method_weights = [
-  [1.0, 0.0, 1.0, 0.0, 1.0], //"Prof Peter Albers",
-  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Artur Andrzejak",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Peter Bastian",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Hans Georg Bock",
-  [0.0, 0.0, 0.0, 0.0, 1.0], //"Prof Gebhard Böckle",
-  [0.0, 1.0, 1.0, 0.0, 0.0], //"Prof André Butz",
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Comba",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Andreas Dreuw",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Dr Stefan Fischer",
-  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Anette Frank",
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Frauke Gräter",
-  [0.0, 0.0, 1.0, 0.0, 0.0], //"Dr Frederik Graw",
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Dr Ganna Gryn'ova",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Eva Gutheil",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Roland Herzog",
-  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Jürgen Hesser",
-  [0.0, 1.0, 1.0, 0.0, 0.0], //"Prof Vincent Heuveline",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"PD Dr Ahmad Hujeirat",
-  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Bernhard Höfle",
-  [1.0, 0.0, 1.0, 0.0, 0.0], //"Prof Jan Johannes",
-  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof Bernd Jähne",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Guido Kanschat",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ralf Klessen",
-  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Hans Knüpfer",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ekaterina Kostina",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Kurt Kremer",
-  [0.0, 0.0, 1.0, 0.0, 1.0], //"Dr Susanne Krömker",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Ursula Kummer",
-  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Anna Marciniak-Czochra",
-  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Björn Ommer",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Barbara Paech",
-  [0.0, 0.0, 0.0, 0.0, 1.0], //"Jun Prof Maria Beatrice Pozzetti",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Rolf Rannacher",
-  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Stefan Riezler",
-  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Joacim Rocklöv",
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Kurt Roth",
-  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Carsten Rother",
-  [0.0, 0.5, 1.0, 0.0, 1.0], //"Prof Filip Sadlo",
-  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Robert Scheichl",
-  [1.0, 0.0, 0.0, 1.0, 0.0], //"Prof Christoph Schnörr",
-  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Ulrich Schwarz",
-  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Oriol Vendrell",
-  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Rebecca Wade",
-  [0.0, 0.0, 0.0, 0.0, 1.0], //"Prof Anna Wienhard",
-  [1.0, 0.0, 0.0, 1.0, 0.0], //"Jun Prof Jakob Zech",
-  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Alexander Zipf",
+  [1.0, 0.0, 1.0, 0.0, 1.0], //"Prof. Peter Albers",
+  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof. Artur Andrzejak",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Peter Bastian",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Hans Georg Bock",
+  [0.0, 0.0, 0.0, 0.0, 1.0], //"Prof. Gebhard Böckle",
+  [0.0, 1.0, 1.0, 0.0, 0.0], //"Prof. André Butz",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Peter Comba",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Andreas Dreuw",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Dr. Stefan Fischer",
+  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof. Anette Frank",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Frauke Gräter",
+  [0.0, 0.0, 1.0, 0.0, 0.0], //"Dr. Frederik Graw",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Dr. Ganna Gryn'ova",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Eva Gutheil",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Roland Herzog",
+  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Jürgen Hesser",
+  [0.0, 1.0, 1.0, 0.0, 0.0], //"Prof. Vincent Heuveline",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"PD Dr. Ahmad Hujeirat",
+  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Bernhard Höfle",
+  [1.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Jan Johannes",
+  [0.0, 0.0, 1.0, 1.0, 0.0], //"Prof. Bernd Jähne",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Guido Kanschat",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Ralf Klessen",
+  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Hans Knüpfer",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Ekaterina Kostina",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Kurt Kremer",
+  [0.0, 0.0, 1.0, 0.0, 1.0], //"Dr. Susanne Krömker",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Ursula Kummer",
+  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Anna Marciniak-Czochra",
+  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Björn Ommer",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Barbara Paech",
+  [0.0, 0.0, 0.0, 0.0, 1.0], //"Jun Prof. Maria Beatrice Pozzetti",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Rolf Rannacher",
+  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Stefan Riezler",
+  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Joacim Rocklöv",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Kurt Roth",
+  [0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Carsten Rother",
+  [0.0, 0.5, 1.0, 0.0, 1.0], //"Prof. Filip Sadlo",
+  [1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Robert Scheichl",
+  [1.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Christoph Schnörr",
+  [1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Ulrich Schwarz",
+  [0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Oriol Vendrell",
+  [0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Rebecca Wade",
+  [0.0, 0.0, 0.0, 0.0, 1.0], //"Prof. Anna Wienhard",
+  [1.0, 0.0, 0.0, 1.0, 0.0], //"Jun Prof. Jakob Zech",
+  [0.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Alexander Zipf",
 ];
 
 // applications
@@ -301,52 +326,52 @@ const application_names = [
 ];
 const application_color = "#499bce";
 const application_weights = [
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Albers",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Artur Andrzejak",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Peter Bastian",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof Hans Georg Bock",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Gebhard Böckle",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof André Butz",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Peter Comba",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Andreas Dreuw",
-  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr Stefan Fischer",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Anette Frank",
-  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Frauke Gräter",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr Frederik Graw",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Dr Ganna Gryn'ova",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Eva Gutheil",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], //"Prof Roland Herzog",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Jürgen Hesser",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Vincent Heuveline",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"PD Dr Ahmad Hujeirat",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Bernhard Höfle",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Jan Johannes",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Bernd Jähne",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Guido Kanschat",
-  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof Ralf Klessen",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Hans Knüpfer",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof Ekaterina Kostina",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Kurt Kremer",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Dr Susanne Krömker",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Ursula Kummer",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Anna Marciniak-Czochra",
-  [0.0, 1.0, 1.0, 0.0, 0.0, 0.0], //"Prof Björn Ommer",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Barbara Paech",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof Maria Beatrice Pozzetti",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Rolf Rannacher",
-  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof Stefan Riezler",
-  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0], //"Prof Joacim Rocklöv",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Kurt Roth",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Carsten Rother",
-  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Prof Filip Sadlo",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Robert Scheichl",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Christoph Schnörr",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Ulrich Schwarz",
-  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Oriol Vendrell",
-  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof Rebecca Wade",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof Anna Wienhard",
-  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof Jakob Zech",
-  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof Alexander Zipf",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Peter Albers",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Artur Andrzejak",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Peter Bastian",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof. Hans Georg Bock",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Gebhard Böckle",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. André Butz",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Peter Comba",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Andreas Dreuw",
+  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr. Stefan Fischer",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Anette Frank",
+  [1.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Frauke Gräter",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Dr. Frederik Graw",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Dr. Ganna Gryn'ova",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Eva Gutheil",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], //"Prof. Roland Herzog",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Jürgen Hesser",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Vincent Heuveline",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"PD Dr. Ahmad Hujeirat",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Bernhard Höfle",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Jan Johannes",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Bernd Jähne",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Guido Kanschat",
+  [0.0, 0.0, 0.0, 1.0, 0.0, 0.0], //"Prof. Ralf Klessen",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Hans Knüpfer",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], //"Prof. Ekaterina Kostina",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Kurt Kremer",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Dr. Susanne Krömker",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Ursula Kummer",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Anna Marciniak-Czochra",
+  [0.0, 1.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Björn Ommer",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Barbara Paech",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof. Maria Beatrice Pozzetti",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Rolf Rannacher",
+  [0.0, 0.0, 1.0, 0.0, 0.0, 0.0], //"Prof. Stefan Riezler",
+  [0.0, 1.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Joacim Rocklöv",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Kurt Roth",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Carsten Rother",
+  [0.25, 0.5, 0.0, 0.5, 0.25, 0.5], //"Prof. Filip Sadlo",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Robert Scheichl",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Christoph Schnörr",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Ulrich Schwarz",
+  [1.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Oriol Vendrell",
+  [0.0, 1.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Rebecca Wade",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Prof. Anna Wienhard",
+  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], //"Jun Prof. Jakob Zech",
+  [0.0, 0.0, 0.0, 0.0, 1.0, 0.0], //"Prof. Alexander Zipf",
 ];
 
 // https://stackoverflow.com/a/36164530/6465472
@@ -377,6 +402,85 @@ function sorted_indices(array, index) {
 const sorted_group_indices = sorted_indices(group_names, 1);
 let sort_by_group = false;
 
+// svg circle arc math based on https://stackoverflow.com/a/18473154/6465472
+function xy(radius, deg) {
+  let rad = ((deg - 90) * Math.PI) / 180.0;
+  return {
+    x: 200 + radius * Math.cos(rad),
+    y: 200 + radius * Math.sin(rad),
+  };
+}
+
+// svg path for text inside a segment (single arc)
+function makeTextArc(radius, startAngle, endAngle) {
+  const anticlockwise = startAngle > 70 && endAngle < 290;
+  if (!anticlockwise) {
+    radius = radius - 1;
+  }
+  const p0 = xy(radius, startAngle);
+  const p1 = xy(radius, endAngle);
+  if (anticlockwise) {
+    return ["M", p1.x, p1.y, "A", radius, radius, 0, 0, 0, p0.x, p0.y].join(
+      " "
+    );
+  }
+  return ["M", p0.x, p0.y, "A", radius, radius, 0, 0, 1, p1.x, p1.y].join(" ");
+}
+
+function makeArrowArc(radius, startAngle, endAngle) {
+  const p0 = xy(radius, startAngle);
+  const p1 = xy(radius, endAngle);
+  const clockwise = endAngle < startAngle ? 0 : 1;
+  return [
+    "M",
+    p0.x,
+    p0.y,
+    "A",
+    radius,
+    radius,
+    0,
+    0,
+    clockwise,
+    p1.x,
+    p1.y,
+  ].join(" ");
+}
+
+// svg path for a segment (two arcs connected by straight lines)
+function makeSegment(radius, startAngle, endAngle, width) {
+  const rm = radius - width;
+  const rp = radius + width;
+  const p0 = xy(rm, startAngle);
+  const p1 = xy(rm, endAngle);
+  const p2 = xy(rp, endAngle);
+  const p3 = xy(rp, startAngle);
+  return [
+    "M",
+    p0.x,
+    p0.y,
+    "A",
+    rm,
+    rm,
+    0,
+    0,
+    1,
+    p1.x,
+    p1.y,
+    "L",
+    p2.x,
+    p2.y,
+    "A",
+    rp,
+    rp,
+    0,
+    0,
+    0,
+    p3.x,
+    p3.y,
+    "z",
+  ].join(" ");
+}
+
 /*global SVG*/
 
 let updateSegments = function () {
@@ -386,16 +490,19 @@ let updateSegments = function () {
   for (let segment of segments) {
     if (segment.hasClass("selected")) {
       segment.css({ opacity: 1, filter: "grayscale(0)" });
-      segment.animate().attr("stroke-width", 1);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#ffffff");
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0.5);
     } else if (segment.hasClass("hovered")) {
       segment.css({ opacity: 1, filter: "grayscale(0)" });
-      segment.attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#000000");
     } else {
       segment.css({
         filter: "grayscale(80%)",
         opacity: "20%",
       });
-      segment.attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#000000");
     }
   }
 };
@@ -439,22 +546,26 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
       }
     }
   }
+  items.findOne(".iwr-vis-group-item-groupname").show();
+  items.findOne(".iwr-vis-group-item-profname-small").show();
+  items.findOne(".iwr-vis-group-item-profname-large").hide();
   let ncols = 2;
-  let height = 30 * zoom;
-  let width = 122 * zoom;
+  let scaleFactor = 0.43 * zoom;
   if (nGroups > 12) {
     ncols = 3;
-    height = 26 * zoom;
-    width = 100 * zoom;
   }
   let nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
   if (nGroups > 21) {
     ncols = 4;
     groupBoxIndex.x = 1;
     nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
-    width = 65 * zoom;
-    height = (280 * zoom) / nrows;
+    scaleFactor = (4.3 / nrows) * zoom;
+    items.findOne(".iwr-vis-group-item-groupname").hide();
+    items.findOne(".iwr-vis-group-item-profname-small").hide();
+    items.findOne(".iwr-vis-group-item-profname-large").show();
   }
+  const width = 200 * scaleFactor;
+  const height = 60 * scaleFactor;
   const x0 = cx - (width * ncols) / 2;
   const y0 = cy - (height * nrows) / 2;
   for (let i0 = 0; i0 < items.length; i0++) {
@@ -469,9 +580,10 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
       if (groups != null) {
         opac = groups[i] + 0.2;
       }
+      const padding = 0.8;
       items[i].animate(method_anim_ms, 0, "now").transform({
-        scaleX: (width - 1) / items[i].width(),
-        scaleY: (height - 1) / items[i].height(),
+        scaleX: (width - padding) / items[i].width(),
+        scaleY: (height - padding) / items[i].height(),
         positionX: x0 + width * (groupBoxIndex.x + 0.5),
         positionY: y0 + height * (groupBoxIndex.y + 0.5),
       });
@@ -500,19 +612,24 @@ const selectSegment = function () {
 };
 
 const hoverSegment = function () {
-  this.findOne(".iwr-vis-segment-item-text").fill("#0000ff");
   const segments = SVG.find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
-  if (nSelected === 1) {
-    return;
+  if (nSelected != 1) {
+    segments.removeClass("selected").removeClass("hovered");
+    this.addClass("hovered");
+    updateGroups(this.data("groups"), true);
   }
-  segments.removeClass("selected").removeClass("hovered");
-  this.addClass("hovered");
-  updateGroups(this.data("groups"), true);
+  if (!this.hasClass("selected")) {
+    this.findOne(".iwr-vis-segment-item-text").fill("#ffffff");
+    this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0.5 });
+  }
 };
 
 const leaveSegment = function () {
-  this.findOne(".iwr-vis-segment-item-text").fill("#000000");
+  if (!this.hasClass("selected")) {
+    this.findOne(".iwr-vis-segment-item-text").fill("#000000");
+    this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0 });
+  }
   const segments = SVG.find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected === 1) {
@@ -544,6 +661,257 @@ const highlightSegments = function () {
   );
 };
 
+function addSegments(
+  svg,
+  label,
+  names,
+  groups,
+  color,
+  radius,
+  width,
+  segmentClass
+) {
+  const delta = 360 / (names.length + 1);
+  for (let i = 0; i < names.length; i++) {
+    let group = svg
+      .group()
+      .addClass("iwr-vis-segment-item")
+      .addClass(segmentClass)
+      .addClass("highlighted");
+    group.click(selectSegment);
+    group.on("mouseenter", hoverSegment);
+    group.on("mouseleave", leaveSegment);
+    group.data("text", names[i]);
+    group.data("groups", groups[i]);
+    group.css({
+      "transition-property": "opacity",
+      "transition-duration": "0.6s",
+    });
+    group
+      .path(makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width))
+      .addClass("iwr-vis-segment-item-arc")
+      .fill(color)
+      .stroke("#ffffff")
+      .attr("stroke-width", 0)
+      .css({ filter: "drop-shadow(0px 0px 1px)" });
+    let strPath = group
+      .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
+      .fill("none")
+      .stroke("none");
+    strPath
+      .text(names[i])
+      .addClass("iwr-vis-segment-item-text")
+      .attr("startOffset", "50%")
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .attr("font-size", "0.55em");
+  }
+  // label
+  let groupLabel = svg.group();
+  groupLabel
+    .path(makeSegment(radius, -delta / 2.05, delta / 2.05, width))
+    .fill("#ffffff");
+  let labelPath = groupLabel
+    .path(makeTextArc(radius, -delta / 2, delta / 2))
+    .fill("none")
+    .stroke("none");
+  labelPath
+    .text(label)
+    .attr("startOffset", "50%")
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .attr("font-size", "0.66em")
+    .attr("fill", color)
+    .attr("font-weight", "bold");
+  let arrow = groupLabel.marker(4, 4, function (add) {
+    add.polyline([0, 0, 4, 2, 0, 4]).fill(color).stroke("none");
+  });
+  const txtAngle = 4 + label.length / 2;
+  const arrowPadding = 3;
+  groupLabel
+    .path(
+      makeArrowArc(radius, arrowPadding + txtAngle, delta / 2 - arrowPadding)
+    )
+    .fill("none")
+    .stroke(color)
+    .attr({ "stroke-width": 2 })
+    .marker("end", arrow);
+  groupLabel
+    .path(
+      makeArrowArc(radius, -arrowPadding - txtAngle, -delta / 2 + arrowPadding)
+    )
+    .fill("none")
+    .stroke(color)
+    .attr({ "stroke-width": 2 })
+    .marker("end", arrow);
+}
+
+function countLines(str) {
+  return (str.match(/\n/g) || "").length + 1;
+}
+
+function addGroups(svg, names, method_weights, application_weights, colour) {
+  const boxHeight = 60;
+  const boxWidth = 200;
+  const padding = 2;
+  for (let i = 0; i < names.length; i++) {
+    let groupContainer = svg.group();
+    let group = groupContainer.group().addClass("iwr-vis-group-item");
+    group.on("mouseenter", highlightSegments);
+    group.on("mouseclick", highlightSegments);
+    group.on("mouseleave", function () {
+      if (!this.hasClass("frozenSegments")) {
+        updateSegments();
+      }
+      return;
+    });
+    group.data("text", names[i][1]);
+    group.data("method_weights", method_weights[i]);
+    group.data("application_weights", application_weights[i]);
+    group.css({
+      transition: "opacity 0.6s, visibility 0.6s",
+      filter: "drop-shadow(0px 0px 1px)",
+    });
+    group.click(function () {
+      this.addClass("frozenSegments");
+      SVG.find(".iwr-vis-group-item").hide();
+      this.parent()
+        .findOne(".iwr-vis-group-card")
+        .front()
+        .css({ opacity: 1, visibility: "visible" });
+    });
+    let link = group.group();
+    // box
+    link
+      .rect(boxWidth, boxHeight)
+      .fill(colour)
+      .stroke("none")
+      .addClass("iwr-vis-group-item-box");
+    // group name
+    const numLines = countLines(names[i][1]);
+    let txtTop = 2 * padding;
+    let txtBottom = 2 * padding;
+    if (numLines === 1) {
+      txtTop = 15;
+      txtBottom = 15;
+    } else if (numLines === 2) {
+      txtTop = 10;
+      txtBottom = 10;
+    }
+    let groupNamePath = link
+      .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
+      .fill("none")
+      .stroke("none");
+    groupNamePath
+      .text(names[i][1])
+      .addClass("iwr-vis-group-item-groupname")
+      .leading(1.1)
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "hanging")
+      .attr("text-anchor", "middle")
+      .fill("#0000ff")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em")
+      .hide();
+    // small professor name
+    let profNameSmallPath = link
+      .path(
+        [
+          "M",
+          0,
+          boxHeight - txtBottom,
+          "L",
+          boxWidth,
+          boxHeight - txtBottom,
+        ].join(" ")
+      )
+      .fill("none")
+      .stroke("none");
+    profNameSmallPath
+      .text(shortenName(names[i][0], false))
+      .addClass("iwr-vis-group-item-profname-small")
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "auto")
+      .attr("text-anchor", "middle")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em")
+      .hide();
+    // large professor name
+    let profNameLargePath = link
+      .path(
+        ["M", 0, boxHeight / 2 - 6, "L", boxWidth, boxHeight / 2 - 6].join(" ")
+      )
+      .fill("none")
+      .stroke("none");
+    profNameLargePath
+      .text(shortenName(names[i][0], true))
+      .addClass("iwr-vis-group-item-profname-large")
+      .attr("startOffset", "50%")
+      .attr("dominant-baseline", "auto")
+      .attr("text-anchor", "middle")
+      .attr("font-size", "1.25em");
+    group.size(65, 20);
+    group.move(200 - 65 / 2, 200 - 20 / 2);
+    addGroupCard(groupContainer, names[i], colour);
+  }
+}
+
+function addGroupCard(svg, name, colour) {
+  let group_card = svg.group().addClass("iwr-vis-group-card");
+  group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
+  group_card
+    .rect(210, 210)
+    .cx(200)
+    .cy(200)
+    .fill(colour)
+    .stroke("none")
+    .css({ filter: "drop-shadow(0px 0px 1px)" });
+  group_card.click(function () {
+    this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
+    this.css({ opacity: 0, visibility: "hidden" });
+    SVG.find(".iwr-vis-group-item").show();
+  });
+  let groupNamePath = group_card
+    .path(["M", 100, 105, "L", 300, 105].join(" "))
+    .fill("none")
+    .stroke("none");
+  groupNamePath
+    .text(name[1])
+    .leading(1.1)
+    .attr("startOffset", "50%")
+    .attr("dominant-baseline", "hanging")
+    .attr("text-anchor", "middle")
+    .fill("#0000ff")
+    .attr("font-weight", "bold")
+    .attr("font-size", "0.75em")
+    .linkTo(name[2]);
+  group_card.css({ opacity: 0, visibility: "hidden" });
+  if (name[1] === "Visual Computing") {
+    group_card
+      .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
+      .size(80, 80)
+      .move(160, 120);
+  }
+  let profNamePath = group_card
+    .path(["M", 100, 220, "L", 300, 220].join(" "))
+    .fill("none")
+    .stroke("none");
+  profNamePath
+    .text(name[0])
+    .attr("startOffset", "50%")
+    .attr("dominant-baseline", "auto")
+    .attr("text-anchor", "middle")
+    .attr("font-weight", "bold")
+    .attr("font-size", "0.75em");
+  let blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 230 });
+  blurb.add(
+    SVG(
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
+      true
+    )
+  );
+}
+
 const zoomGroups = function (e) {
   // only zoom in/out if all groups are displayed
   const segments = SVG.find(".iwr-vis-segment-item");
@@ -567,9 +935,9 @@ const zoomGroups = function (e) {
 };
 
 const sortGroupsByProf = function () {
-  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
-  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
-  if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
+  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group-checkbox");
+  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof-checkbox");
+  if (this.findOne(".iwr-vis-settings-menu-sort-by-prof-checkbox") != null) {
     prof.fill("#777777");
     group.fill("#ffffff");
     sort_by_group = false;
@@ -667,8 +1035,8 @@ function addSettings(svg) {
 }
 
 window.onload = function () {
-  let svg = SVG("#iwr-vis-menu-svg");
-
+  SVG("#iwr-vis-menu-svg").on("wheel", zoomGroups);
+  SVG.find(".iwr-vis-bg").click(resetAll);
   SVG.find(".iwr-vis-segment-item")
     .click(selectSegment)
     .on("mouseenter", hoverSegment)
@@ -696,20 +1064,15 @@ window.onload = function () {
     this.css({ opacity: 0, visibility: "hidden" });
     SVG.find(".iwr-vis-group-item").show();
   });
-  resetAll();
 
-  // iwr logo: animate dot colors
-  for (let i = 1; i < 7; ++i) {
-    SVG("#iwr-logo-dot" + i)
-      .animate({
-        duration: 800,
-        delay: 500 * i,
-        swing: i < 6,
-        times: 2 - Math.floor(i / 6),
-        wait: 300,
-      })
-      .attr({ fill: "#a1131b" });
-  }
+  SVG.find(".iwr-vis-settings-menu").on("mouseenter", function () {
+    this.findOne(".iwr-vis-settings-menu-large").show();
+  }).on("mouseleave", function () {
+    this.findOne(".iwr-vis-settings-menu-large").hide();
+  });
+  SVG.find(".iwr-vis-settings-menu-sort-by-group").click(sortGroupsByProf);
+  SVG.find(".iwr-vis-settings-menu-sort-by-prof").click(sortGroupsByProf);
+  resetAll();
 
   //   console.log(svg.svg());
 };

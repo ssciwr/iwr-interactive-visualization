@@ -935,9 +935,9 @@ const zoomGroups = function (e) {
 };
 
 const sortGroupsByProf = function () {
-  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
-  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
-  if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
+  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group-checkbox");
+  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof-checkbox");
+  if (this.findOne(".iwr-vis-settings-menu-sort-by-prof-checkbox") != null) {
     prof.fill("#777777");
     group.fill("#ffffff");
     sort_by_group = false;
@@ -994,14 +994,14 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .attr("font-size", "0.5em")
     .fill(line_colour);
-  let sort_by_group = settings_menu.group();
+  let sort_by_group = settings_menu.group().addClass("iwr-vis-settings-menu-sort-by-group");
   sort_by_group
     .rect(8, 8)
     .radius(1)
     .stroke(line_colour)
     .fill(bg_colour)
     .move(12, 24)
-    .addClass("iwr-vis-settings-menu-sort-by-group");
+    .addClass("iwr-vis-settings-menu-sort-by-group-checkbox");
   sort_by_group
     .path(["M", 24, 24, "L", 100, 24].join(" "))
     .fill("none")
@@ -1011,14 +1011,14 @@ function addSettings(svg) {
     .attr("dominant-baseline", "hanging")
     .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
-  let sort_by_prof = settings_menu.group();
+  let sort_by_prof = settings_menu.group().addClass("iwr-vis-settings-menu-sort-by-prof");
   sort_by_prof
     .rect(8, 8)
     .radius(1)
     .stroke(line_colour)
     .fill(line_colour)
     .move(12, 24 + 12)
-    .addClass("iwr-vis-settings-menu-sort-by-prof");
+    .addClass("iwr-vis-settings-menu-sort-by-prof-checkbox");
   sort_by_prof
     .path(["M", 24, 24 + 12, "L", 100, 24 + 12].join(" "))
     .fill("none")
@@ -1084,4 +1084,5 @@ window.onload = function () {
   resetAll();
   // settings menu
   addSettings(svg);
+  console.log(svg.svg());
 };
