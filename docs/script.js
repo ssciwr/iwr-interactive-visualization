@@ -233,7 +233,7 @@ const group_names = [
     "https://typo.iwr.uni-heidelberg.de/",
   ],
 ];
-const group_border_colour = "#ffffff";
+const group_colour = "#ffffff";
 
 // methods
 const method_names = [
@@ -552,9 +552,10 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
       if (groups != null) {
         opac = groups[i] + 0.2;
       }
+      const padding = 0.8;
       items[i].animate(method_anim_ms, 0, "now").transform({
-        scaleX: (width - 1) / items[i].width(),
-        scaleY: (height - 1) / items[i].height(),
+        scaleX: (width - padding) / items[i].width(),
+        scaleY: (height - padding) / items[i].height(),
         positionX: x0 + width * (groupBoxIndex.x + 0.5),
         positionY: y0 + height * (groupBoxIndex.y + 0.5),
       });
@@ -714,14 +715,7 @@ function countLines(str) {
   return (str.match(/\n/g) || "").length + 1;
 }
 
-function addGroups(
-  svg,
-  names,
-  method_weights,
-  application_weights,
-  gradient,
-  border_colour
-) {
+function addGroups(svg, names, method_weights, application_weights, colour) {
   const boxHeight = 60;
   const boxWidth = 200;
   const padding = 2;
@@ -739,7 +733,10 @@ function addGroups(
     group.data("text", names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
-    group.css({ transition: "opacity 0.6s, visibility 0.6s" });
+    group.css({
+      transition: "opacity 0.6s, visibility 0.6s",
+      filter: "drop-shadow(0px 0px 1px)",
+    });
     group.click(function () {
       this.addClass("frozenSegments");
       SVG.find(".iwr-vis-group-item").hide();
@@ -752,9 +749,9 @@ function addGroups(
     // box
     link
       .rect(boxWidth, boxHeight)
-      .radius(10)
-      .fill(gradient)
-      .stroke({ color: border_colour, width: padding });
+      .fill(colour)
+      .stroke("none")
+      .addClass("iwr-vis-group-item-box");
     // group name
     const numLines = countLines(names[i][1]);
     let txtTop = 2 * padding;
@@ -802,21 +799,20 @@ function addGroups(
       .attr("font-size", "0.75em");
     group.size(65, 20);
     group.move(200 - boxWidth / 2, 200 - boxHeight / 2);
-    addGroupCard(groupContainer, names[i], gradient, border_colour);
+    addGroupCard(groupContainer, names[i], colour);
   }
 }
 
-function addGroupCard(svg, name, gradient, border_colour) {
+function addGroupCard(svg, name, colour) {
   let group_card = svg.group().addClass("iwr-vis-group-card");
   group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
   group_card
     .rect(210, 210)
     .cx(200)
     .cy(200)
-    .fill(gradient)
-    .radius(5)
-    .stroke(border_colour)
-    .attr("stroke-width", 0.4);
+    .fill(colour)
+    .stroke("none")
+    .css({ filter: "drop-shadow(0px 0px 1px)" });
   group_card.click(function () {
     this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
     this.css({ opacity: 0, visibility: "hidden" });
@@ -991,14 +987,6 @@ window.onload = function () {
   let bg_group = svg.group().addClass("iwr-vis-bg");
   bg_group.click(resetAll);
   bg_group.rect(400, 400).cx(200).cy(200).fill("#ffffff").stroke("#ffffff");
-  // gradient
-  let gradient = svg
-    .gradient("linear", function (add) {
-      add.stop({ offset: 0, color: application_color, opacity: 0.3 });
-      add.stop({ offset: 1, color: method_color, opacity: 0.1 });
-    })
-    .from(0, 0)
-    .to(0, 1);
 
   let inner_circle = svg
     .circle(316)
@@ -1016,8 +1004,7 @@ window.onload = function () {
     group_names,
     method_weights,
     application_weights,
-    gradient,
-    group_border_colour
+    group_colour
   );
   // methods
   addSegments(
