@@ -235,6 +235,23 @@ const group_names = [
 ];
 const group_colour = "#ffffff";
 
+function shortenName(full_name) {
+  const words = full_name.split(" ");
+  const short_name = [];
+  for (const word of words.slice(0, -1)) {
+    if (word.slice(-1) === ".") {
+      // title: keep full word
+      short_name.push(word);
+    } else {
+      // name: keep only first initial & add .
+      short_name.push(word[0] + ".");
+    }
+  }
+  // surname: keep full word
+  short_name.push(words.slice(-1));
+  return short_name.join(" ");
+}
+
 // methods
 const method_names = [
   "Mathematical and Numerical Analysis",
@@ -798,7 +815,7 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       .fill("none")
       .stroke("none");
     profNamePath
-      .text(names[i][0])
+      .text(shortenName(names[i][0]))
       .attr("startOffset", "50%")
       .attr("dominant-baseline", "auto")
       .attr("text-anchor", "middle")
