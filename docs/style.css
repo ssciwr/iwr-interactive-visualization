@@ -31,6 +31,6 @@ body {
   cursor: pointer;
 }
 
-.iwr-vis-group-item:hover {
-  filter: brightness(70%);
+.iwr-vis-group-item:hover .iwr-vis-group-item-box {
+  fill: #cccccc;
 }
