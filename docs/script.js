@@ -523,12 +523,10 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     }
   }
   let ncols = 2;
-  let height = 30 * zoom;
-  let width = 122 * zoom;
+  let width = 100 * zoom;
+  let height = 26 * zoom;
   if (nGroups > 12) {
     ncols = 3;
-    height = 26 * zoom;
-    width = 100 * zoom;
   }
   let nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
   if (nGroups > 21) {
