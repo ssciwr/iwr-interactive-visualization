@@ -1,5 +1,7 @@
 "use strict";
 
+import { SVG } from "@svgdotjs/svg.js";
+
 // groups: [professor name, group name, webpage]
 const group_names = [
   [

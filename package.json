@@ -1,0 +1,31 @@
+{
+  "title": "IWR Interactive Visualization",
+  "name": "iwr-interactive-visualization",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "npm run clean && npm run build:pug && npm run build:scripts-scss && npm run build:assets",
+    "build:assets": "node scripts/build-assets.js",
+    "build:pug": "node scripts/build-pug.js",
+    "build:scripts-scss": "node scripts/build-scripts-scss.js",
+    "clean": "node scripts/clean.js",
+    "start": "npm run build && node scripts/start.js",
+    "start:debug": "npm run build && node scripts/start-debug.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssciwr/iwr-interactive-visualizations.git"
+  },
+  "license": "MIT",
+  "author": "Liam Keegan",
+  "dependencies": {
+    "@svgdotjs/svg.js": "3.1.2"
+  },
+  "devDependencies": {
+    "shelljs": "0.8.5",
+    "svgdom": "0.1.10",
+    "uglify-js": "3.15.3",
+    "upath": "2.0.1",
+    "webpack": "5.71.0",
+    "yaml": "1.10.2"
+  }
+}
