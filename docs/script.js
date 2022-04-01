@@ -469,16 +469,19 @@ let updateSegments = function () {
   for (let segment of segments) {
     if (segment.hasClass("selected")) {
       segment.css({ opacity: 1, filter: "grayscale(0)" });
-      segment.animate().attr("stroke-width", 1);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#ffffff");
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0.5);
     } else if (segment.hasClass("hovered")) {
       segment.css({ opacity: 1, filter: "grayscale(0)" });
-      segment.attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#000000");
     } else {
       segment.css({
         filter: "grayscale(80%)",
         opacity: "20%",
       });
-      segment.attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
+      segment.findOne(".iwr-vis-segment-item-text").fill("#000000");
     }
   }
 };
@@ -582,19 +585,24 @@ const selectSegment = function () {
 };
 
 const hoverSegment = function () {
-  this.findOne(".iwr-vis-segment-item-text").fill("#0000ff");
   const segments = SVG.find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
-  if (nSelected === 1) {
-    return;
+  if (nSelected != 1) {
+    segments.removeClass("selected").removeClass("hovered");
+    this.addClass("hovered");
+    updateGroups(this.data("groups"), true);
   }
-  segments.removeClass("selected").removeClass("hovered");
-  this.addClass("hovered");
-  updateGroups(this.data("groups"), true);
+  if (!this.hasClass("selected")) {
+    this.findOne(".iwr-vis-segment-item-text").fill("#ffffff");
+    this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0.5 });
+  }
 };
 
 const leaveSegment = function () {
-  this.findOne(".iwr-vis-segment-item-text").fill("#000000");
+  if (!this.hasClass("selected")) {
+    this.findOne(".iwr-vis-segment-item-text").fill("#000000");
+    this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0 });
+  }
   const segments = SVG.find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected === 1) {
@@ -654,8 +662,9 @@ function addSegments(
     });
     group
       .path(makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width))
+      .addClass("iwr-vis-segment-item-arc")
       .fill(color)
-      .stroke("#000000")
+      .stroke("#ffffff")
       .css({ filter: "drop-shadow(0px 0px 1px)" });
     let strPath = group
       .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
