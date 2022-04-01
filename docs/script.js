@@ -237,8 +237,8 @@ const group_colour = "#ffffff";
 
 function shortenName(full_name, newline) {
   const words = full_name.split(" ");
-  const short_name = [];
-  for (const word of words.slice(0, -1)) {
+  const short_name = [words[0]];
+  for (const word of words.slice(1, -1)) {
     if (word.slice(-1) === ".") {
       // title: keep full word
       short_name.push(word);
