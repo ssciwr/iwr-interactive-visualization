@@ -1044,17 +1044,4 @@ window.onload = function () {
   resetAll();
   // settings menu
   addSettings(svg);
-
-  // iwr logo: animate dot colors
-  for (let i = 1; i < 7; ++i) {
-    SVG("#iwr-logo-dot" + i)
-      .animate({
-        duration: 800,
-        delay: 500 * i,
-        swing: i < 6,
-        times: 2 - Math.floor(i / 6),
-        wait: 300,
-      })
-      .attr({ fill: "#a1131b" });
-  }
 };
