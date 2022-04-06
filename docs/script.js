@@ -234,6 +234,7 @@ const group_names = [
   ],
 ];
 const group_colour = "#ffffff";
+const show_groups = false;
 
 function shortenName(full_name, newline) {
   const words = full_name.split(" ");
@@ -546,9 +547,11 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
       }
     }
   }
-  items.findOne(".iwr-vis-group-item-groupname").show();
-  items.findOne(".iwr-vis-group-item-profname-small").show();
-  items.findOne(".iwr-vis-group-item-profname-large").hide();
+  if (show_groups === true) {
+    items.findOne(".iwr-vis-group-item-groupname").show();
+    items.findOne(".iwr-vis-group-item-profname-small").show();
+    items.findOne(".iwr-vis-group-item-profname-large").hide();
+  }
   let ncols = 2;
   let scaleFactor = 0.43 * zoom;
   if (nGroups > 12) {
@@ -560,9 +563,11 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     groupBoxIndex.x = 1;
     nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
     scaleFactor = (4.3 / nrows) * zoom;
-    items.findOne(".iwr-vis-group-item-groupname").hide();
-    items.findOne(".iwr-vis-group-item-profname-small").hide();
-    items.findOne(".iwr-vis-group-item-profname-large").show();
+    if (show_groups === true) {
+      items.findOne(".iwr-vis-group-item-groupname").hide();
+      items.findOne(".iwr-vis-group-item-profname-small").hide();
+      items.findOne(".iwr-vis-group-item-profname-large").show();
+    }
   }
   const width = 200 * scaleFactor;
   const height = 60 * scaleFactor;
@@ -787,55 +792,57 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       .fill(colour)
       .stroke("none")
       .addClass("iwr-vis-group-item-box");
-    // group name
-    const numLines = countLines(names[i][1]);
-    let txtTop = 2 * padding;
-    let txtBottom = 2 * padding;
-    if (numLines === 1) {
-      txtTop = 15;
-      txtBottom = 15;
-    } else if (numLines === 2) {
-      txtTop = 10;
-      txtBottom = 10;
+    if (show_groups === true) {
+      // group name
+      const numLines = countLines(names[i][1]);
+      let txtTop = 2 * padding;
+      let txtBottom = 2 * padding;
+      if (numLines === 1) {
+        txtTop = 15;
+        txtBottom = 15;
+      } else if (numLines === 2) {
+        txtTop = 10;
+        txtBottom = 10;
+      }
+      let groupNamePath = link
+        .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
+        .fill("none")
+        .stroke("none");
+      groupNamePath
+        .text(names[i][1])
+        .addClass("iwr-vis-group-item-groupname")
+        .leading(1.1)
+        .attr("startOffset", "50%")
+        .attr("dominant-baseline", "hanging")
+        .attr("text-anchor", "middle")
+        .fill("#0000ff")
+        .attr("font-weight", "bold")
+        .attr("font-size", "0.75em")
+        .hide();
+      // small professor name
+      let profNameSmallPath = link
+        .path(
+          [
+            "M",
+            0,
+            boxHeight - txtBottom,
+            "L",
+            boxWidth,
+            boxHeight - txtBottom,
+          ].join(" ")
+        )
+        .fill("none")
+        .stroke("none");
+      profNameSmallPath
+        .text(shortenName(names[i][0], false))
+        .addClass("iwr-vis-group-item-profname-small")
+        .attr("startOffset", "50%")
+        .attr("dominant-baseline", "auto")
+        .attr("text-anchor", "middle")
+        .attr("font-weight", "bold")
+        .attr("font-size", "0.75em")
+        .hide();
     }
-    let groupNamePath = link
-      .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
-      .fill("none")
-      .stroke("none");
-    groupNamePath
-      .text(names[i][1])
-      .addClass("iwr-vis-group-item-groupname")
-      .leading(1.1)
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "hanging")
-      .attr("text-anchor", "middle")
-      .fill("#0000ff")
-      .attr("font-weight", "bold")
-      .attr("font-size", "0.75em")
-      .hide();
-    // small professor name
-    let profNameSmallPath = link
-      .path(
-        [
-          "M",
-          0,
-          boxHeight - txtBottom,
-          "L",
-          boxWidth,
-          boxHeight - txtBottom,
-        ].join(" ")
-      )
-      .fill("none")
-      .stroke("none");
-    profNameSmallPath
-      .text(shortenName(names[i][0], false))
-      .addClass("iwr-vis-group-item-profname-small")
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "auto")
-      .attr("text-anchor", "middle")
-      .attr("font-weight", "bold")
-      .attr("font-size", "0.75em")
-      .hide();
     // large professor name
     let profNameLargePath = link
       .path(
