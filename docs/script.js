@@ -443,8 +443,10 @@ function xy(radius, deg) {
 // svg path for text inside a segment (single arc)
 function makeTextArc(radius, startAngle, endAngle) {
   const anticlockwise = startAngle > 70 && endAngle < 290;
-  if (!anticlockwise) {
-    radius = radius - 1;
+  if (anticlockwise) {
+    radius = radius + 2;
+  } else {
+    radius = radius - 3;
   }
   const p0 = xy(radius, startAngle);
   const p1 = xy(radius, endAngle);
@@ -736,7 +738,6 @@ function addSegments(
       .addClass("iwr-vis-segment-item-text")
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "middle")
       .attr("font-size", "0.55em");
   }
   // label
