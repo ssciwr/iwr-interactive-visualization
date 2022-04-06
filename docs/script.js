@@ -985,7 +985,9 @@ function addGroupCard(svg, name, colour) {
   let blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 230 });
   blurb.add(
     SVG(
-      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis mollis mi ut ultricies. Nullam magna ipsum, porta vel dui convallis, rutrum imperdiet eros. Aliquam erat volutpat.</div>',
+      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html">' +
+        name[3] +
+        "</div>",
       true
     )
   );
