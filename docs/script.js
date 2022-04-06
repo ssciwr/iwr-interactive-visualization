@@ -642,9 +642,9 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     }
   }
   if (show_groups === true) {
-    items.findOne(".iwr-vis-group-item-groupname").show();
-    items.findOne(".iwr-vis-group-item-profname-small").show();
-    items.findOne(".iwr-vis-group-item-profname-large").hide();
+    items.find(".iwr-vis-group-item-groupname").show();
+    items.find(".iwr-vis-group-item-profname-small").show();
+    items.find(".iwr-vis-group-item-profname-large").hide();
   }
   let ncols = 2;
   let scaleFactor = 0.43 * zoom;
@@ -658,9 +658,9 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
     nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
     scaleFactor = (4.3 / nrows) * zoom;
     if (show_groups === true) {
-      items.findOne(".iwr-vis-group-item-groupname").hide();
-      items.findOne(".iwr-vis-group-item-profname-small").hide();
-      items.findOne(".iwr-vis-group-item-profname-large").show();
+      items.find(".iwr-vis-group-item-groupname").hide();
+      items.find(".iwr-vis-group-item-profname-small").hide();
+      items.find(".iwr-vis-group-item-profname-large").show();
     }
   }
   const width = 200 * scaleFactor;
@@ -817,7 +817,6 @@ function addSegments(
     .text(label)
     .attr("startOffset", "50%")
     .attr("text-anchor", "middle")
-    .attr("dominant-baseline", "middle")
     .attr("font-size", "0.66em")
     .attr("fill", color)
     .attr("font-weight", "bold");
@@ -863,7 +862,6 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       }
       return;
     });
-    group.data("text", names[i][1]);
     group.data("method_weights", method_weights[i]);
     group.data("application_weights", application_weights[i]);
     group.css({
@@ -878,9 +876,8 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
         .front()
         .css({ opacity: 1, visibility: "visible" });
     });
-    let link = group.group();
     // box
-    link
+    group
       .rect(boxWidth, boxHeight)
       .fill(colour)
       .stroke("none")
@@ -888,68 +885,52 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
     if (show_groups === true) {
       // group name
       const numLines = countLines(names[i][1]);
-      let txtTop = 2 * padding;
-      let txtBottom = 2 * padding;
+      let txtTop = 0;
+      const dy = 11;
       if (numLines === 1) {
-        txtTop = 15;
-        txtBottom = 15;
-      } else if (numLines === 2) {
         txtTop = 10;
-        txtBottom = 10;
+      } else if (numLines === 2) {
+        txtTop = 4;
       }
-      let groupNamePath = link
-        .path(["M", 0, txtTop, "L", boxWidth, txtTop].join(" "))
-        .fill("none")
-        .stroke("none");
-      groupNamePath
-        .text(names[i][1])
-        .addClass("iwr-vis-group-item-groupname")
-        .leading(1.1)
-        .attr("startOffset", "50%")
-        .attr("dominant-baseline", "hanging")
-        .attr("text-anchor", "middle")
-        .fill("#0000ff")
-        .attr("font-weight", "bold")
-        .attr("font-size", "0.75em")
-        .hide();
+      for (const textLine of names[i][1].split("\n")) {
+        group
+          .text(textLine)
+          .addClass("iwr-vis-group-item-groupname")
+          .x(boxWidth / 2)
+          .y(txtTop)
+          .attr("startOffset", "50%")
+          .attr("text-anchor", "middle")
+          .fill("#0000ff")
+          .attr("font-weight", "bold")
+          .attr("font-size", "0.75em")
+          .hide();
+        txtTop += dy;
+      }
       // small professor name
-      let profNameSmallPath = link
-        .path(
-          [
-            "M",
-            0,
-            boxHeight - txtBottom,
-            "L",
-            boxWidth,
-            boxHeight - txtBottom,
-          ].join(" ")
-        )
-        .fill("none")
-        .stroke("none");
-      profNameSmallPath
+      group
         .text(shortenName(names[i][0], false))
+        .x(boxWidth / 2)
+        .y(txtTop + padding + 6 / numLines)
         .addClass("iwr-vis-group-item-profname-small")
         .attr("startOffset", "50%")
-        .attr("dominant-baseline", "auto")
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .attr("font-size", "0.75em")
         .hide();
     }
     // large professor name
-    let profNameLargePath = link
-      .path(
-        ["M", 0, boxHeight / 2 - 6, "L", boxWidth, boxHeight / 2 - 6].join(" ")
-      )
-      .fill("none")
-      .stroke("none");
-    profNameLargePath
-      .text(shortenName(names[i][0], true))
-      .addClass("iwr-vis-group-item-profname-large")
-      .attr("startOffset", "50%")
-      .attr("dominant-baseline", "auto")
-      .attr("text-anchor", "middle")
-      .attr("font-size", "1.25em");
+    let dy = 0;
+    for (const textLine of shortenName(names[i][0], true).split("\n")) {
+      group
+        .text(textLine)
+        .y(10 + dy)
+        .x(boxWidth / 2)
+        .addClass("iwr-vis-group-item-profname-large")
+        .attr("startOffset", "50%")
+        .attr("text-anchor", "middle")
+        .attr("font-size", "1.25em");
+      dy += 25;
+    }
     group.size(65, 20);
     group.move(200 - 65 / 2, 200 - 20 / 2);
     addGroupCard(groupContainer, names[i], colour);
@@ -958,9 +939,10 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
 
 function addGroupCard(svg, name, colour) {
   let group_card = svg.group().addClass("iwr-vis-group-card");
+  const card_size = 210;
   group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
   group_card
-    .rect(210, 210)
+    .rect(card_size, card_size)
     .cx(200)
     .cy(200)
     .fill(colour)
@@ -971,20 +953,20 @@ function addGroupCard(svg, name, colour) {
     this.css({ opacity: 0, visibility: "hidden" });
     SVG.find(".iwr-vis-group-item").show();
   });
-  let groupNamePath = group_card
-    .path(["M", 100, 105, "L", 300, 105].join(" "))
-    .fill("none")
-    .stroke("none");
-  groupNamePath
-    .text(name[1])
-    .leading(1.1)
-    .attr("startOffset", "50%")
-    .attr("dominant-baseline", "hanging")
-    .attr("text-anchor", "middle")
-    .fill("#0000ff")
-    .attr("font-weight", "bold")
-    .attr("font-size", "0.75em")
-    .linkTo(name[2]);
+  let dy = 0;
+  for (const textLine of name[1].split("\n")) {
+    group_card
+      .text(textLine)
+      .x(200)
+      .y(99 + dy)
+      .attr("startOffset", "50%")
+      .attr("text-anchor", "middle")
+      .fill("#0000ff")
+      .attr("font-weight", "bold")
+      .attr("font-size", "0.75em")
+      .linkTo(name[2]);
+    dy += 13;
+  }
   group_card.css({ opacity: 0, visibility: "hidden" });
   if (name[1] === "Visual Computing") {
     group_card
@@ -992,14 +974,11 @@ function addGroupCard(svg, name, colour) {
       .size(80, 80)
       .move(160, 120);
   }
-  let profNamePath = group_card
-    .path(["M", 100, 220, "L", 300, 220].join(" "))
-    .fill("none")
-    .stroke("none");
-  profNamePath
+  group_card
     .text(name[0])
+    .x(200)
+    .y(205)
     .attr("startOffset", "50%")
-    .attr("dominant-baseline", "auto")
     .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
     .attr("font-size", "0.75em");
@@ -1084,14 +1063,11 @@ function addSettings(svg) {
     .radius(radius)
     .stroke(line_colour)
     .fill(bg_colour);
-  settings_menu.hide();
   // group sorting options
   settings_menu
-    .path(["M", 6, 6, "L", 100, 6].join(" "))
-    .fill("none")
-    .stroke("none")
     .text("Sort by")
-    .attr("dominant-baseline", "hanging")
+    .x(6)
+    .y(0)
     .attr("font-size", "0.5em")
     .fill(line_colour);
   let sort_by_group = settings_menu.group();
@@ -1103,12 +1079,10 @@ function addSettings(svg) {
     .move(12, 24)
     .addClass("iwr-vis-settings-menu-sort-by-group");
   sort_by_group
-    .path(["M", 24, 24, "L", 100, 24].join(" "))
-    .fill("none")
-    .stroke("none")
     .text("group name")
+    .x(24)
+    .y(16)
     .attr("font-size", "0.5em")
-    .attr("dominant-baseline", "hanging")
     .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
   let sort_by_prof = settings_menu.group();
@@ -1120,18 +1094,17 @@ function addSettings(svg) {
     .move(12, 24 + 12)
     .addClass("iwr-vis-settings-menu-sort-by-prof");
   sort_by_prof
-    .path(["M", 24, 24 + 12, "L", 100, 24 + 12].join(" "))
-    .fill("none")
-    .stroke("none")
     .text("professor name")
+    .x(24)
+    .y(28)
     .attr("font-size", "0.5em")
-    .attr("dominant-baseline", "hanging")
     .fill(line_colour);
   sort_by_prof.click(sortGroupsByProf);
   settings_menu.transform({
     translateX: 400 - width - padding,
     translateY: padding,
   });
+  settings_menu.hide();
 }
 
 window.onload = function () {
