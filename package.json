@@ -7,16 +7,12 @@
     "build:assets": "node scripts/build-assets.js",
     "build:pug": "node scripts/build-pug.js",
     "build:scripts-scss": "node scripts/build-scripts-scss.js",
-    "clean": "node scripts/clean.js",
-    "start": "npm run build && node scripts/start.js",
-    "start:debug": "npm run build && node scripts/start-debug.js"
+    "clean": "node scripts/clean.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ssciwr/iwr-interactive-visualizations.git"
   },
-  "license": "MIT",
-  "author": "Liam Keegan",
   "dependencies": {
     "@svgdotjs/svg.js": "3.1.2"
   },
