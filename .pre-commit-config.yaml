@@ -19,6 +19,9 @@ repos:
     rev: "v8.11.0"
     hooks:
       - id: eslint
-
+        additional_dependencies:
+          - eslint
+          - "@typescript-eslint/parser"
+          - "@typescript-eslint/eslint-plugin"
 ci:
   autoupdate_schedule: quarterly
