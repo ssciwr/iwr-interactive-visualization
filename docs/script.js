@@ -760,6 +760,10 @@ const highlightSegments = function () {
   );
 };
 
+const shadowFilter = function (add) {
+  add.blend(add.$source, add.gaussianBlur(1).in(add.$sourceAlpha));
+};
+
 function addSegments(
   svg,
   label,
@@ -792,7 +796,7 @@ function addSegments(
       .fill(color)
       .stroke("#ffffff")
       .attr("stroke-width", 0)
-      .css({ filter: "drop-shadow(0px 0px 1px)" });
+      .filterWith(shadowFilter);
     let strPath = group
       .path(makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
       .fill("none")
@@ -866,7 +870,6 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
     group.data("application_weights", application_weights[i]);
     group.css({
       transition: "opacity 0.6s, visibility 0.6s",
-      filter: "drop-shadow(0px 0px 1px)",
     });
     group.click(function () {
       this.addClass("frozenSegments");
@@ -881,7 +884,8 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
       .rect(boxWidth, boxHeight)
       .fill(colour)
       .stroke("none")
-      .addClass("iwr-vis-group-item-box");
+      .addClass("iwr-vis-group-item-box")
+      .filterWith(shadowFilter);
     if (show_groups === true) {
       // group name
       const numLines = countLines(names[i][1]);
@@ -947,7 +951,7 @@ function addGroupCard(svg, name, colour) {
     .cy(200)
     .fill(colour)
     .stroke("none")
-    .css({ filter: "drop-shadow(0px 0px 1px)" });
+    .filterWith(shadowFilter);
   group_card.click(function () {
     this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
     this.css({ opacity: 0, visibility: "hidden" });
