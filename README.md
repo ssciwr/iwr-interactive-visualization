@@ -1,7 +1,38 @@
 # [ssciwr.github.io/iwr-interactive-visualization](https://ssciwr.github.io/iwr-interactive-visualization/)
 
+[![Build and deploy to gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml/badge.svg)](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml)
+
 Prototype implementation for an interactive presentation of the IWR and its activities
 
-- Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
-- [source code](docs)
-- [preview](https://ssciwr.github.io/iwr-interactive-visualization/)
+## Overview
+
+Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
+
+- [main](https://github.com/ssciwr/iwr-interactive-visualization/tree/main) branch contains the source code
+- [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch contains the generated website
+- uses [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/) to manage the build and dependencies
+
+## Online preview
+
+On every commit to the main branch:
+
+- [deploy.yml](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml) action builds website & deploys to [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages)
+- github pages hosts these files at [ssciwr.github.io/iwr-interactive-visualization](https://ssciwr.github.io/iwr-interactive-visualization/)
+
+## How to build locally
+
+- clone this repo
+  - `git clone https://github.com/ssciwr/iwr-interactive-visualization.git`
+  - `cd iwr-interactive-visualization`
+- (optional) install pre-commit to auto-format code
+  - `pip install pre-commit`
+  - `pre-commit install`
+- install node
+  - macOS: `brew install node`
+  - windows: https://nodejs.org/en/
+  - ubuntu: `sudo apt install nodejs npm`
+- install website node dependencies
+  - `npm install`
+- build website
+  - `npm run build`
+- website will be built in `dist` folder

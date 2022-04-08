@@ -1,0 +1,24 @@
+{
+  "title": "IWR Interactive Visualization",
+  "name": "iwr-interactive-visualization",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && node scripts/build.mjs",
+    "clean": "node scripts/clean.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssciwr/iwr-interactive-visualization.git"
+  },
+  "dependencies": {
+    "@svgdotjs/svg.filter.js": "3.0.8",
+    "@svgdotjs/svg.js": "3.1.2"
+  },
+  "devDependencies": {
+    "shelljs": "0.8.5",
+    "svgdom": "0.1.10",
+    "webpack": "5.71.0",
+    "yaml": "1.10.2"
+  }
+}

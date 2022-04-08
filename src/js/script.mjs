@@ -1,4 +1,5 @@
-"use strict";
+import { SVG } from "@svgdotjs/svg.js"; // eslint-disable-line
+import { filterWith } from "@svgdotjs/svg.filter.js"; // eslint-disable-line
 
 // groups: [professor name, group name, webpage]
 const group_names = [
@@ -576,12 +577,12 @@ function makeSegment(radius, startAngle, endAngle, width) {
   ].join(" ");
 }
 
-/*global SVG*/
-
 let updateSegments = function () {
-  SVG.find(".iwr-vis-group-card").css({ opacity: 0, visibility: "hidden" });
-  SVG.find(".iwr-vis-group-item").show();
-  const segments = SVG.find(".iwr-vis-segment-item");
+  SVG("#iwr-vis-menu-svg")
+    .find(".iwr-vis-group-card")
+    .css({ opacity: 0, visibility: "hidden" });
+  SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
+  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
   for (let segment of segments) {
     if (segment.hasClass("selected")) {
       segment.css({ opacity: 1, filter: "grayscale(0)" });
@@ -626,7 +627,7 @@ function nextGroupBoxIndex(p, ncols, nrows = 0) {
 
 function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
   updateSegments();
-  const items = SVG.find(".iwr-vis-group-item");
+  const items = SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item");
   if (groups != null) {
     console.assert(items.length === groups.length, items, groups);
   }
@@ -693,12 +694,15 @@ function updateGroups(groups, show_all = false, zoom = 1, cx = 200, cy = 200) {
 }
 
 const resetAll = function () {
-  SVG.find(".iwr-vis-segment-item").addClass("hovered").removeClass("selected");
+  SVG("#iwr-vis-menu-svg")
+    .find(".iwr-vis-segment-item")
+    .addClass("hovered")
+    .removeClass("selected");
   updateGroups();
 };
 
 const selectSegment = function () {
-  const segments = SVG.find(".iwr-vis-segment-item");
+  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (this.hasClass("selected") && nSelected === 1) {
     resetAll();
@@ -711,7 +715,7 @@ const selectSegment = function () {
 };
 
 const hoverSegment = function () {
-  const segments = SVG.find(".iwr-vis-segment-item");
+  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected != 1) {
     segments.removeClass("selected").removeClass("hovered");
@@ -729,7 +733,7 @@ const leaveSegment = function () {
     this.findOne(".iwr-vis-segment-item-text").fill("#000000");
     this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0 });
   }
-  const segments = SVG.find(".iwr-vis-segment-item");
+  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected === 1) {
     return;
@@ -751,11 +755,11 @@ function applyWeightedHighlights(items, weights) {
 
 const highlightSegments = function () {
   applyWeightedHighlights(
-    SVG.find(".iwr-vis-method-item"),
+    SVG("#iwr-vis-menu-svg").find(".iwr-vis-method-item"),
     this.data("method_weights")
   );
   applyWeightedHighlights(
-    SVG.find(".iwr-vis-application-item"),
+    SVG("#iwr-vis-menu-svg").find(".iwr-vis-application-item"),
     this.data("application_weights")
   );
 };
@@ -873,7 +877,7 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
     });
     group.click(function () {
       this.addClass("frozenSegments");
-      SVG.find(".iwr-vis-group-item").hide();
+      SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").hide();
       this.parent()
         .findOne(".iwr-vis-group-card")
         .front()
@@ -955,7 +959,7 @@ function addGroupCard(svg, name, colour) {
   group_card.click(function () {
     this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
     this.css({ opacity: 0, visibility: "hidden" });
-    SVG.find(".iwr-vis-group-item").show();
+    SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
   });
   let dy = 0;
   for (const textLine of name[1].split("\n")) {
@@ -999,7 +1003,7 @@ function addGroupCard(svg, name, colour) {
 
 const zoomGroups = function (e) {
   // only zoom in/out if all groups are displayed
-  const segments = SVG.find(".iwr-vis-segment-item");
+  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
   const nHovered = segments.hasClass("hovered").filter(Boolean).length;
   if (nHovered != segments.length) {
     return;
@@ -1020,8 +1024,12 @@ const zoomGroups = function (e) {
 };
 
 const sortGroupsByProf = function () {
-  const group = SVG.find(".iwr-vis-settings-menu-sort-by-group");
-  const prof = SVG.find(".iwr-vis-settings-menu-sort-by-prof");
+  const group = SVG("#iwr-vis-menu-svg").find(
+    ".iwr-vis-settings-menu-sort-by-group"
+  );
+  const prof = SVG("#iwr-vis-menu-svg").find(
+    ".iwr-vis-settings-menu-sort-by-prof"
+  );
   if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
     prof.fill("#777777");
     group.fill("#ffffff");
