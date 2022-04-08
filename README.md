@@ -9,6 +9,7 @@ Prototype implementation for an interactive presentation of the IWR and its acti
 Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
 
 - [main](https://github.com/ssciwr/iwr-interactive-visualization/tree/main) branch contains the source code
+  - [src/js/data.ts](src/js/data.ts) contains the contents (group data, applications, methods, weights)
 - [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch contains the generated website
 - uses [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/) to manage the build and dependencies
 
@@ -16,7 +17,7 @@ Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
 
 On every commit to the main branch:
 
-- [deploy.yml](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml) action builds website & deploys to [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages)
+- [deploy.yml](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml) action builds website & deploys to the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
 - github pages hosts these files at [ssciwr.github.io/iwr-interactive-visualization](https://ssciwr.github.io/iwr-interactive-visualization/)
 
 ## How to build locally
