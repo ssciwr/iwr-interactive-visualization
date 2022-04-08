@@ -2,16 +2,28 @@ import webpack from "webpack";
 import shell from "shelljs";
 
 // copy html & css to dist folder
-shell.mkdir("p", "./dist");
+shell.mkdir("-p", "./dist");
 shell.cp("./src/html/index.html", "./dist/.");
 shell.cp("./src/css/style.css", "./dist/.");
 
-// create bundle from javascript using webpack
+// create javascript bundle from typescript sources using webpack
 const webpackConfig = {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
     filename: "bundle.js",
     path: shell.pwd() + "/dist",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   mode: "production",
 };
