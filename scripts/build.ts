@@ -1,7 +1,14 @@
-import webpack from "webpack";
-import shell from "shelljs";
-import ConvertTiff from "tiff-to-png";
-import glob from "glob";
+import { webpack } from "webpack";
+import { Configuration } from "webpack";
+import * as shell from "shelljs";
+// import { ConvertTiff } from "tiff-to-png";
+var ConvertTiff = require("tiff-to-png");
+import { glob } from "glob";
+import { createSvgFile } from "../src/svg/svg";
+const fs = require("fs");
+
+// generate SVG
+fs.writeFileSync("./tmpsvg.svg", createSvgFile());
 
 // copy html & css to dist folder
 shell.mkdir("-p", "./dist");
@@ -13,14 +20,14 @@ const options = {
   cwd: ".",
 };
 const converter = new ConvertTiff();
-const forFiles = (err, files) => {
+const forFiles = (err: any, files: any) => {
   if (err) console.log(err);
   converter.convertArray(files, "./dist");
 };
 glob("**/img/*.tif", options, forFiles);
 
 // create javascript bundle from typescript sources using webpack
-const webpackConfig = {
+const webpackConfig: Configuration = {
   entry: "./src/index.ts",
   output: {
     filename: "bundle.js",
@@ -41,7 +48,7 @@ const webpackConfig = {
   mode: "production",
 };
 
-webpack(webpackConfig, (err, stats) => {
+webpack(webpackConfig, (err: any, stats: any) => {
   if (err || stats.hasErrors()) {
     console.error(err);
   }
