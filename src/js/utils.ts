@@ -19,6 +19,11 @@ export function shortenName(full_name: string, newline: boolean) {
   return short_name.join(" ");
 }
 
+export function getFileFromName(full_name: string) {
+  // filename is "SURNAME_sw/0.png" with any ' chars first removed from SURNAME
+  return full_name.split(" ").at(-1).split("'").join("") + "_sw/0.png";
+}
+
 export function countLines(str: string) {
   return (str.match(/\n/g) || "").length + 1;
 }

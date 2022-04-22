@@ -404,21 +404,16 @@ function addGroupCard(svg, name, colour) {
     dy += 13;
   }
   group_card.css({ opacity: 0, visibility: "hidden" });
-  if (name[1] === "Visual Computing") {
-    group_card
-      .image("https://vcg.iwr.uni-heidelberg.de/static/images/sadlo.jpg")
-      .size(80, 80)
-      .move(160, 120);
-  }
+  group_card.image(Utils.getFileFromName(name[0])).size(80, 80).move(160, 145);
   group_card
     .text(name[0])
     .x(200)
-    .y(205)
+    .y(230)
     .attr("startOffset", "50%")
     .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
     .attr("font-size", "0.75em");
-  const blurb = group_card.foreignObject(180, 120).attr({ x: 110, y: 230 });
+  const blurb = group_card.foreignObject(180, 95).attr({ x: 110, y: 255 });
   blurb.add(
     SVG(
       '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html">' +
