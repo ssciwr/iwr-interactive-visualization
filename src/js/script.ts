@@ -401,7 +401,7 @@ function addGroupCard(svg, name, colour) {
   const close_button_x =
     200 + card_size / 2 - close_button_size - close_button_padding;
   const close_button_y = 200 - card_size / 2 + close_button_padding;
-  const close_button = group_card.group().addClass("iwr-vis-close-button");
+  const close_button = group_card.group().addClass("iwr-vis-clickable");
   close_button
     .rect(close_button_size, close_button_size)
     .move(close_button_x, close_button_y)
@@ -528,11 +528,15 @@ function addSettings(svg) {
     .rect(16, 16)
     .radius(radius)
     .stroke(line_colour)
-    .fill(bg_colour);
-  settings_button.line(4, 12, 12, 12);
-  settings_button.line(4, 8, 12, 8);
-  settings_button.line(4, 4, 12, 4);
-  settings_button.stroke(line_colour).fill("none");
+    .fill(bg_colour)
+    .attr({ "stroke-width": 0.5 });
+  settings_button.line(4, 12, 12, 12).attr({ "stroke-width": 0.5 });
+  settings_button.line(4, 8, 12, 8).attr({ "stroke-width": 0.5 });
+  settings_button.line(4, 4, 12, 4).attr({ "stroke-width": 0.5 });
+  settings_button
+    .stroke(line_colour)
+    .fill("none")
+    .attr({ "stroke-width": 0.5 });
   settings_button.move(400 - 16 - padding, padding);
   // menu
   const settings_menu = settings
@@ -542,7 +546,8 @@ function addSettings(svg) {
     .rect(width, height)
     .radius(radius)
     .stroke(line_colour)
-    .fill(bg_colour);
+    .fill(bg_colour)
+    .attr({ "stroke-width": 0.5 });
   // group sorting options
   settings_menu
     .text("Sort by")
@@ -550,13 +555,14 @@ function addSettings(svg) {
     .y(0)
     .attr("font-size", "0.5em")
     .fill(line_colour);
-  const sort_by_group = settings_menu.group();
+  const sort_by_group = settings_menu.group().addClass("iwr-vis-clickable");
   sort_by_group
     .rect(8, 8)
     .radius(1)
     .stroke(line_colour)
     .fill(bg_colour)
     .move(12, 24)
+    .attr({ "stroke-width": 0.5 })
     .addClass("iwr-vis-settings-menu-sort-by-group");
   sort_by_group
     .text("group name")
@@ -565,13 +571,14 @@ function addSettings(svg) {
     .attr("font-size", "0.5em")
     .fill(line_colour);
   sort_by_group.click(sortGroupsByProf);
-  const sort_by_prof = settings_menu.group();
+  const sort_by_prof = settings_menu.group().addClass("iwr-vis-clickable");
   sort_by_prof
     .rect(8, 8)
     .radius(1)
     .stroke(line_colour)
     .fill(line_colour)
     .move(12, 24 + 12)
+    .attr({ "stroke-width": 0.5 })
     .addClass("iwr-vis-settings-menu-sort-by-prof");
   sort_by_prof
     .text("professor name")
