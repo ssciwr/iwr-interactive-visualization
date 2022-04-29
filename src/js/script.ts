@@ -389,31 +389,34 @@ function addGroupCard(svg, name, colour) {
     this.css({ opacity: 0, visibility: "hidden" });
     SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
   });
-  let dy = 0;
+  let y = 99;
   for (const textLine of name[1].split("\n")) {
     group_card
       .text(textLine)
       .x(200)
-      .y(99 + dy)
+      .y(y)
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
       .fill("#0000ff")
       .attr("font-weight", "bold")
       .attr("font-size", "0.75em")
       .linkTo(name[2]);
-    dy += 13;
+    y += 13;
   }
   group_card.css({ opacity: 0, visibility: "hidden" });
-  group_card.image(Utils.getFileFromName(name[0])).size(80, 80).move(160, 145);
+  y += 10;
+  group_card.image(Utils.getFileFromName(name[0])).size(80, 80).move(160, y);
+  y += 84;
   group_card
     .text(name[0])
     .x(200)
-    .y(230)
+    .y(y)
     .attr("startOffset", "50%")
     .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
     .attr("font-size", "0.75em");
-  const blurb = group_card.foreignObject(180, 95).attr({ x: 110, y: 255 });
+  y += 25;
+  const blurb = group_card.foreignObject(180, 95).attr({ x: 110, y: y });
   blurb.add(
     SVG(
       '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html">' +
