@@ -31,6 +31,10 @@ body {
   cursor: pointer;
 }
 
+.iwr-vis-close-button {
+  cursor: pointer;
+}
+
 .iwr-vis-group-item:hover .iwr-vis-group-item-box {
   fill: #cccccc;
 }

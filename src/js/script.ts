@@ -373,10 +373,22 @@ function addGroups(svg, names, method_weights, application_weights, colour) {
   }
 }
 
+const hideGroupCard = function () {
+  const card = this.parent();
+  card.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
+  card.css({ opacity: 0, visibility: "hidden" });
+  SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
+};
+
 function addGroupCard(svg, name, colour) {
   const group_card = svg.group().addClass("iwr-vis-group-card");
   const card_size = 210;
-  group_card.circle(316).cx(200).cy(200).fill("#ffffff").stroke("none");
+  const bg_circle = group_card
+    .circle(316)
+    .cx(200)
+    .cy(200)
+    .fill("#ffffff")
+    .stroke("none");
   group_card
     .rect(card_size, card_size)
     .cx(200)
@@ -384,11 +396,37 @@ function addGroupCard(svg, name, colour) {
     .fill(colour)
     .stroke("none")
     .filterWith(shadowFilter);
-  group_card.click(function () {
-    this.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
-    this.css({ opacity: 0, visibility: "hidden" });
-    SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
-  });
+  const close_button_size = 6;
+  const close_button_padding = 3;
+  const close_button_x =
+    200 + card_size / 2 - close_button_size - close_button_padding;
+  const close_button_y = 200 - card_size / 2 + close_button_padding;
+  const close_button = group_card.group().addClass("iwr-vis-close-button");
+  close_button
+    .rect(close_button_size, close_button_size)
+    .move(close_button_x, close_button_y)
+    .stroke("#ffffff")
+    .fill("#ffffff");
+  close_button
+    .line(
+      close_button_x,
+      close_button_y,
+      close_button_x + close_button_size,
+      close_button_y + close_button_size
+    )
+    .stroke("#777777")
+    .attr({ "stroke-width": 0.5 });
+  close_button
+    .line(
+      close_button_x + close_button_size,
+      close_button_y,
+      close_button_x,
+      close_button_y + close_button_size
+    )
+    .stroke("#777777")
+    .attr({ "stroke-width": 0.5 });
+  bg_circle.click(hideGroupCard);
+  close_button.click(hideGroupCard);
   let y = 99;
   for (const textLine of name[1].split("\n")) {
     group_card
