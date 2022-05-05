@@ -9,9 +9,9 @@ shell.cp("./src/html/index.html", "./dist/.");
 shell.cp("./src/css/style.css", "./dist/.");
 
 // copy json data to dist/fileadmin/iwr_vis
-shell.mkdir("-p", "./dist/fileadmin");
-shell.mkdir("-p", "./dist/fileadmin/iwr_vis");
-shell.cp("./src/data/data.json", "./dist/fileadmin/iwr_vis/.");
+const data_dir = "./dist/fileadmin/templates/iwr_vis";
+shell.mkdir("-p", data_dir);
+shell.cp("./src/data/data.json", data_dir);
 
 // convert tif images to png & write to dist/fileadmin/iwr_vis folder
 const options = {
@@ -20,7 +20,7 @@ const options = {
 const converter = new ConvertTiff();
 const forFiles = (err, files) => {
   if (err) console.log(err);
-  converter.convertArray(files, "./dist/fileadmin/iwr_vis");
+  converter.convertArray(files, data_dir);
 };
 glob("**/img/*.tif", options, forFiles);
 
