@@ -20,6 +20,15 @@ On every commit to the main branch:
 - [deploy.yml](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml) action builds website & deploys to the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
 - github pages hosts these files at [ssciwr.github.io/iwr-interactive-visualization](https://ssciwr.github.io/iwr-interactive-visualization/)
 
+## How to deploy
+
+- copy the files from the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
+- contents can be edited in [data.json](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/fileadmin/templates/iwr_vis/data.json)
+- to change the location of the image files
+  - edit [image_base_url](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/fileadmin/templates/iwr_vis/data.json#L2)
+- to change the location of data.json
+  - find `"fileadmin/templates/iwr_vis/data.json"` in [bundle.js](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/bundle.js) and replace with desired url
+
 ## How to build locally
 
 - clone this repo
