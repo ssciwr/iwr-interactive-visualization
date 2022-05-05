@@ -33,17 +33,17 @@ export function transpose<T>(m: T[][]) {
   return m[0].map((x, i) => m.map((x) => x[i]));
 }
 
-// get indices of sorted array of arrays, sorted by given sub-array index
-export function sorted_indices<T>(array: T[][], index: number) {
+// get indices of sorted array of objects, sorted by given member of object
+export function sorted_indices(array: any, member: string) {
   const len = array.length;
   const indices = new Array(len);
   for (let i = 0; i < len; ++i) {
     indices[i] = i;
   }
   indices.sort(function (a, b) {
-    return array[a][index] < array[b][index]
+    return array[a][member] < array[b][member]
       ? -1
-      : array[a][index] > array[b][index]
+      : array[a][member] > array[b][member]
       ? 1
       : 0;
   });
