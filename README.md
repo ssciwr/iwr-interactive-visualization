@@ -9,7 +9,7 @@ Prototype implementation for an interactive presentation of the IWR and its acti
 Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
 
 - [main](https://github.com/ssciwr/iwr-interactive-visualization/tree/main) branch contains the source code
-  - [src/js/data.ts](src/js/data.ts) contains the contents (group data, applications, methods, weights)
+  - contents can be edited in [src/data/data.json](https://github.com/ssciwr/iwr-interactive-visualization/blob/main/src/data/data.json)
 - [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch contains the generated website
 - uses [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/) to manage the build and dependencies
 
