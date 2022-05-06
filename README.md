@@ -29,7 +29,9 @@ On every commit to the main branch:
 - to change the location of data.json
   - find `"fileadmin/templates/iwr_vis/data.json"` in [bundle.js](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/bundle.js) and replace with desired url
 
-## How to build locally
+## How to build and preview locally
+
+First time:
 
 - clone this repo
   - `git clone https://github.com/ssciwr/iwr-interactive-visualization.git`
@@ -43,6 +45,17 @@ On every commit to the main branch:
   - ubuntu: `sudo apt install nodejs npm`
 - install website node dependencies
   - `npm install`
-- build website
+
+Subsequently:
+
+- build from source, start local http-server & open website in browser
+  - `npm run preview`
+
+Other commands:
+
+- remove any existing build
+  - `npm run clean`
+- build website in `dist` folder
   - `npm run build`
-- website will be built in `dist` folder
+- start a http-server serving files from the `dist` folder at `http://localhost:8080/` & open in browser
+  - `npm run serve`

@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "preview": "npm run build && npm run serve",
+    "serve": "http-server dist/ -c-1 -p 0 -o",
     "build": "npm run clean && node scripts/build.mjs",
     "clean": "node scripts/clean.mjs"
   },
@@ -13,10 +15,11 @@
   },
   "dependencies": {
     "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.1.2",
-    "tiff-to-png": "2.0.2"
+    "@svgdotjs/svg.js": "3.1.2"
   },
   "devDependencies": {
+    "http-server": "14.1.0",
+    "tiff-to-png": "2.0.2",
     "shelljs": "0.8.5",
     "svgdom": "0.1.10",
     "ts-loader": "9.3.0",
