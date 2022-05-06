@@ -11,8 +11,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a.iwr-vis:link {
+  text-decoration: none;
+}
+
+a.iwr-vis:visited {
+  text-decoration: none;
+}
+
+a.iwr-vis:hover {
+  text-decoration: none;
+}
+
+a.iwr-vis:active {
+  text-decoration: none;
+}
+
 .iwr-vis-group-card-html {
   font-size: 6px;
+  line-height: 6px;
 }
 
 .iwr-vis-menu {

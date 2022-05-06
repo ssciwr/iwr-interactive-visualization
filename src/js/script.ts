@@ -240,7 +240,7 @@ function addSegments(
       .addClass("iwr-vis-segment-item-text")
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
-      .attr("font-size", "0.55em");
+      .attr("font-size", "8.8px");
   }
   // label
   const groupLabel = svg.group();
@@ -255,7 +255,7 @@ function addSegments(
     .text(label)
     .attr("startOffset", "50%")
     .attr("text-anchor", "middle")
-    .attr("font-size", "0.66em")
+    .attr("font-size", "10.56px")
     .attr("fill", color)
     .attr("font-weight", "bold");
   const arrow = groupLabel.marker(4, 4, function (add) {
@@ -351,7 +351,7 @@ function addGroups(
           .attr("text-anchor", "middle")
           .fill("#0000ff")
           .attr("font-weight", "bold")
-          .attr("font-size", "0.75em")
+          .attr("font-size", "12px")
           .hide();
         txtTop += dy;
       }
@@ -364,7 +364,7 @@ function addGroups(
         .attr("startOffset", "50%")
         .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
-        .attr("font-size", "0.75em")
+        .attr("font-size", "12px")
         .hide();
     }
     // large professor name
@@ -379,7 +379,7 @@ function addGroups(
         .addClass("iwr-vis-group-item-profname-large")
         .attr("startOffset", "50%")
         .attr("text-anchor", "middle")
-        .attr("font-size", "1.25em");
+        .attr("font-size", "20px");
       dy += 25;
     }
     group.size(65, 20);
@@ -452,7 +452,7 @@ function addGroupCard(svg, member, color, image_base_url) {
       .attr("text-anchor", "middle")
       .fill("#0000ff")
       .attr("font-weight", "bold")
-      .attr("font-size", "0.75em")
+      .attr("font-size", "12px")
       .linkTo(member.website);
     y += 13;
   }
@@ -470,7 +470,7 @@ function addGroupCard(svg, member, color, image_base_url) {
     .attr("startOffset", "50%")
     .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
-    .attr("font-size", "0.75em");
+    .attr("font-size", "12px");
   y += 25;
   const blurb = group_card.foreignObject(180, 95).attr({ x: 110, y: y });
   blurb.add(
@@ -568,7 +568,7 @@ function addSettings(svg) {
     .text("Sort by")
     .x(6)
     .y(0)
-    .attr("font-size", "0.5em")
+    .attr("font-size", "8px")
     .fill(line_color);
   const sort_by_group = settings_menu.group().addClass("iwr-vis-clickable");
   sort_by_group
@@ -583,7 +583,7 @@ function addSettings(svg) {
     .text("group name")
     .x(24)
     .y(16)
-    .attr("font-size", "0.5em")
+    .attr("font-size", "8px")
     .fill(line_color);
   sort_by_group.click(sortGroupsByProf);
   const sort_by_prof = settings_menu.group().addClass("iwr-vis-clickable");
@@ -599,7 +599,7 @@ function addSettings(svg) {
     .text("professor name")
     .x(24)
     .y(28)
-    .attr("font-size", "0.5em")
+    .attr("font-size", "8px")
     .fill(line_color);
   sort_by_prof.click(sortGroupsByProf);
   settings_menu.transform({
