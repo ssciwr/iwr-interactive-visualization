@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 400 400"
+   id="iwr-vis-menu-svg"
+   version="1.1"
+   sodipodi:docname="iwr-vis-menu2.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:svgjs="http://svgjs.dev/svgjs">
+  <sodipodi:namedview
+     id="namedview3090"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="4.365"
+     inkscape:cx="210.99656"
+     inkscape:cy="208.93471"
+     inkscape:window-width="3840"
+     inkscape:window-height="2074"
+     inkscape:window-x="0"
+     inkscape:window-y="52"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="iwr-vis-menu-svg" />
+  <rect
+     width="400"
+     height="400"
+     x="0"
+     y="0"
+     fill="#ffffff"
+     stroke="#ffffff"
+     id="rect2" />
+  <circle
+     r="158"
+     cx="200"
+     cy="200"
+     fill="none"
+     stroke="none"
+     id="circle6" />
+  <path
+     d="M 279,63.167986 A 158,158 0 0 1 358,200 h 20 A 178,178 0 0 0 289,45.847478 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#e13535"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1002)"
+     id="path8"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 282.5,57.105808 A 165,165 0 0 1 365,200"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1003" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text15"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1003"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath13"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan11"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Mathematical and Numerical Analysis</tspan></textPath></text>
+  <defs
+     id="defs58">
+    <filter
+       id="SvgjsFilter1002"
+       x="-0.029761719"
+       y="-0.019113603"
+       width="1.0580445"
+       height="1.0372774">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1000"
+         result="SvgjsFeGaussianBlur1000"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1001"
+         result="SvgjsFeBlend1001"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1000" />
+    </filter>
+    <filter
+       id="SvgjsFilter1006"
+       x="-0.029761719"
+       y="-0.018163829"
+       width="1.0580445"
+       height="1.0372774">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1004"
+         result="SvgjsFeGaussianBlur1004"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1005"
+         result="SvgjsFeBlend1005"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1004" />
+    </filter>
+    <filter
+       id="SvgjsFilter1010"
+       x="-0.016552866"
+       y="-0.071570419"
+       width="1.0331057"
+       height="1.139578">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1008"
+         result="SvgjsFeGaussianBlur1008"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1009"
+         result="SvgjsFeBlend1009"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1008" />
+    </filter>
+    <filter
+       id="SvgjsFilter1014"
+       x="-0.028282828"
+       y="-0.018163829"
+       width="1.0580445"
+       height="1.0372774">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1012"
+         result="SvgjsFeGaussianBlur1012"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1013"
+         result="SvgjsFeBlend1013"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1012" />
+    </filter>
+    <filter
+       id="SvgjsFilter1018"
+       x="-0.028282828"
+       y="-0.019113603"
+       width="1.0580445"
+       height="1.0372774">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1016"
+         result="SvgjsFeGaussianBlur1016"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1017"
+         result="SvgjsFeBlend1017"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1016" />
+    </filter>
+    <marker
+       markerWidth="4"
+       markerHeight="4"
+       refX="2"
+       refY="2"
+       viewBox="0 0 4 4"
+       orient="auto"
+       id="SvgjsMarker1021">
+      <polyline
+         points="0,0 4,2 0,4"
+         fill="#e13535"
+         stroke="none"
+         id="polyline34" />
+    </marker>
+    <filter
+       id="SvgjsFilter1024"
+       x="-0.025335311"
+       y="-0.021140477"
+       width="1.050196"
+       height="1.0418849">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1022"
+         result="SvgjsFeGaussianBlur1022"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1023"
+         result="SvgjsFeBlend1023"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1022" />
+    </filter>
+    <filter
+       id="SvgjsFilter1028"
+       x="-0.050347222"
+       y="-0.017186898"
+       width="1.0979681"
+       height="1.0348702">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1026"
+         result="SvgjsFeGaussianBlur1026"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1027"
+         result="SvgjsFeBlend1027"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1026" />
+    </filter>
+    <filter
+       id="SvgjsFilter1032"
+       x="-0.018087548"
+       y="-0.034040091"
+       width="1.0372224"
+       height="1.066217">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1030"
+         result="SvgjsFeGaussianBlur1030"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1031"
+         result="SvgjsFeBlend1031"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1030" />
+    </filter>
+    <filter
+       id="SvgjsFilter1036"
+       x="-0.019134871"
+       y="-0.034040091"
+       width="1.0372224"
+       height="1.066217">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1034"
+         result="SvgjsFeGaussianBlur1034"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1035"
+         result="SvgjsFeBlend1035"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1034" />
+    </filter>
+    <filter
+       id="SvgjsFilter1040"
+       x="-0.04762084"
+       y="-0.017186898"
+       width="1.0979681"
+       height="1.0348702">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1038"
+         result="SvgjsFeGaussianBlur1038"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1039"
+         result="SvgjsFeBlend1039"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1038" />
+    </filter>
+    <filter
+       id="SvgjsFilter1044"
+       x="-0.024860706"
+       y="-0.021140477"
+       width="1.050196"
+       height="1.0418849">
+      <feGaussianBlur
+         id="SvgjsFeGaussianBlur1042"
+         result="SvgjsFeGaussianBlur1042"
+         in="SourceAlpha"
+         stdDeviation="1 1" />
+      <feBlend
+         id="SvgjsFeBlend1043"
+         result="SvgjsFeBlend1043"
+         in="SourceGraphic"
+         in2="SvgjsFeGaussianBlur1042" />
+    </filter>
+    <marker
+       markerWidth="4"
+       markerHeight="4"
+       refX="2"
+       refY="2"
+       viewBox="0 0 4 4"
+       orient="auto"
+       id="SvgjsMarker1047">
+      <polyline
+         points="0,0 4,2 0,4"
+         fill="#499bce"
+         stroke="none"
+         id="polyline55" />
+    </marker>
+  </defs>
+  <path
+     d="m 358,200 a 158,158 0 0 1 -79,136.83201 l 10,17.32051 A 178,178 0 0 0 378,200 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#e13535"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1006)"
+     id="path60"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 285,347.22432 A 170,170 0 0 0 370,200"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1007" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text67"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1007"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath65"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan63"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Numerical Algorithms and Software</tspan></textPath></text>
+  <path
+     d="m 279,336.83201 a 158,158 0 0 1 -158,0 l -10,17.32051 a 178,178 0 0 0 178,0 z"
+     class="iwr-vis-segment-item-arc"
+     fill="#e13535"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1010)"
+     id="path71"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="m 115,347.22432 a 170,170 0 0 0 170,0"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1011" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text78"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1011"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath76"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan74"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Data Analysis and Graphics</tspan></textPath></text>
+  <path
+     d="M 121,336.83201 A 158,158 0 0 1 42,200 H 22 a 178,178 0 0 0 89,154.15252 z"
+     class="iwr-vis-segment-item-arc"
+     fill="#e13535"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1014)"
+     id="path82"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="m 30,200 a 170,170 0 0 0 85,147.22432"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1015" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text89"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1015"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath87"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan85"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Machine Learning and Computer Vision</tspan></textPath></text>
+  <path
+     d="M 42,200 A 158,158 0 0 1 121,63.167986 L 111,45.847478 A 178,178 0 0 0 22,200 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#e13535"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1018)"
+     id="path93"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 35,200 A 165,165 0 0 1 117.5,57.105808"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1019" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text100"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1019"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath98"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan96"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Arithmetic, Geometry and Topology</tspan></textPath></text>
+  <path
+     d="m 122.75384,62.170286 a 158,158 0 0 1 154.49232,0 l 9.778,-17.446799 a 178,178 0 0 0 -174.04832,0 z"
+     fill="#ffffff"
+     id="path104" />
+  <path
+     d="m 117.5,57.105808 a 165,165 0 0 1 165,0"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1020" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text111"
+     style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:10px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1020"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="10.56px"
+       fill="#e13535"
+       font-weight="bold"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath109"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan107"
+         style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:10px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">METHODS</tspan></textPath></text>
+  <path
+     d="M 230.61557,34.813176 A 168,168 0 0 1 276.2704,50.310904"
+     fill="none"
+     stroke="#e13535"
+     stroke-width="2"
+     marker-end="url(#SvgjsMarker1021)"
+     id="path113" />
+  <path
+     d="M 169.38443,34.813176 A 168,168 0 0 0 123.7296,50.310904"
+     fill="none"
+     stroke="#e13535"
+     stroke-width="2"
+     marker-end="url(#SvgjsMarker1021)"
+     id="path115" />
+  <path
+     d="m 277.23131,39.627542 a 178,178 0 0 1 96.30586,120.763728 l 19.49856,-4.45041 A 198,198 0 0 0 285.90898,21.608164 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1024)"
+     id="path119"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 280.26849,33.320759 A 185,185 0 0 1 380.36166,158.83363"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1025" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text126"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1025"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath124"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan122"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Molecular Material Science</tspan></textPath></text>
+  <path
+     d="M 373.53717,160.39127 A 178,178 0 0 1 339.166,310.98118 l 15.63663,12.4698 a 198,198 0 0 0 38.2331,-167.51012 z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1028)"
+     id="path130"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 348.54798,318.46306 A 190,190 0 0 0 385.2363,157.72102"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1029" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text137"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1029"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath135"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan133"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Medicine and Bioscience</tspan></textPath></text>
+  <path
+     d="M 339.166,310.98118 A 178,178 0 0 1 200,378 v 20 a 198,198 0 0 0 154.80263,-74.54902 z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1032)"
+     id="path141"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 200,390 A 190,190 0 0 0 348.54798,318.46306"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1033" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text148"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1033"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath146"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan144"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Humanities</tspan></textPath></text>
+  <path
+     d="M 200,378 A 178,178 0 0 1 60.833996,310.98118 l -15.63663,12.4698 A 198,198 0 0 0 200,398 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1036)"
+     id="path152"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 51.452018,318.46306 A 190,190 0 0 0 200,390"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1037" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text159"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1037"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath157"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan155"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Astrophysics</tspan></textPath></text>
+  <path
+     d="M 60.833996,310.98118 A 178,178 0 0 1 26.462832,160.39127 L 6.9642734,155.94086 A 198,198 0 0 0 45.197366,323.45098 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1040)"
+     id="path163"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 14.763697,157.72102 A 190,190 0 0 0 51.452018,318.46306"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1041" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text170"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1041"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath168"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan166"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Environmental Sciences</tspan></textPath></text>
+  <path
+     d="M 26.462832,160.39127 A 178,178 0 0 1 122.76869,39.627542 L 114.09102,21.608164 A 198,198 0 0 0 6.9642734,155.94086 Z"
+     class="iwr-vis-segment-item-arc"
+     fill="#499bce"
+     stroke="#ffffff"
+     stroke-width="0"
+     filter="url(#SvgjsFilter1044)"
+     id="path174"
+     style="stroke-width:0.8;stroke-miterlimit:4;stroke-dasharray:none" />
+  <path
+     d="M 19.638336,158.83363 A 185,185 0 0 1 119.73151,33.320759"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1045" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text181"
+     style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1045"
+       class="iwr-vis-segment-item-text"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="8.8px"
+       fill="#000000"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath179"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan177"
+         style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:8.26666667px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Engineering</tspan></textPath></text>
+  <path
+     d="m 124.52877,38.791768 a 178,178 0 0 1 150.94246,0 l 8.47991,-18.113284 a 198,198 0 0 0 -167.90228,0 z"
+     fill="#ffffff"
+     id="path185" />
+  <path
+     d="m 119.73151,33.320759 a 185,185 0 0 1 160.53698,0"
+     fill="none"
+     stroke="none"
+     id="SvgjsPath1046" />
+  <text
+     svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+     id="text192"
+     style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:10px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><textPath
+       xlink:href="#SvgjsPath1046"
+       startOffset="50%"
+       text-anchor="middle"
+       font-size="10.56px"
+       fill="#499bce"
+       font-weight="bold"
+       svgjs:data="{&quot;leading&quot;:&quot;1.3&quot;}"
+       id="textPath190"><tspan
+         dy="0"
+         x="0"
+         svgjs:data="{&quot;newLined&quot;:true}"
+         id="tspan188"
+         style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:10px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">APPLICATIONS</tspan></textPath></text>
+  <path
+     d="m 242.2908,16.818428 a 188,188 0 0 1 30.30278,9.762506"
+     fill="none"
+     stroke="#499bce"
+     stroke-width="2"
+     marker-end="url(#SvgjsMarker1047)"
+     id="path194" />
+  <path
+     d="m 157.7092,16.818428 a 188,188 0 0 0 -30.30278,9.762506"
+     fill="none"
+     stroke="#499bce"
+     stroke-width="2"
+     marker-end="url(#SvgjsMarker1047)"
+     id="path196" />
+</svg>

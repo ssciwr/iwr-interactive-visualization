@@ -2,13 +2,24 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "iwr";
+  src: url("TradeGothicLT.woff2") format("woff");
+}
+
+@font-face {
+  font-family: "iwr";
+  src: url("TradeGothicLT-BoldTwo.woff2") format("woff");
+  font-weight: bold;
+}
+
 .iwr-vis {
   position: relative;
   margin: 0 auto;
   width: 100vmin;
   height: 100vmin;
   background: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: iwr, Arial, Helvetica, sans-serif;
 }
 
 a.iwr-vis:link {

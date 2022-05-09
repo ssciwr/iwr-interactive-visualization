@@ -674,6 +674,7 @@ function create_iwr_vis(data) {
   resetAll();
   // settings menu
   addSettings(svg);
+  console.log(svg.svg());
 }
 
 window.onload = function () {
