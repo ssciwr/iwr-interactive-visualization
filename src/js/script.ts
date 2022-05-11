@@ -204,8 +204,6 @@ function addSegments(
   width,
   segmentClass
 ) {
-  console.log(names);
-  console.log(groups);
   const delta = 360 / (names.length + 1);
   for (let i = 0; i < names.length; i++) {
     const group = svg
@@ -626,7 +624,6 @@ function create_iwr_vis(data) {
     .stroke("none");
   svg.on("wheel", zoomGroups);
 
-  console.log(data);
   // create array of weights from member data
   const method_weights = [];
   const application_weights = [];
@@ -634,9 +631,6 @@ function create_iwr_vis(data) {
     method_weights.push(member.method_weights);
     application_weights.push(member.application_weights);
   }
-
-  console.log(method_weights);
-  console.log(application_weights);
 
   // groups
   const groups = svg.group();
