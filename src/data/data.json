@@ -386,8 +386,8 @@
       "website": "https://vcg.iwr.uni-heidelberg.de/",
       "description": "Filip Sadlo received his master’s and PhD degrees in computer science from ETH Zurich. In 2014, after six years at the Visualization Research Center of the University of Stuttgart, he moved to Heidelberg to chair the Visual Computing Group at the IWR.",
       "image": "Sadlo_sw/0.png",
-      "method_weights": [0, 0.5, 1, 0, 1],
-      "application_weights": [0.25, 0.5, 0, 0.5, 0.25, 0.5]
+      "method_weights": [0, 1, 1, 0, 1],
+      "application_weights": [0, 0, 0, 0, 0, 0]
     },
     {
       "name": "Prof. Dr. Robert Scheichl",
