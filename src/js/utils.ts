@@ -6,16 +6,17 @@ export function shortenName(full_name: string, newline: boolean) {
       // title: keep full word
       short_name.push(word);
     } else {
+      // optionally add a newline after titles
+      if (newline === true) {
+        short_name.push("\n");
+        newline = false;
+      }
       // ignore if starts with "("
       if (word.at(0) != "(") {
         // name: keep only first initial & add .
         short_name.push(word[0] + ".");
       }
     }
-  }
-  // optionally add a newline before surname
-  if (newline === true) {
-    short_name.push("\n");
   }
   // surname: keep full word
   short_name.push(words.at(-1));
