@@ -14,11 +14,11 @@ export const group_names = [
     "Artur Andrzejak received a PhD degree in computer science from ETH Zurich and a habilitation degree from FU Berlin. He worked at HP Labs Palo Alto in 2001–2002, at ZIB Berlin in 2003–2009, and was co-leading Data Mining Dep. at I2R Singapore in 2010. Since 2010 he holds the Chair for Parallel and Distributed Systems at Institute of Computer Science.",
     "",
   ],
-   [
+  [
     "Prof. Dr. Dr. Till Bärnighausen",
     "Global Health",
     "https://www.klinikum.uni-heidelberg.de/heidelberger-institut-fuer-global-health/",
-    "Till Bärnighausen is Alexander von Humboldt Professor and Director of the Heidelberg Institute of Global Health (HIGH), Heidelberg University. He is also Adjunct Professor of Global Health at the Harvard T.H. Chan School of Public Health and Senior Faculty at the Wellcome Trust’s Africa Health Research Institute (AHRI) in South Africa.
+    "Till Bärnighausen is Alexander von Humboldt Professor and Director of the Heidelberg Institute of Global Health (HIGH), Heidelberg University. He is also Adjunct Professor of Global Health at the Harvard T.H. Chan School of Public Health and Senior Faculty at the Wellcome Trust’s Africa Health Research Institute (AHRI) in South Africa.",
     "",
   ],
   [
@@ -133,7 +133,7 @@ export const group_names = [
     "Vincent Heuveline is full professor for Scientific Computing and leads the Engineering Mathematics and Computing Lab (EMCL) at IWR. He is Director of the Computing Centre and Chief Information Officer (CIO) of Heidelberg University. Furthermore, he leads the Data Mining and Uncertainty Quantification group at the Heidelberg Institute for Theoretical Studies (HITS gGmbH).",
     "",
   ],
-    [
+  [
     "Prof. Dr. Bernhard Höfle",
     "3DGeo – 3D Geospatial\nData Processing",
     "https://uni-heidelberg.de/3dgeo",
@@ -147,7 +147,7 @@ export const group_names = [
     "Ahmad Hujeirat obtained his M.Sc. from the Technion, PhD in applied mathematics from Heidelberg University, habilitation in physics from Basel University and habilitation in Astronomy from Heidelberg University. After his stays at the MPIA, Basel University and the Weizmann Institute/Israel, he joined the IWR in 2011 to lead the independent CAAD-research group.",
     "",
   ],
-    [
+  [
     "Prof. Dr. Dr. h.c. mult. Willi Jäger",
     "Multiscale Analysis and Applications",
     "",
