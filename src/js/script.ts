@@ -459,7 +459,8 @@ function addGroupCard(svg, member, color, image_base_url) {
   group_card
     .image(image_base_url + member.image)
     .size(80, 80)
-    .move(160, y);
+    .move(160, y)
+    .linkTo(member.website);
   y += 84;
   group_card
     .text(member.name)
