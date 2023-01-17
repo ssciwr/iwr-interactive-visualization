@@ -422,7 +422,7 @@
       "website": "https://saezlab.org/",
       "description": "",
       "image": "",
-      "method_weights": [0, 0, 0, 0, 0],
+      "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
     {
