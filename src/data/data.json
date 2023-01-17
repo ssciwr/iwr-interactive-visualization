@@ -74,6 +74,15 @@
       "method_weights": [0, 0, 0, 0, 1],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
+     {
+      "name": "Dr. Tobias Buck",
+      "group": "AstroAI Lab",
+      "website": "https://astroai-lab.de/",
+      "description": ""  
+      "image": "",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
     {
       "name": "Prof. Dr. André Butz",
       "group": "Atmospheric Physics",
@@ -100,6 +109,15 @@
       "image": "Dreuw_sw/0.png",
       "method_weights": [0, 1, 0, 0, 0],
       "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Daniel Durstewitz",
+      "group": "Theoretical Neurosciences",
+      "website": "https://www.zi-mannheim.de/forschung/personen/person/1889.html",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
     },
     {
       "name": "Dr. Stefan Fischer",
@@ -326,6 +344,24 @@
       "method_weights": [0, 1, 0, 0, 0],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
+  {
+      "name": "Prof. Dr. Tilmann Plehn",
+      "group": "Particle Phenomenology and Machine Learning",
+      "website": "https://www.thphys.uni-heidelberg.de/~plehn/?visible=group",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+  {
+      "name": "Prof. Dr. Irina Podtergera",
+      "group": "Slavic Linguistics",
+      "website": "https://www.slav.uni-heidelberg.de/personal/ipodtergera.html",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
     {
       "name": "Jun. Prof. Dr. Maria Beatrice Pozzetti",
       "group": "Geometric Group Theory",
@@ -380,6 +416,15 @@
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
+  {
+      "name": "Prof. Dr. Julio Saez-Rodriguez",
+      "group": "Systems Biomedicine",
+      "website": "https://saezlab.org/",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
     {
       "name": "Prof. Dr. Filip Sadlo",
       "group": "Visual Computing",
@@ -433,15 +478,6 @@
       "image": "Wade_sw/0.png",
       "method_weights": [0, 0, 0, 0, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
-    },
-    {
-      "name": "Prof. Dr. Anna Wienhard",
-      "group": "Differential Geometry",
-      "website": "https://www.mathi.uni-heidelberg.de/~wienhard/",
-      "description": "Anna received her PhD from the University of Bonn and held positions at IAS, Chicago and Princeton before becoming Chair for Differential Geometry at Heidelberg. Anna holds an ERC Advanced Grant, is an AMS Fellow, and member of the Heidelberg Academy of Science and the BBAW. She is co-speaker of the Heidelberg Cluster of Excellence STRUCTURES.",
-      "image": "Wienhard_sw/0.png",
-      "method_weights": [0, 0, 0, 0, 1],
-      "application_weights": [0, 0, 0, 0, 0, 0]
     },
     {
       "name": "Jun. Prof. Dr. Jakob Zech",
