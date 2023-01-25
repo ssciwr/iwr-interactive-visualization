@@ -74,7 +74,7 @@
       "method_weights": [0, 0, 0, 0, 1],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
-     {
+    {
       "name": "Dr. Tobias Buck",
       "group": "AstroAI Lab",
       "website": "https://astroai-lab.de/",
@@ -344,7 +344,7 @@
       "method_weights": [0, 1, 0, 0, 0],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
-  {
+    {
       "name": "Prof. Dr. Tilmann Plehn",
       "group": "Particle Phenomenology\nand Machine Learning",
       "website": "https://www.thphys.uni-heidelberg.de/~plehn/?visible=group",
@@ -353,7 +353,7 @@
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [0, 0, 0, 0, 1, 0]
     },
-  {
+    {
       "name": "Prof. Dr. Irina Podtergera",
       "group": "Slavic Linguistics",
       "website": "https://www.slav.uni-heidelberg.de/personal/ipodtergera.html",
@@ -416,7 +416,7 @@
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
-  {
+    {
       "name": "Prof. Dr. Julio Saez-Rodriguez",
       "group": "Systems Biomedicine",
       "website": "https://saezlab.org/",
