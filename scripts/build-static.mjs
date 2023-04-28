@@ -1,8 +1,9 @@
+import fs from "fs";
 import shell from "shelljs";
 
 export function buildStatic() {
   // copy html, css to dist folder
-  shell.mkdir("-p", "./dist");
+  fs.mkdirSync("./dist", { recursive: true });
   shell.cp("./src/html/index.html", "./dist/.");
   shell.cp("./src/css/style.css", "./dist/.");
 

@@ -1,9 +1,10 @@
-import shell from "shelljs";
+import fs from "fs";
 import ConvertTiff from "tiff-to-png";
 import glob from "glob";
+import shell from "shelljs";
 
 const image_dir = "./dist/fileadmin/templates/iwr_vis";
-shell.mkdir("-p", image_dir);
+fs.mkdirSync(image_dir, { recursive: true });
 
 // convert tif images to png & write to dist/fileadmin/iwr_vis folder
 const options = {
