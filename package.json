@@ -28,7 +28,7 @@
     "svgdom": "0.1.13",
     "tiff-to-png": "2.0.2",
     "ts-loader": "9.4.2",
-    "typescript": "5.0.3",
+    "typescript": "5.0.4",
     "webpack": "5.81.0",
     "yaml": "2.2.1"
   }
