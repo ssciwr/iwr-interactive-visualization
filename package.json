@@ -30,6 +30,6 @@
     "ts-loader": "9.4.3",
     "typescript": "5.0.4",
     "webpack": "5.85.0",
-    "yaml": "2.2.2"
+    "yaml": "2.3.1"
   }
 }
