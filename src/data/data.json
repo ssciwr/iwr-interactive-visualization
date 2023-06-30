@@ -466,7 +466,7 @@
       "group": "Biological Data Science",
       "website": "https://www.cos.uni-heidelberg.de/en/research-groups/biological-data-science",
       "description": "Britta Velten obtained her PhD from ETH Zurich and the European Molecular Biology Laboratory (EMBL) working at the interface of statistics, machine learning and the life sciences. After 3 years as a Postdoc at the German Cancer Research Center (DKFZ) and the Wellcome Sanger Institute, she joined Heidelberg University as tenure-track professor in 2023.",
-      "image": "Velten_sw/0.png",
+      "image": "Velten_sw.png",
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
