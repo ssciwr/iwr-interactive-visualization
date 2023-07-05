@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.1.2"
+    "@svgdotjs/svg.js": "3.2.0"
   },
   "devDependencies": {
     "chokidar": "3.5.3",
