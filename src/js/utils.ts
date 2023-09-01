@@ -38,7 +38,10 @@ export function transpose<T>(m: T[][]) {
 }
 
 // get indices of sorted array of objects, sorted by given member of object
-export function sorted_indices(array: any, member: string) {
+export function sorted_indices(
+  array: Array<Record<string, object>>,
+  member: string
+) {
   const len = array.length;
   const indices = new Array(len);
   for (let i = 0; i < len; ++i) {
