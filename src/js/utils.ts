@@ -40,7 +40,7 @@ export function transpose<T>(m: T[][]) {
 // get indices of sorted array of objects, sorted by given member of object
 export function sorted_indices(
   array: Array<Record<string, object>>,
-  member: string
+  member: string,
 ) {
   const len = array.length;
   const indices = new Array(len);
@@ -70,7 +70,7 @@ function xy(radius: number, deg: number) {
 export function makeTextArc(
   radius: number,
   startAngle: number,
-  endAngle: number
+  endAngle: number,
 ) {
   const anticlockwise = startAngle > 70 && endAngle < 290;
   if (anticlockwise) {
@@ -82,7 +82,7 @@ export function makeTextArc(
   const p1 = xy(radius, endAngle);
   if (anticlockwise) {
     return ["M", p1.x, p1.y, "A", radius, radius, 0, 0, 0, p0.x, p0.y].join(
-      " "
+      " ",
     );
   }
   return ["M", p0.x, p0.y, "A", radius, radius, 0, 0, 1, p1.x, p1.y].join(" ");
@@ -91,7 +91,7 @@ export function makeTextArc(
 export function makeArrowArc(
   radius: number,
   startAngle: number,
-  endAngle: number
+  endAngle: number,
 ) {
   const p0 = xy(radius, startAngle);
   const p1 = xy(radius, endAngle);
@@ -116,7 +116,7 @@ export function makeSegment(
   radius: number,
   startAngle: number,
   endAngle: number,
-  width: number
+  width: number,
 ) {
   const rm = radius - width;
   const rp = radius + width;
@@ -154,7 +154,7 @@ export function makeSegment(
 export function nextGroupBoxIndex(
   p: { x: number; y: number },
   ncols: number,
-  nrows = 0
+  nrows = 0,
 ) {
   let x_max = ncols - 1;
   let x_min = 0;

@@ -15,12 +15,12 @@ let sort_by_group = false;
 
 const updateSegments = function () {
   for (const group_card of SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-group-card"
+    ".iwr-vis-group-card",
   )) {
     group_card.css({ opacity: "0", visibility: "hidden" });
   }
   for (const group_item of SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-group-item"
+    ".iwr-vis-group-item",
   )) {
     group_item.show();
   }
@@ -50,7 +50,7 @@ function updateGroups(
   show_all = false,
   zoom = 1,
   cx = 200,
-  cy = 200
+  cy = 200,
 ) {
   updateSegments();
   const items = SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item");
@@ -182,11 +182,11 @@ function applyWeightedHighlights(items, weights) {
 const highlightSegments = function () {
   applyWeightedHighlights(
     SVG("#iwr-vis-menu-svg").find(".iwr-vis-method-item"),
-    this.data("method_weights")
+    this.data("method_weights"),
   );
   applyWeightedHighlights(
     SVG("#iwr-vis-menu-svg").find(".iwr-vis-application-item"),
-    this.data("application_weights")
+    this.data("application_weights"),
   );
 };
 
@@ -202,7 +202,7 @@ function addSegments(
   color,
   radius,
   width,
-  segmentClass
+  segmentClass,
 ) {
   const delta = 360 / (names.length + 1);
   for (let i = 0; i < names.length; i++) {
@@ -222,7 +222,7 @@ function addSegments(
     });
     group
       .path(
-        Utils.makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width)
+        Utils.makeSegment(radius, (i + 0.5) * delta, (i + 1.5) * delta, width),
       )
       .addClass("iwr-vis-segment-item-arc")
       .fill(color)
@@ -266,8 +266,8 @@ function addSegments(
       Utils.makeArrowArc(
         radius,
         arrowPadding + txtAngle,
-        delta / 2 - arrowPadding
-      )
+        delta / 2 - arrowPadding,
+      ),
     )
     .fill("none")
     .stroke(color)
@@ -278,8 +278,8 @@ function addSegments(
       Utils.makeArrowArc(
         radius,
         -arrowPadding - txtAngle,
-        -delta / 2 + arrowPadding
-      )
+        -delta / 2 + arrowPadding,
+      ),
     )
     .fill("none")
     .stroke(color)
@@ -293,7 +293,7 @@ function addGroups(
   method_weights,
   application_weights,
   color,
-  image_base_url
+  image_base_url,
 ) {
   const boxHeight = 60;
   const boxWidth = 200;
@@ -368,7 +368,7 @@ function addGroups(
     // large professor name
     let dy = 0;
     for (const textLine of Utils.shortenName(members[i].name, true).split(
-      "\n"
+      "\n",
     )) {
       group
         .text(textLine)
@@ -425,7 +425,7 @@ function addGroupCard(svg, member, color, image_base_url) {
       close_button_x,
       close_button_y,
       close_button_x + close_button_size,
-      close_button_y + close_button_size
+      close_button_y + close_button_size,
     )
     .stroke("#777777")
     .attr({ "stroke-width": 0.5 });
@@ -434,7 +434,7 @@ function addGroupCard(svg, member, color, image_base_url) {
       close_button_x + close_button_size,
       close_button_y,
       close_button_x,
-      close_button_y + close_button_size
+      close_button_y + close_button_size,
     )
     .stroke("#777777")
     .attr({ "stroke-width": 0.5 });
@@ -477,8 +477,8 @@ function addGroupCard(svg, member, color, image_base_url) {
       '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html">' +
         member.description +
         "</div>",
-      true
-    )
+      true,
+    ),
   );
 }
 
@@ -497,7 +497,7 @@ const zoomGroups = function (e) {
       true,
       z,
       200 + (1 - z) * (p.x - 200),
-      200 + (1 - z) * (p.y - 200)
+      200 + (1 - z) * (p.y - 200),
     );
   } else {
     updateGroups(null, true, 1, 200, 200);
@@ -506,10 +506,10 @@ const zoomGroups = function (e) {
 
 const sortGroupsByProf = function () {
   const group = SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-settings-menu-sort-by-group"
+    ".iwr-vis-settings-menu-sort-by-group",
   );
   const prof = SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-settings-menu-sort-by-prof"
+    ".iwr-vis-settings-menu-sort-by-prof",
   );
   if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
     prof.fill("#777777");
@@ -642,7 +642,7 @@ function create_iwr_vis(data) {
     method_weights,
     application_weights,
     data.group_color,
-    data.image_base_url
+    data.image_base_url,
   );
   // methods
   addSegments(
@@ -653,7 +653,7 @@ function create_iwr_vis(data) {
     data.method_color,
     168,
     10,
-    "iwr-vis-method-item"
+    "iwr-vis-method-item",
   );
   // applications
   addSegments(
@@ -664,7 +664,7 @@ function create_iwr_vis(data) {
     data.application_color,
     188,
     10,
-    "iwr-vis-application-item"
+    "iwr-vis-application-item",
   );
   resetAll();
   // settings menu

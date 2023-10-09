@@ -110,12 +110,12 @@
       "method_weights": [0, 1, 0, 0, 0],
       "application_weights": [1, 0, 0, 0, 0, 0]
     },
-     {
+    {
       "name": "Prof. Dr. Martin Dugas",
       "group": "Medical Informatics",
       "website": "https://www.klinikum.uni-heidelberg.de/mi/",
       "description": "Since 2021 Martin Dugas is Director of the Institute for Medical Informatics [ukhd.de/imi] at Heidelberg University Hospital. He holds a doctoral degree in human medicine as well as a diploma in computer science. His research is focused on medical informations systems and data integration, specifically structured patient data. He received the venia legendi for Medical Informatics in 2002 at the University of Munich, Germany. From 2004 to 2005 he was a research fellow at Siemens Medical Health Services, USA. 2005-2021 he was professor of Medical Informatics at the University of Münster. In 2011 he and his team established the Portal of Medical Data Models, a research information infrastructure funded by the German Research Foundation.",
-      "image": "Dugas_sw/0.png",
+      "image": "Dugas_sw.png",
       "method_weights": [0, 0, 1, 0, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },

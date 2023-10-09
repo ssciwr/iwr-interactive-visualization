@@ -4,11 +4,11 @@ repos:
     hooks:
       - id: prettier
         additional_dependencies:
-          - prettier@2.3.2
-          - "@prettier/plugin-pug@1.16.5"
+          - prettier
+          - "@prettier/plugin-pug"
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
@@ -16,7 +16,7 @@ repos:
       - id: mixed-line-ending
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: "v8.50.0"
+    rev: "v8.51.0"
     hooks:
       - id: eslint
         files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
