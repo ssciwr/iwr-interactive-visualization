@@ -56,6 +56,15 @@
       "method_weights": [0, 1, 0, 0, 0],
       "application_weights": [0, 0, 0, 0, 1, 0]
     },
+       {
+      "name": "Prof. Dr. Tristan Bereau",
+      "group": "Theoretical Physics",
+      "website": "https://tristanbereau.com/",
+      "description": "Tristan obtained his PhD at Carnegie Mellon University. He's held academic positions at the University of Basel, the Max Planck Institute for Polymer Research (Emmy Noether research group), and the University of Amsterdam. Tristan is currently professor at the Institute for Theoretical Physics, Heidelberg University. He works at the intersection of molecular simulations and machine learning.",
+      "image": "Bereau_sw/0.png",
+      "method_weights": [0, 1, 0, 1, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
     {
       "name": "Prof. Dr. Dr. h.c. mult. Hans Georg Bock",
       "group": "Simulation and Optimization",
