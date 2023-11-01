@@ -27,7 +27,7 @@
     "shelljs": "0.8.5",
     "svgdom": "0.1.16",
     "tiff-to-png": "2.0.2",
-    "ts-loader": "9.4.4",
+    "ts-loader": "9.5.0",
     "typescript": "5.2.2",
     "webpack": "5.88.2",
     "yaml": "2.3.2"
