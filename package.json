@@ -29,7 +29,7 @@
     "tiff-to-png": "2.0.2",
     "ts-loader": "9.5.0",
     "typescript": "5.2.2",
-    "webpack": "5.88.2",
+    "webpack": "5.89.0",
     "yaml": "2.3.3"
   }
 }
