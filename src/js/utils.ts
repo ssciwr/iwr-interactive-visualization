@@ -51,8 +51,8 @@ export function sorted_indices(
     return array[a][member] < array[b][member]
       ? -1
       : array[a][member] > array[b][member]
-      ? 1
-      : 0;
+        ? 1
+        : 0;
   });
   return indices;
 }
