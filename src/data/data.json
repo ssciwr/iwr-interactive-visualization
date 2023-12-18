@@ -511,7 +511,7 @@
       "group": "Computational Pathology Heidelberg",
       "website": "https://github.com/cpheidelberg",
       "description": "Cleo-Aron Weis completed his medical studies at the Medical Faculty Mannheim, Heidelberg University, earning his MD in 2014. Board-examined since 2019, he now serves as a senior consultant at the Institute of Pathology, University Hospital Heidelberg, where he leads the Computational Pathology section. His research focuses on the integration of image analysis and natural language processing into the interpretation of medical data, particularly in the field of pathology.",
-      "image": "Weis_sw/0.png",
+      "image": "Weis_sw.png",
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
