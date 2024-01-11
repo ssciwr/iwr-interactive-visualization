@@ -344,12 +344,12 @@
       "method_weights": [1, 0, 0, 0, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
-        {
+    {
       "name": "Prof. Dr. Benjamin Meder",
       "group": "Molecular Genetics Laboratory",
       "website": "https://www.klinikum.uni-heidelberg.de/personen/prof-dr-med-benjamin-meder-2774",
       "description": "Benjamin Meder is Full Professor for Precision Digital Health, a research unit devoted to embark on digital and molecular profiles and targeted interventions to cure heart diseases. Clinically, he is head of the Institute for Cardiomyopathies at Heidelberg University and deputy Medical Director of the Department of Cardiology, Angiology, Pneumology. From 2018-2021 he was Visiting Prof. of Genetics at Stanford University. In 2018 he cofounded Informatics for Life, a large medical AI research cluster in Heidelberg.",
-      "image": "Meder/0.png",
+      "image": "Meder.png",
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [1, 1, 0, 0, 0, 0]
     },
