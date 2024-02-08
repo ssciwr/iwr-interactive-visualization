@@ -193,8 +193,8 @@
     },
     {
       "name": "Prof. Dr. Fred Hamprecht",
-      "group": "Image Analysis and Learning",
-      "website": "https://hci.iwr.uni-heidelberg.de/ial/",
+      "group": "Scientific AI",
+      "website": "https://sciai-lab.org/",
       "description": "Fred studied chemistry at ETH Zürich, Imperial College and Cambridge University. Starting from work in quantum chemistry, he drifted into machine learning and computer vision and has happily worked in this domain ever since. He joined IWR in 2001, and co-founded the Heidelberg Collaboratory for Image Processing (HCI) in 2008.",
       "image": "Hamprecht_sw/0.png",
       "method_weights": [0, 0, 0, 1, 0],
