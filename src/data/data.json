@@ -111,6 +111,15 @@
       "application_weights": [1, 0, 0, 0, 0, 0]
     },
     {
+      "name": "Prof. Dr. Claudia Maria Denkinger",
+      "group": "Global Health Diagnostics",
+      "website": "https://denkglobaldx.org/",
+      "description": "Claudia Denkinger is Professor and Medical Director of the Department of Infectious Disease and Tropical Medicine, Heidelberg University. She is internationally recognized for her work on diagnostics for resource limited settings, and serves as an advisor to the WHO for tuberculosis and COVID diagnostics.",
+      "image": "Denkinger.png",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
       "name": "Prof. Dr. Andreas Dreuw",
       "group": "Theoretical and Computational\nChemistry",
       "website": "https://wwwagdreuw.iwr.uni-heidelberg.de/",
@@ -298,6 +307,15 @@
       "image": "Knüpfer_sw/0.png",
       "method_weights": [1, 0, 0, 0, 0],
       "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Georgia Koppe",
+      "group": "Machine Learning Human Beaviour",
+      "website": "https://www.zi-mannheim.de/forschung/personen/person/7111.html",
+      "description": "Georgia studied psychology at the Justus-Liebig-University of Gießen. She joined the Central Institute of Mental Health in Mannheim in 2011, and the Hector Institute for AI in Psychiatry in 2023 where she mainly worked on developing and applying machine learning models in the context of neuroscience and mental health. In 2024, she moved to the IWR, focusing on the study of human cognition and behavior.",
+      "image": "Koppe.png",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 1, 0, 0, 0]
     },
     {
       "name": "Prof. Dr. Ekaterina Kostina",
