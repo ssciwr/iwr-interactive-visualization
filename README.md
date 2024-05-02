@@ -22,7 +22,7 @@ On every commit to the main branch:
 
 ## How to deploy
 
-- copy the files from the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
+- [download a zipfile](https://github.com/ssciwr/iwr-interactive-visualization/archive/refs/heads/gh-pages.zip) of the files in the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
 - contents can be edited in [data.json](https://raw.githubusercontent.com/ssciwr/iwr-interactive-visualization/gh-pages/fileadmin/templates/iwr_vis/data.json)
 - to change the location of the image files
   - edit [image_base_url](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/fileadmin/templates/iwr_vis/data.json#L2)
