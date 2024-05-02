@@ -115,7 +115,7 @@
       "group": "Global Health Diagnostics",
       "website": "https://denkglobaldx.org/",
       "description": "Claudia Denkinger is Professor and Medical Director of the Department of Infectious Disease and Tropical Medicine, Heidelberg University. She is internationally recognized for her work on diagnostics for resource limited settings, and serves as an advisor to the WHO for tuberculosis and COVID diagnostics.",
-      "image": "Denkinger.png",
+      "image": "Denkinger_sw/0.png",
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },

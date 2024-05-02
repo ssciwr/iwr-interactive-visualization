@@ -7,15 +7,9 @@ const image_dir = "./dist/fileadmin/templates/iwr_vis";
 fs.mkdirSync(image_dir, { recursive: true });
 
 // convert tif images to png & write to dist/fileadmin/iwr_vis folder
-const options = {
-  cwd: ".",
-};
+const tifImageFiles = await glob("**/img/*.tif");
 const converter = new ConvertTiff();
-const forFiles = (err, files) => {
-  if (err) console.log(err);
-  converter.convertArray(files, image_dir).then(console.log);
-};
-glob("**/img/*.tif", options, forFiles);
+converter.convertArray(tifImageFiles, image_dir).then(console.log);
 
 // just copy any jpg or png images to image_dir
 shell.cp("./src/img/*.jpg", image_dir);
