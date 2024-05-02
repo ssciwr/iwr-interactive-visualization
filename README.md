@@ -39,24 +39,23 @@ Initial setup:
 - (optional) install pre-commit to auto-format code
   - `pip install pre-commit`
   - `pre-commit install`
-- install node
-  - macOS: `brew install node`
-  - windows: https://nodejs.org/en/
-  - ubuntu: `sudo apt install nodejs npm`
-- install website node dependencies
-  - `npm install`
+- install [pnpm](https://pnpm.io/installation)
+  - windows: `iwr https://get.pnpm.io/install.ps1 -useb | iex`
+  - linux/macOS: `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+- install website dependencies
+  - `pnpm install`
 
 To build from source, start local http-server, open website in browser, monitor & re-build modified source files:
 
-- `npm start`
+- `pnpm start`
 
 Other commands:
 
 - remove any existing build
-  - `npm run clean`
+  - `pnpm run clean`
 - build website in `dist` folder
-  - `npm run build`
+  - `pnpm run build`
 - start a http-server serving files from the `dist` folder at `http://localhost:8080/` & open in browser
-  - `npm run serve`
+  - `pnpm run serve`
 - monitor changes to source code & automatically re-build modified files
-  - `npm run autobuild`
+  - `pnpm run autobuild`
