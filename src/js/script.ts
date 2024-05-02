@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import { SVG } from "@svgdotjs/svg.js"; // eslint-disable-line
-import "@svgdotjs/svg.filter.js"; // eslint-disable-line
+import { SVG } from "@svgdotjs/svg.js";
+import "@svgdotjs/svg.filter.js";
 import * as Utils from "./utils";
 
 const json_data_url = "fileadmin/templates/iwr_vis/data.json";
