@@ -22,6 +22,7 @@ repos:
         files: \.[jt]sx?$ # *.js, *.jsx, *.ts and *.tsx
         types: [file]
         additional_dependencies:
+          - eslint
           - "@eslint/js"
           - typescript
           - typescript-eslint
