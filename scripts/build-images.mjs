@@ -1,6 +1,6 @@
 import fs from "fs";
 import ConvertTiff from "tiff-to-png";
-import glob from "glob";
+import { glob } from "glob";
 import shell from "shelljs";
 
 const image_dir = "./dist/fileadmin/templates/iwr_vis";
