@@ -480,6 +480,15 @@
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
     {
+      "name": "Prof. Dr. Björn Malte Schäfer",
+      "group": "Sampling Methods and Physics of MCMC",
+      "website": "https://www.ita.uni-heidelberg.de/~spirou/",
+      "description": "Björn Malte Schäfer works on inference problems in cosmology, in relation to dark energy and gravity. He graduated from LMU in 2005 and joined Heidelberg University in 2012 as a professor for fundamental physics.",
+      "image": "Schaefer.png",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
       "name": "Prof. Dr. Robert Scheichl",
       "group": "Numerical Analysis and\nUncertainty Quantification",
       "website": "https://katana.iwr.uni-heidelberg.de/",
