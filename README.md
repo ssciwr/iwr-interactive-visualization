@@ -2,7 +2,7 @@
 
 [![Build and deploy to gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml/badge.svg)](https://github.com/ssciwr/iwr-interactive-visualization/actions/workflows/deploy.yml)
 
-Prototype implementation for an interactive presentation of the IWR and its activities
+An interactive visualization of the IWR and its activities
 
 ## Overview
 
