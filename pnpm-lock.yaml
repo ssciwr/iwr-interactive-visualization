@@ -11,12 +11,12 @@ importers:
         specifier: 3.0.8
         version: 3.0.8
       "@svgdotjs/svg.js":
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.2.4
+        version: 3.2.4
     devDependencies:
       "@eslint/js":
-        specifier: ^9.1.1
-        version: 9.4.0
+        specifier: ^9.6.0
+        version: 9.6.0
       chokidar:
         specifier: 3.6.0
         version: 3.6.0
@@ -54,8 +54,8 @@ importers:
         specifier: 5.92.1
         version: 5.92.1
       yaml:
-        specifier: 2.4.1
-        version: 2.4.1
+        specifier: 2.4.5
+        version: 2.4.5
 
 packages:
   "@eslint-community/eslint-utils@4.4.0":
@@ -85,13 +85,6 @@ packages:
     resolution:
       {
         integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==,
-      }
-    engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
-
-  "@eslint/js@9.4.0":
-    resolution:
-      {
-        integrity: sha512-fdI7VJjP3Rvc70lC4xkFXHB0fiPeojiL1PxVG6t1ZvXQrarj893PweuBTujxDUFk0Fxj4R7PIIAZ/aiiyZPZcg==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
@@ -204,10 +197,10 @@ packages:
       }
     engines: { node: ">= 0.8.0" }
 
-  "@svgdotjs/svg.js@3.2.0":
+  "@svgdotjs/svg.js@3.2.4":
     resolution:
       {
-        integrity: sha512-Tr8p+QVP7y+QT1GBlq1Tt57IvedVH8zCPoYxdHLX0Oof3a/PqnC/tXAkVufv1JQJfsDHlH/UrjcDfgxSofqSNA==,
+        integrity: sha512-BjJ/7vWNowlX3Z8O4ywT58DqbNRyYlkk6Yz/D13aB7hGmfQTvGX4Tkgtm/ApYlu9M7lCQi15xUEidqMUmdMYwg==,
       }
 
   "@swc/helpers@0.4.14":
@@ -2663,10 +2656,10 @@ packages:
         integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==,
       }
 
-  yaml@2.4.1:
+  yaml@2.4.5:
     resolution:
       {
-        integrity: sha512-pIXzoImaqmfOrL7teGUBt/T7ZDnyeGBWyXQBvOVhLkWLN37GXv8NMLK406UY6dS51JfcQHsmcW5cJ441bHg6Lg==,
+        integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==,
       }
     engines: { node: ">= 14" }
     hasBin: true
@@ -2707,8 +2700,6 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  "@eslint/js@9.4.0": {}
 
   "@eslint/js@9.6.0": {}
 
@@ -2766,9 +2757,9 @@ snapshots:
 
   "@svgdotjs/svg.filter.js@3.0.8":
     dependencies:
-      "@svgdotjs/svg.js": 3.2.0
+      "@svgdotjs/svg.js": 3.2.4
 
-  "@svgdotjs/svg.js@3.2.0": {}
+  "@svgdotjs/svg.js@3.2.4": {}
 
   "@swc/helpers@0.4.14":
     dependencies:
@@ -4329,6 +4320,6 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  yaml@2.4.1: {}
+  yaml@2.4.5: {}
 
   yocto-queue@0.1.0: {}
