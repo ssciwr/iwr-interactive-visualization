@@ -43,7 +43,7 @@ importers:
         version: 2.0.2
       ts-loader:
         specifier: 9.5.1
-        version: 9.5.1(typescript@5.5.2)(webpack@5.91.0)
+        version: 9.5.1(typescript@5.5.2)(webpack@5.92.1)
       typescript:
         specifier: 5.5.2
         version: 5.5.2
@@ -51,8 +51,8 @@ importers:
         specifier: ^7.8.0
         version: 7.11.0(eslint@9.4.0)(typescript@5.5.2)
       webpack:
-        specifier: 5.91.0
-        version: 5.91.0
+        specifier: 5.92.1
+        version: 5.92.1
       yaml:
         specifier: 2.4.1
         version: 2.4.1
@@ -429,10 +429,10 @@ packages:
         integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==,
       }
 
-  acorn-import-assertions@1.9.0:
+  acorn-import-attributes@1.9.5:
     resolution:
       {
-        integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==,
+        integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==,
       }
     peerDependencies:
       acorn: ^8
@@ -832,6 +832,13 @@ packages:
     resolution:
       {
         integrity: sha512-4U5pNsuDl0EhuZpq46M5xPslstkviJuhrdobaRDBk2Jy2KO37FDAJl4lb2KlNabxT0m4MTK2UHNrsAcphE8nyw==,
+      }
+    engines: { node: ">=10.13.0" }
+
+  enhanced-resolve@5.17.0:
+    resolution:
+      {
+        integrity: sha512-dwDPwZL0dmye8Txp2gzFmA6sxALaSvdRDjPH0viLcKrtlOL3tw62nWWweVD1SdILDTJrbrL6tdWVN58Wo6U3eA==,
       }
     engines: { node: ">=10.13.0" }
 
@@ -2560,10 +2567,10 @@ packages:
       }
     engines: { node: ">=10.13.0" }
 
-  webpack@5.91.0:
+  webpack@5.92.1:
     resolution:
       {
-        integrity: sha512-rzVwlLeBWHJbmgTC/8TvAcu5vpJNII+MelQpylD4jNERPwpBJOE2lEcko1zJX3QJeLjTTAnQxn/OJ8bjDzVQaw==,
+        integrity: sha512-JECQ7IwJb+7fgUFBlrJzbyu3GEuNBcdqr1LD7IbSzwkSmIevTm8PF+wej3Oxuz/JFBUZ6O1o43zsPkwm1C4TmA==,
       }
     engines: { node: ">=10.13.0" }
     hasBin: true
@@ -2928,7 +2935,7 @@ snapshots:
 
   "@xtuc/long@4.2.2": {}
 
-  acorn-import-assertions@1.9.0(acorn@8.11.3):
+  acorn-import-attributes@1.9.5(acorn@8.11.3):
     dependencies:
       acorn: 8.11.3
 
@@ -3158,6 +3165,11 @@ snapshots:
   emoji-regex@9.2.2: {}
 
   enhanced-resolve@5.16.1:
+    dependencies:
+      graceful-fs: 4.2.11
+      tapable: 2.2.1
+
+  enhanced-resolve@5.17.0:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
@@ -4076,14 +4088,14 @@ snapshots:
 
   tapable@2.2.1: {}
 
-  terser-webpack-plugin@5.3.10(webpack@5.91.0):
+  terser-webpack-plugin@5.3.10(webpack@5.92.1):
     dependencies:
       "@jridgewell/trace-mapping": 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.31.0
-      webpack: 5.91.0
+      webpack: 5.92.1
 
   terser@5.31.0:
     dependencies:
@@ -4106,7 +4118,7 @@ snapshots:
     dependencies:
       typescript: 5.5.2
 
-  ts-loader@9.5.1(typescript@5.5.2)(webpack@5.91.0):
+  ts-loader@9.5.1(typescript@5.5.2)(webpack@5.92.1):
     dependencies:
       chalk: 4.1.2
       enhanced-resolve: 5.16.1
@@ -4114,7 +4126,7 @@ snapshots:
       semver: 7.6.2
       source-map: 0.7.4
       typescript: 5.5.2
-      webpack: 5.91.0
+      webpack: 5.92.1
 
   tslib@2.6.2: {}
 
@@ -4214,7 +4226,7 @@ snapshots:
 
   webpack-sources@3.2.3: {}
 
-  webpack@5.91.0:
+  webpack@5.92.1:
     dependencies:
       "@types/eslint-scope": 3.7.7
       "@types/estree": 1.0.5
@@ -4222,10 +4234,10 @@ snapshots:
       "@webassemblyjs/wasm-edit": 1.12.1
       "@webassemblyjs/wasm-parser": 1.12.1
       acorn: 8.11.3
-      acorn-import-assertions: 1.9.0(acorn@8.11.3)
+      acorn-import-attributes: 1.9.5(acorn@8.11.3)
       browserslist: 4.23.0
       chrome-trace-event: 1.0.4
-      enhanced-resolve: 5.16.1
+      enhanced-resolve: 5.17.0
       es-module-lexer: 1.5.3
       eslint-scope: 5.1.1
       events: 3.3.0
@@ -4237,7 +4249,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(webpack@5.91.0)
+      terser-webpack-plugin: 5.3.10(webpack@5.92.1)
       watchpack: 2.4.1
       webpack-sources: 3.2.3
     transitivePeerDependencies:
