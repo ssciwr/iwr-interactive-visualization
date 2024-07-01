@@ -18,12 +18,12 @@
   },
   "dependencies": {
     "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.2.0"
+    "@svgdotjs/svg.js": "3.2.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.1.1",
+    "@eslint/js": "^9.6.0",
     "chokidar": "3.6.0",
-    "eslint": "^9.4.0",
+    "eslint": "^9.6.0",
     "glob": "^10.4.2",
     "http-server": "14.1.1",
     "npm-run-all": "4.1.5",
@@ -34,6 +34,6 @@
     "typescript": "5.5.2",
     "typescript-eslint": "^7.14.1",
     "webpack": "5.92.1",
-    "yaml": "2.4.1"
+    "yaml": "2.4.5"
   }
 }
