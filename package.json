@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.2.4"
+    "@svgdotjs/svg.js": "3.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.6.0",
+    "@eslint/js": "^9.1.1",
     "chokidar": "3.6.0",
     "eslint": "^9.6.0",
     "glob": "^10.4.2",
@@ -34,6 +34,6 @@
     "typescript": "5.5.2",
     "typescript-eslint": "^7.14.1",
     "webpack": "5.92.1",
-    "yaml": "2.4.5"
+    "yaml": "2.4.1"
   }
 }
