@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
+    "lib": ["es2020"],
     "target": "es6",
     "strict": false,
     "allowJs": true,
