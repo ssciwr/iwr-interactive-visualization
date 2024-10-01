@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.2.4"
+    "@svgdotjs/svg.js": "3.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
