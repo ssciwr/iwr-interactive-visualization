@@ -30,6 +30,15 @@
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
     {
+      "name": "Prof. Dr. Saeed Amirjalayer",
+      "group": "Computational Chemistrys",
+      "website": "www.samirjalayer.de",
+      "description": "Saeed Amirjalayer received his PhD from Ruhr University Bochum in 2011. After two years as a fellow of the German National Academy of Sciences Leopoldina at the University of Amsterdam and ten years as a group leader at the University of Münster, he became full professor in Computational Chemistry at Heidelberg University in 2024, supported by the Heisenberg program of the DFG.",
+      "image": "Amirjalayer.png",
+      "method_weights": [0, 1, 0, 1, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
       "name": "Prof. Dr. Artur Andrzejak",
       "group": "Parallel and\nDistributed Systems",
       "website": "https://pvs.ifi.uni-heidelberg.de/team/aa",
