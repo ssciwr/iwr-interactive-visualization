@@ -47,6 +47,15 @@
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
+     {
+      "name": "Dr. Sandra Barteit",
+      "group": "Digital Global Health",
+      "website": "https://ukhd.de/digitalGH/",
+      "description": "Dr. Sandra Barteit is the head of the research group Digital Global Health at the Heidelberg Institute of Global Health. Her research focuses on using artificial intelligence, data science and sensor-based technologies to investigate the health impacts of climate change in vulnerable populations. She leads the PULSE-AI project funded by the Carl Zeiss Foundation and teaches global health and research methods. Dr. Barteit holds a Dr.sc.hum. in Global Health from Heidelberg University and has master's degrees in Data Analytics and Innovation and Entrepreneurship.",
+      "image": "Barteit.jpg",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 0, 1, 0, 1, 1]
+    },
     {
       "name": "Prof. Dr. Peter Bastian",
       "group": "Parallel Computing",
