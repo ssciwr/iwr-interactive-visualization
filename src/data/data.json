@@ -56,7 +56,7 @@
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
-     {
+    {
       "name": "Dr. Sandra Barteit",
       "group": "Digital Global Health",
       "website": "https://ukhd.de/digitalGH/",
@@ -242,7 +242,7 @@
       "website": "https://www.hdsu.org",
       "description": "Carl Herrmann studied engineering sciences, applied mathematics and theoretical physics in France, and holds a PhD on string theory and supergravity. He moved to bioinformatics and was appointed assistance professor in Bioinformatics at Aix-Marseille University. In 2012, he moved to Heidelberg and became professor of Bioinformatics at IPMB and BioQuant in 2023. He is member of the faculty of engineering sciences.",
       "image": "Herrmann.png",
-      "method_weights": [0, 0, 1, 1, 0],  
+      "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
     {
