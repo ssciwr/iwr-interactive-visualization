@@ -439,7 +439,7 @@
       "group": "Particle Phenomenology\nand Machine Learning",
       "website": "https://www.thphys.uni-heidelberg.de/~plehn/?visible=group",
       "description": "Tilman studied physics in Heidelberg, ETH Zürich, and Hamburg. As a PhD student he started working on precision predictions for and searches for new particles at the LHC. Following stages in Madison/Wisconsin, CERN, MPI Munich, and Edinburgh he came to Heidelberg, working mostly on Higgs physics. When the excitement about the Higgs discovery waned, he moved into modern machine learning, with a focus on LHC analysis, simulations, and inference.",
-      "image": "Plehn.png",
+      "image": "Plehn.jpg",
       "method_weights": [0, 1, 0, 1, 0],
       "application_weights": [0, 0, 0, 1, 0, 1]
     },
