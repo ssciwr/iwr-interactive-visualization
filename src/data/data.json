@@ -32,7 +32,7 @@
     {
       "name": "Prof. Dr. Saeed Amirjalayer",
       "group": "Computational Chemistrys",
-      "website": "www.samirjalayer.de",
+      "website": "https://www.samirjalayer.de",
       "description": "Saeed Amirjalayer received his PhD from Ruhr University Bochum in 2011. After two years as a fellow of the German National Academy of Sciences Leopoldina at the University of Amsterdam and ten years as a group leader at the University of Münster, he became full professor in Computational Chemistry at Heidelberg University in 2024, supported by the Heisenberg program of the DFG.",
       "image": "Amirjalayer.png",
       "method_weights": [0, 1, 0, 1, 0],
@@ -184,8 +184,8 @@
     },
     {
       "name": "Dr. Roman Gold",
-      "group": "Compact objects: gravity and astrophysics",
-      "website": "www.roman-gold-web.com",
+      "group": "Compact objects:\ngravity and astrophysics",
+      "website": "https://www.roman-gold-web.com",
       "description": "Roman Gold works on inference problems in Very-Long-Baseline Interferometry (in particular black hole images), theoretical source modeling of accretion of compact objects and gravitational waves (black holes and neutron stars) and associated computational methods (mainly PDEs, MCMC). He seeks to understand both the astrophysics and gravity of compact objects. He received his PhD from FSU Jena in 2011, became associate professor at SDU, Odense,DK  and joined Heidelberg University in 2024.",
       "image": "Gold.png",
       "method_weights": [1, 1, 1, 0, 0],
@@ -238,7 +238,7 @@
     },
     {
       "name": "Prof. Dr. Carl Herrmann",
-      "group": "Computational Regulatory Genomics Group",
+      "group": "Computational Regulatory\nGenomics Group",
       "website": "https://www.hdsu.org",
       "description": "Carl Herrmann studied engineering sciences, applied mathematics and theoretical physics in France, and holds a PhD on string theory and supergravity. He moved to bioinformatics and was appointed assistance professor in Bioinformatics at Aix-Marseille University. In 2012, he moved to Heidelberg and became professor of Bioinformatics at IPMB and BioQuant in 2023. He is member of the faculty of engineering sciences.",
       "image": "Herrmann.png",
