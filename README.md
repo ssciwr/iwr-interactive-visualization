@@ -44,6 +44,8 @@ Initial setup:
   - linux/macOS: `curl -fsSL https://get.pnpm.io/install.sh | sh -`
 - install website dependencies
   - `pnpm install`
+- the [cwebp](https://developers.google.com/speed/webp/download) binary is also needed to convert image files
+  - ubuntu: `sudo apt install webp`
 
 To build from source, start local http-server, open website in browser, monitor & re-build modified source files:
 

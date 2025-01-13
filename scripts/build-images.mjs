@@ -1,17 +1,20 @@
 import fs from "fs";
-import ConvertTiff from "tiff-to-png";
 import { glob } from "glob";
-import shell from "shelljs";
+import path from "path";
+import { execSync } from "child_process";
 
-const image_dir = "./dist/fileadmin/templates/iwr_vis";
+const image_dir = "./dist/fileadmin/templates/iwr_vis/";
 fs.mkdirSync(image_dir, { recursive: true });
 
-// convert tif images to png & write to dist/fileadmin/iwr_vis folder
-const tifImageFiles = await glob("**/img/*.tif");
-const converter = new ConvertTiff();
-converter.convertArray(tifImageFiles, image_dir).then(console.log);
+// convert all image files to webp & write to image folder
+const images = await glob("**/img/*.*");
 
-// just copy any jpg or png images to image_dir
-shell.cp("./src/img/*.jpg", image_dir);
-shell.cp("./src/img/*.jpeg", image_dir);
-shell.cp("./src/img/*.png", image_dir);
+for (const image of images) {
+  const output = path.format({
+    root: image_dir,
+    name: path.parse(image).name,
+    ext: ".webp",
+  });
+  console.log(`${image} --> ${output}`);
+  execSync(`cwebp ${image} -o ${output} -quiet`);
+}

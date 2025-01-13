@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 22
           cache: "pnpm"
+      - run: sudo apt-get update -yy && sudo apt-get install -yy webp
       - run: pnpm install
       - run: pnpm run build
       - uses: JamesIves/github-pages-deploy-action@v4.7.1

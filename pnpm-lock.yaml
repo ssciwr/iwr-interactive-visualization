@@ -38,9 +38,6 @@ importers:
       svgdom:
         specifier: 0.1.19
         version: 0.1.19
-      tiff-to-png:
-        specifier: 2.0.2
-        version: 2.0.2
       ts-loader:
         specifier: 9.5.1
         version: 9.5.1(typescript@5.7.2)(webpack@5.97.1)
@@ -2407,12 +2404,6 @@ packages:
     engines: { node: ">=10" }
     hasBin: true
 
-  tiff-to-png@2.0.2:
-    resolution:
-      {
-        integrity: sha512-1gD1s5aeYdsTJ1xskXcf+qlpZKXsMiVm1PZan4VjN2RMAEgqBG/pHLXegTwmdT9ihOjCjYmk4kx6MJCZ20Bvdg==,
-      }
-
   tiny-inflate@1.0.3:
     resolution:
       {
@@ -4116,8 +4107,6 @@ snapshots:
       acorn: 8.14.0
       commander: 2.20.3
       source-map-support: 0.5.21
-
-  tiff-to-png@2.0.2: {}
 
   tiny-inflate@1.0.3: {}
 
