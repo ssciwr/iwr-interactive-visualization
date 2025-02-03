@@ -11,8 +11,8 @@ importers:
         specifier: 3.0.8
         version: 3.0.8
       "@svgdotjs/svg.js":
-        specifier: 3.2.4
-        version: 3.2.4
+        specifier: 3.2.0
+        version: 3.2.0
     devDependencies:
       "@eslint/js":
         specifier: ^9.19.0
@@ -222,10 +222,10 @@ packages:
       }
     engines: { node: ">= 0.8.0" }
 
-  "@svgdotjs/svg.js@3.2.4":
+  "@svgdotjs/svg.js@3.2.0":
     resolution:
       {
-        integrity: sha512-BjJ/7vWNowlX3Z8O4ywT58DqbNRyYlkk6Yz/D13aB7hGmfQTvGX4Tkgtm/ApYlu9M7lCQi15xUEidqMUmdMYwg==,
+        integrity: sha512-Tr8p+QVP7y+QT1GBlq1Tt57IvedVH8zCPoYxdHLX0Oof3a/PqnC/tXAkVufv1JQJfsDHlH/UrjcDfgxSofqSNA==,
       }
 
   "@swc/helpers@0.4.14":
@@ -2729,9 +2729,9 @@ snapshots:
 
   "@svgdotjs/svg.filter.js@3.0.8":
     dependencies:
-      "@svgdotjs/svg.js": 3.2.4
+      "@svgdotjs/svg.js": 3.2.0
 
-  "@svgdotjs/svg.js@3.2.4": {}
+  "@svgdotjs/svg.js@3.2.0": {}
 
   "@swc/helpers@0.4.14":
     dependencies:
