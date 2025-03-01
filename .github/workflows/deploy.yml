@@ -18,7 +18,7 @@ jobs:
       - run: sudo apt-get update -yy && sudo apt-get install -yy webp
       - run: pnpm install
       - run: pnpm run build
-      - uses: JamesIves/github-pages-deploy-action@v4.7.2
+      - uses: JamesIves/github-pages-deploy-action@v4.7.3
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         name: Deploy to gh-pages
         with:
