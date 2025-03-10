@@ -17,22 +17,22 @@
     "url": "https://github.com/ssciwr/iwr-interactive-visualization.git"
   },
   "dependencies": {
-    "@svgdotjs/svg.filter.js": "3.0.8",
-    "@svgdotjs/svg.js": "3.2.0"
+    "@svgdotjs/svg.filter.js": "3.0.9",
+    "@svgdotjs/svg.js": "3.2.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.21.0",
     "chokidar": "4.0.3",
-    "eslint": "^9.19.0",
+    "eslint": "^9.21.0",
     "glob": "^11.0.1",
     "http-server": "14.1.1",
     "npm-run-all": "4.1.5",
     "shelljs": "0.8.5",
-    "svgdom": "0.1.19",
+    "svgdom": "0.1.20",
     "ts-loader": "9.5.2",
-    "typescript": "5.7.3",
-    "typescript-eslint": "^8.22.0",
-    "webpack": "5.97.1",
+    "typescript": "5.8.2",
+    "typescript-eslint": "^8.25.0",
+    "webpack": "5.98.0",
     "yaml": "2.7.0"
   }
 }
