@@ -79,11 +79,11 @@ function updateGroups(
     ncols = 3;
   }
   let nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
-  if (nGroups > 21) {
+  if (nGroups > 18) {
     ncols = 4;
     groupBoxIndex.x = 1;
     nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
-    scaleFactor = (4.3 / nrows) * zoom;
+    scaleFactor = (6.1 / (nrows + 2 * ncols)) * zoom;
     if (show_groups === true) {
       items.find(".iwr-vis-group-item-groupname").hide();
       items.find(".iwr-vis-group-item-profname-small").hide();
