@@ -21,18 +21,18 @@
     "@svgdotjs/svg.js": "3.2.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.0",
+    "@eslint/js": "^9.32.0",
     "chokidar": "4.0.3",
-    "eslint": "^9.30.0",
+    "eslint": "^9.32.0",
     "glob": "^11.0.3",
     "http-server": "14.1.1",
     "npm-run-all": "4.1.5",
     "shelljs": "0.10.0",
-    "svgdom": "0.1.21",
+    "svgdom": "0.1.22",
     "ts-loader": "9.5.2",
-    "typescript": "5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "webpack": "5.99.9",
+    "typescript": "5.9.2",
+    "typescript-eslint": "^8.38.0",
+    "webpack": "5.101.0",
     "yaml": "2.8.0"
   }
 }
