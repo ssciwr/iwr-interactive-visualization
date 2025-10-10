@@ -1,5 +1,5 @@
 {
-  "image_base_url": "fileadmin/templates/iwr_vis/",
+  "image_base_url": "data/",
   "group_color": "#ffffff",
   "method_color": "#e13535",
   "application_color": "#499bce",
