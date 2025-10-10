@@ -7,8 +7,8 @@ export function buildStatic() {
   shell.cp("./src/html/index.html", "./dist/.");
   shell.cp("./src/css/style.css", "./dist/.");
 
-  // copy json data to dist/fileadmin/iwr_vis
-  const data_dir = "./dist/fileadmin/templates/iwr_vis";
+  // copy json data to dist/data
+  const data_dir = "./dist/data";
   shell.mkdir("-p", data_dir);
   shell.cp("./src/data/data.json", data_dir);
 }

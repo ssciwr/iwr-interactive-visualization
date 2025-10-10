@@ -3,7 +3,7 @@ import { glob } from "glob";
 import path from "path";
 import { execSync } from "child_process";
 
-const image_dir = "./dist/fileadmin/templates/iwr_vis/";
+const image_dir = "./dist/data/";
 fs.mkdirSync(image_dir, { recursive: true });
 
 // convert all image files to webp & write to image folder

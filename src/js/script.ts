@@ -4,7 +4,7 @@ import { SVG } from "@svgdotjs/svg.js";
 import "@svgdotjs/svg.filter.js";
 import * as Utils from "./utils";
 
-const json_data_url = "fileadmin/templates/iwr_vis/data.json";
+const json_data_url = "data/data.json";
 
 let sorted_group_indices = [];
 

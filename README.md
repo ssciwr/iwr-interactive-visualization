@@ -23,11 +23,11 @@ On every commit to the main branch:
 ## How to deploy
 
 - [download a zipfile](https://github.com/ssciwr/iwr-interactive-visualization/archive/refs/heads/gh-pages.zip) of the files in the [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch
-- contents can be edited in [data.json](https://raw.githubusercontent.com/ssciwr/iwr-interactive-visualization/gh-pages/fileadmin/templates/iwr_vis/data.json)
+- contents can be edited in [data.json](https://raw.githubusercontent.com/ssciwr/iwr-interactive-visualization/gh-pages/data/data.json)
 - to change the location of the image files
-  - edit [image_base_url](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/fileadmin/templates/iwr_vis/data.json#L2)
+  - edit [image_base_url](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/data/data.json#L2)
 - to change the location of data.json
-  - find `"fileadmin/templates/iwr_vis/data.json"` in [bundle.js](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/bundle.js) and replace with desired url
+  - find `"data/data.json"` in [bundle.js](https://github.com/ssciwr/iwr-interactive-visualization/blob/gh-pages/bundle.js) and replace with desired url
 
 ## How to build and view locally
 
