@@ -408,6 +408,15 @@
       "application_weights": [1, 1, 0, 0, 0, 0]
     },
     {
+      "name": "Dr. Zahra Monfared",
+      "group": "Dynamical Systems and AI",
+      "website": "https://zmonfared.github.io/DSAIlab/",
+      "description": "Zahra Monfared is an independent BMBF Research Group Leader in Dynamical Systems and AI at Heidelberg University. She obtained her PhD in Applied Mathematics (Dynamical Systems) from Ferdowsi University of Mashhad, Iran and worked as a postdoctoral researcher at TUM and UHD. Her work mainly focuses on two research directions: Dynamical Systems for AI and AI for Dynamical Systems.",
+      "image": "Monfared.webp",
+      "method_weights": [1, 0, 0, 1, 1],
+      "application_weights": [0, 1, 0, 0, 1, 1]
+    },
+    {
       "name": "Dr. Florian Nieser",
       "group": "Critical AI Engineering\nDigital Humanities and\nEducational Transfer",
       "website": "https://www.uni-heidelberg.de/de/forschung/forschungsprofil/fields-of-focus/field-of-focus-iii/forschungsschwerpunkte/heidelberg-center-for-digital-humanities-hcdh/geschaeftsfuehrung-hcdh",
