@@ -417,6 +417,15 @@
       "application_weights": [0, 1, 0, 0, 1, 1]
     },
     {
+      "name": "Dr. Dylan Nelson",
+      "group": "Computational Galaxy Formation",
+      "website": "https://www.ita.uni-heidelberg.de/~dnelson/#group",
+      "description": "Dylan Nelson is an Emmy Noether research group leader at the Institute for Theoretical Astrophysics within the Center for Astronomy (ITA/ZAH) of Heidelberg University. He was previously a postdoctoral fellow at the Max Planck Institute for Astrophysics, after completing his PhD at Harvard University and his bachelor degrees at the University of California Berkeley.",
+      "image": "Nelson_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
       "name": "Dr. Florian Nieser",
       "group": "Critical AI Engineering\nDigital Humanities and\nEducational Transfer",
       "website": "https://www.uni-heidelberg.de/de/forschung/forschungsprofil/fields-of-focus/field-of-focus-iii/forschungsschwerpunkte/heidelberg-center-for-digital-humanities-hcdh/geschaeftsfuehrung-hcdh",
