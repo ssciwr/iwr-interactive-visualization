@@ -534,6 +534,15 @@
       "application_weights": [0, 0, 0, 0, 0, 0]
     },
     {
+      "name": "Dr. Sven Sahle",
+      "group": "Methods in computational systems biology",
+      "website": "https://www.bioquant.uni-heidelberg.de/groups/sahle",
+      "description": "Sven Sahle studied physics and obtained a PhD in theoretical chemistry at the University of Tübingen (Germany). He worked as a research associate at the ZKM (Centre for Art and Media Technology, Karlsruhe, Germany) and at EML Research gGmbH in Heidelberg before joining BIOQUANT as a junior group leader in 2007. His group focuses on methodological research and software for mathematical modeling of biological processes.",
+      "image": "Sahle_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
       "name": "Prof. Dr. Björn Malte Schäfer",
       "group": "Sampling Methods and\nPhysics of MCMC",
       "website": "https://www.ita.uni-heidelberg.de/~spirou/",
