@@ -210,6 +210,15 @@
       "application_weights": [0, 1, 0, 0, 0, 0]
     },
     {
+      "name": "Prof. Dr. Lutz Greb",
+      "group": "Greb Group",
+      "website": "https://www.bioquant.uni-heidelberg.de/research/groups/grawlab.html",
+      "description": "Lutz Greb is a professor of inorganic chemistry at Heidelberg University, leading a research group renowned for advancing modern main-group chemistry, strong Lewis acids, and unusual bonding phenomena. He studied chemistry in Freiburg, completed his doctorate at KIT Karlsruhe, and expanded his expertise during postdoctoral work on molecular motors before establishing his independent group in Heidelberg. His research bridges computational predictions and experimental realization, focusing on molecular Lewis acidity, reactive main-group compounds, and applied computational chemistry. Greb is widely recognized for his role in shaping the current understanding of Lewis acidity and molecular reactivity.",
+      "image": "Greb_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
       "name": "Dr. Ganna (Anya) Gryn'ova",
       "group": "Computational Carbon Chemistry",
       "website": "https://www.h-its.org/research/ccc/",
@@ -640,6 +649,15 @@
       "image": "Zipf_sw.webp",
       "method_weights": [0, 0, 1, 0, 0],
       "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Frank Zöllner",
+      "group": "Computer Assisted Clinical Medicine",
+      "website": "https://www.umm.uni-heidelberg.de/miism/computer-assisted-clinical-medicine/",
+      "description": "Frank Zöllner received the diploma and a PhD degree (Dr.-Ing.) in computer science from Bielefeld University, Germany, and the venia legendi in medical physics from the Heidelberg University.  In 2017 he became adjunct Professor for medical physics at Heidelberg University. He leads the Computer Assisted Clinical Medicine group and the corefacility for preclinical MRI at the Medical Faculty Mannheim, Heidelberg University. ",
+      "image": "Zöllner_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
     }
   ]
 }
