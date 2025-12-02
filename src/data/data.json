@@ -654,7 +654,7 @@
       "name": "Prof. Dr. Frank Zöllner",
       "group": "Computer Assisted Clinical Medicine",
       "website": "https://www.umm.uni-heidelberg.de/miism/computer-assisted-clinical-medicine/",
-      "description": "Frank Zöllner received the diploma and a PhD degree (Dr.-Ing.) in computer science from Bielefeld University, Germany, and the venia legendi in medical physics from the Heidelberg University.  In 2017 he became adjunct Professor for medical physics at Heidelberg University. He leads the Computer Assisted Clinical Medicine group and the corefacility for preclinical MRI at the Medical Faculty Mannheim, Heidelberg University. ",
+      "description": "Frank Zöllner received the diploma and a PhD degree (Dr.-Ing.) in computer science from Bielefeld University, Germany, and the venia legendi in medical physics from the Heidelberg University.  In 2017 he became adjunct Professor for medical physics at Heidelberg University. He leads the Computer Assisted Clinical Medicine group and the corefacility for preclinical MRI at the Medical Faculty Mannheim, Heidelberg University. His research interests are applying computational methods including machine learning to the fields of medical imaging and image analysis. ",
       "image": "Zöllner_sw.webp",
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
