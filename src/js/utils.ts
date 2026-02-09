@@ -151,28 +151,81 @@ export function makeSegment(
   ].join(" ");
 }
 
-export function nextGroupBoxIndex(
-  p: { x: number; y: number },
-  ncols: number,
-  nrows = 0,
-) {
-  let x_max = ncols - 1;
-  let x_min = 0;
-  if (ncols === 4) {
-    // first 2, last 3 have 2 columns
-    if (p.y <= 1 || p.y >= nrows - 4) {
-      x_max = 2;
-      x_min = 1;
+export function computeCircleGrid(
+  nGroups: number,
+  aspectRatio: number,
+  radius: number,
+): {
+  positions: { x: number; y: number }[];
+  cellWidth: number;
+  cellHeight: number;
+} {
+  const padding = 0.9;
+
+  function tryFit(h: number): { x: number; y: number }[] | null {
+    const w = h * aspectRatio;
+    const positions: { x: number; y: number }[] = [];
+    const halfH = h / 2;
+    // stack rows from top to bottom
+    const firstRowCenter = -Math.floor((radius - halfH) / h) * h;
+    for (
+      let rowCenter = firstRowCenter;
+      rowCenter + halfH <= radius;
+      rowCenter += h
+    ) {
+      const dy = Math.abs(rowCenter);
+      if (dy + halfH > radius) continue;
+      const chordHalf = Math.sqrt(
+        radius * radius - (dy + halfH) * (dy + halfH),
+      );
+      const cols = Math.floor((2 * chordHalf) / w);
+      if (cols <= 0) continue;
+      const rowLeft = -(cols * w) / 2;
+      for (let c = 0; c < cols; c++) {
+        positions.push({
+          x: rowLeft + (c + 0.5) * w,
+          y: rowCenter,
+        });
+      }
     }
-    if (p.y === 1) {
-      x_min = 0;
-    }
-    if (p.y === nrows - 4) {
-      x_max = ncols - 1;
+    return positions.length >= nGroups ? positions : null;
+  }
+
+  // binary search for the largest cell height that fits nGroups cards
+  let lo = 1;
+  let hi = Math.min(2 * radius, (2 * radius) / (3 * aspectRatio) / padding);
+  let bestH = lo;
+  let bestPositions: { x: number; y: number }[] = [];
+
+  for (let iter = 0; iter < 50; iter++) {
+    const mid = (lo + hi) / 2;
+    const result = tryFit(mid * padding);
+    if (result) {
+      bestH = mid * padding;
+      bestPositions = result;
+      lo = mid;
+    } else {
+      hi = mid;
     }
   }
-  if (p.x < x_max) {
-    return { x: p.x + 1, y: p.y };
+
+  // trim to exactly nGroups, centering the selection
+  // pick positions closest to center first for a balanced look
+  if (bestPositions.length > nGroups) {
+    // sort rows by distance from center, fill from center outward
+    bestPositions.sort((a, b) => {
+      const da = Math.abs(a.y) + Math.abs(a.x) * 0.01;
+      const db = Math.abs(b.y) + Math.abs(b.x) * 0.01;
+      return da - db;
+    });
+    bestPositions = bestPositions.slice(0, nGroups);
+    // re-sort top-to-bottom, left-to-right for display order
+    bestPositions.sort((a, b) => a.y - b.y || a.x - b.x);
   }
-  return { x: x_min, y: p.y + 1 };
+
+  return {
+    positions: bestPositions,
+    cellWidth: bestH * aspectRatio,
+    cellHeight: bestH,
+  };
 }

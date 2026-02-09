@@ -1,7 +1,6 @@
 // @ts-nocheck
 
 import { SVG } from "@svgdotjs/svg.js";
-import "@svgdotjs/svg.filter.js";
 import * as Utils from "./utils";
 
 const json_data_url = "data/data.json";
@@ -13,32 +12,154 @@ const method_anim_ms = 1000;
 let show_groups = false;
 let sort_by_group = false;
 
-const updateSegments = function () {
-  for (const group_card of SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-group-card",
-  )) {
-    group_card.css({ opacity: "0", visibility: "hidden" });
+let cachedGroupCards;
+let cachedGroupItems;
+let cachedSegments;
+let cachedMethodItems;
+let cachedApplicationItems;
+let cachedSortByGroup;
+let cachedSortByProf;
+
+function alignTextTop(el, x, topY, anchor = "middle") {
+  el.x(x).y(topY).attr("text-anchor", anchor);
+  // Normalize baseline differences across browsers by aligning the measured top.
+  const bbox = el.bbox();
+  if (bbox.height > 0) {
+    el.dy(topY - bbox.y);
   }
-  for (const group_item of SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-group-item",
-  )) {
+  return el;
+}
+
+function alignTextLikeBaseline(el, x, baselineY) {
+  // Match legacy "baseline y" layout while normalizing browser font metrics.
+  const fontSize = parseFloat(el.attr("font-size")) || 12;
+  const targetTop = baselineY - 0.8 * fontSize;
+  return alignTextTop(el, x, targetTop);
+}
+
+function normalizeTextHeight(
+  el,
+  targetHeight,
+  minFontSize = 9,
+  maxFontSize = 12,
+) {
+  const bbox = el.bbox();
+  if (bbox.height <= 0) {
+    return;
+  }
+  const current = parseFloat(el.attr("font-size"));
+  if (Number.isNaN(current) || current <= 0) {
+    return;
+  }
+  const next = Math.max(
+    minFontSize,
+    Math.min(maxFontSize, (current * targetHeight) / bbox.height),
+  );
+  el.attr("font-size", `${next}px`);
+}
+
+function fitTextWidth(el, maxWidth, minFontSize = 12) {
+  const bbox = el.bbox();
+  if (bbox.width <= maxWidth || bbox.width === 0) {
+    return;
+  }
+  const current = parseFloat(el.attr("font-size"));
+  if (Number.isNaN(current) || current <= 0) {
+    return;
+  }
+  const next = Math.max(minFontSize, (current * maxWidth) / bbox.width);
+  el.attr("font-size", `${next}px`);
+}
+
+function wrapTextLines(svg, text, maxWidth, fontSize) {
+  const lines = [];
+  const measure = svg
+    .text("")
+    .attr("font-size", `${fontSize}px`)
+    .attr("font-family", "Arial, Helvetica, sans-serif")
+    .opacity(0);
+  const widthOf = (s) => {
+    measure.text(s);
+    return measure.bbox().width;
+  };
+  for (const paragraph of text.split("\n")) {
+    const words = paragraph.trim().split(/\s+/).filter(Boolean);
+    if (words.length === 0) {
+      lines.push("");
+      continue;
+    }
+    let line = words[0];
+    for (let i = 1; i < words.length; i++) {
+      const candidate = `${line} ${words[i]}`;
+      if (widthOf(candidate) <= maxWidth) {
+        line = candidate;
+      } else {
+        lines.push(line);
+        line = words[i];
+      }
+    }
+    lines.push(line);
+  }
+  measure.remove();
+  return lines;
+}
+
+function normalizedFontSize(
+  svg,
+  targetHeight,
+  baseFontSize,
+  minFontSize,
+  maxFontSize,
+) {
+  const sample = svg
+    .text("Hg")
+    .attr("font-size", `${baseFontSize}px`)
+    .attr("font-family", "Arial, Helvetica, sans-serif")
+    .opacity(0);
+  const h = sample.bbox().height;
+  sample.remove();
+  if (h <= 0) {
+    return baseFontSize;
+  }
+  return Math.max(
+    minFontSize,
+    Math.min(maxFontSize, (baseFontSize * targetHeight) / h),
+  );
+}
+
+function addWrappedDescription(svg, text, x, y, width, height) {
+  const fontSize = normalizedFontSize(svg, 5.1, 6, 5, 6);
+  const lineHeight = (7 / 6) * fontSize;
+  const maxLines = Math.max(1, Math.floor(height / lineHeight));
+  const lines = wrapTextLines(svg, text, width, fontSize).slice(0, maxLines);
+  for (let i = 0; i < lines.length; i++) {
+    const line = svg
+      .text(lines[i])
+      .attr("font-size", `${fontSize}px`)
+      .attr("font-family", "Arial, Helvetica, sans-serif")
+      .fill("#000000");
+    alignTextTop(line, x, y + i * lineHeight, "start");
+  }
+}
+
+const updateSegments = function () {
+  for (const group_card of cachedGroupCards) {
+    group_card.hide();
+  }
+  for (const group_item of cachedGroupItems) {
     group_item.show();
   }
-  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
-  for (const segment of segments) {
+  for (const segment of cachedSegments) {
     if (segment.hasClass("selected")) {
-      segment.css({ opacity: "1", filter: "grayscale(0)" });
+      segment.css({ opacity: "1" });
       segment.findOne(".iwr-vis-segment-item-text").attr("fill", "#ffffff");
       segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0.5);
     } else if (segment.hasClass("hovered")) {
-      segment.css({ opacity: "1", filter: "grayscale(0)" });
+      segment.css({ opacity: "1" });
       segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
       segment.findOne(".iwr-vis-segment-item-text").attr("fill", "#000000");
     } else {
-      segment.css({
-        filter: "grayscale(80%)",
-        opacity: "20%",
-      });
+      segment.css({ opacity: "0.2" });
       segment.findOne(".iwr-vis-segment-item-arc").attr("stroke-width", 0);
       segment.findOne(".iwr-vis-segment-item-text").attr("fill", "#000000");
     }
@@ -53,11 +174,10 @@ function updateGroups(
   cy = 200,
 ) {
   updateSegments();
-  const items = SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item");
+  const items = cachedGroupItems;
   if (groups != null) {
     console.assert(items.length === groups.length, items, groups);
   }
-  let groupBoxIndex = { x: 0, y: 0 };
   let nGroups = 0;
   if (groups == null || show_all === true) {
     nGroups = items.length;
@@ -68,32 +188,21 @@ function updateGroups(
       }
     }
   }
+  if (nGroups === 0) return;
+  const grid = Utils.computeCircleGrid(nGroups, 200 / 60, 148 * zoom);
+  const compact = grid.cellHeight < 20;
   if (show_groups === true) {
-    items.find(".iwr-vis-group-item-groupname").show();
-    items.find(".iwr-vis-group-item-profname-small").show();
-    items.find(".iwr-vis-group-item-profname-large").hide();
-  }
-  let ncols = 2;
-  let scaleFactor = 0.43 * zoom;
-  if (nGroups > 12) {
-    ncols = 3;
-  }
-  let nrows = Math.floor((nGroups + (ncols - 1)) / ncols);
-  if (nGroups > 18) {
-    ncols = 4;
-    groupBoxIndex.x = 1;
-    nrows = Math.floor((nGroups + 10 + (ncols - 1)) / ncols);
-    scaleFactor = (6.1 / (nrows + 2 * ncols)) * zoom;
-    if (show_groups === true) {
+    if (compact) {
       items.find(".iwr-vis-group-item-groupname").hide();
       items.find(".iwr-vis-group-item-profname-small").hide();
       items.find(".iwr-vis-group-item-profname-large").show();
+    } else {
+      items.find(".iwr-vis-group-item-groupname").show();
+      items.find(".iwr-vis-group-item-profname-small").show();
+      items.find(".iwr-vis-group-item-profname-large").hide();
     }
   }
-  const width = 200 * scaleFactor;
-  const height = 60 * scaleFactor;
-  const x0 = cx - (width * ncols) / 2;
-  const y0 = cy - (height * nrows) / 2;
+  let posIdx = 0;
   for (let i0 = 0; i0 < items.length; i0++) {
     let i = i0;
     if (sort_by_group) {
@@ -107,28 +216,26 @@ function updateGroups(
         opac = groups[i] + 0.2;
       }
       const padding = 0.8;
+      const pos = grid.positions[posIdx];
+      posIdx++;
       items[i].animate(method_anim_ms, 0, "now").transform({
-        scaleX: (width - padding) / items[i].width(),
-        scaleY: (height - padding) / items[i].height(),
-        positionX: x0 + width * (groupBoxIndex.x + 0.5),
-        positionY: y0 + height * (groupBoxIndex.y + 0.5),
+        scaleX: (grid.cellWidth - padding) / items[i].width(),
+        scaleY: (grid.cellHeight - padding) / items[i].height(),
+        positionX: cx + pos.x,
+        positionY: cy + pos.y,
       });
       items[i].css({ opacity: opac, visibility: "visible" });
-      groupBoxIndex = Utils.nextGroupBoxIndex(groupBoxIndex, ncols, nrows);
     }
   }
 }
 
 const resetAll = function () {
-  SVG("#iwr-vis-menu-svg")
-    .find(".iwr-vis-segment-item")
-    .addClass("hovered")
-    .removeClass("selected");
+  cachedSegments.addClass("hovered").removeClass("selected");
   updateGroups(null);
 };
 
 const selectSegment = function () {
-  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
+  const segments = cachedSegments;
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (this.hasClass("selected") && nSelected === 1) {
     resetAll();
@@ -141,7 +248,7 @@ const selectSegment = function () {
 };
 
 const hoverSegment = function () {
-  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
+  const segments = cachedSegments;
   const nSelected = segments.hasClass("selected").filter(Boolean).length;
   if (nSelected != 1) {
     segments.removeClass("selected").removeClass("hovered");
@@ -159,39 +266,30 @@ const leaveSegment = function () {
     this.findOne(".iwr-vis-segment-item-text").fill("#000000");
     this.findOne(".iwr-vis-segment-item-arc").attr({ "stroke-width": 0 });
   }
-  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
-  const nSelected = segments.hasClass("selected").filter(Boolean).length;
+  const nSelected = cachedSegments.hasClass("selected").filter(Boolean).length;
   if (nSelected === 1) {
     return;
   }
-  segments.addClass("hovered");
+  cachedSegments.addClass("hovered");
   updateGroups(null);
 };
 
 function applyWeightedHighlights(items, weights) {
   console.assert(items.length === weights.length, items, weights);
-  items.css({ filter: "grayscale(80%)", opacity: "20%" });
+  items.css({ opacity: "0.2" });
   for (let i = 0; i < weights.length; i++) {
     if (weights[i] > 0) {
-      items[i].css({ filter: "grayscale(0)" });
       items[i].css({ opacity: weights[i] });
     }
   }
 }
 
 const highlightSegments = function () {
+  applyWeightedHighlights(cachedMethodItems, this.data("method_weights"));
   applyWeightedHighlights(
-    SVG("#iwr-vis-menu-svg").find(".iwr-vis-method-item"),
-    this.data("method_weights"),
-  );
-  applyWeightedHighlights(
-    SVG("#iwr-vis-menu-svg").find(".iwr-vis-application-item"),
+    cachedApplicationItems,
     this.data("application_weights"),
   );
-};
-
-const shadowFilter = function (add) {
-  add.blend(add.$source, add.gaussianBlur(1).in(add.$sourceAlpha));
 };
 
 function addSegments(
@@ -227,8 +325,7 @@ function addSegments(
       .addClass("iwr-vis-segment-item-arc")
       .fill(color)
       .stroke("#ffffff")
-      .attr("stroke-width", 0)
-      .filterWith(shadowFilter);
+      .attr("stroke-width", 0);
     const strPath = group
       .path(Utils.makeTextArc(radius, (i + 0.5) * delta, (i + 1.5) * delta))
       .fill("none")
@@ -316,19 +413,16 @@ function addGroups(
     });
     group.click(function () {
       this.addClass("frozenSegments");
-      SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").hide();
-      this.parent()
-        .findOne(".iwr-vis-group-card")
-        .front()
-        .css({ opacity: 1, visibility: "visible" });
+      cachedGroupItems.hide();
+      this.parent().findOne(".iwr-vis-group-card").front().show();
     });
     // box
     group
       .rect(boxWidth, boxHeight)
+      .radius(4)
       .fill(color)
       .stroke("none")
-      .addClass("iwr-vis-group-item-box")
-      .filterWith(shadowFilter);
+      .addClass("iwr-vis-group-item-box");
     if (show_groups === true) {
       // group name
       const numLines = countLines(members[i].group);
@@ -340,45 +434,40 @@ function addGroups(
         txtTop = 4;
       }
       for (const textLine of members[i].group.split("\n")) {
-        group
+        const txt = group
           .text(textLine)
           .addClass("iwr-vis-group-item-groupname")
-          .x(boxWidth / 2)
-          .y(txtTop)
           .attr("startOffset", "50%")
-          .attr("text-anchor", "middle")
-          .fill("#0000ff")
+          .fill("#2563eb")
           .attr("font-weight", "bold")
           .attr("font-size", "12px")
           .hide();
+        alignTextTop(txt, boxWidth / 2, txtTop);
         txtTop += dy;
       }
       // small professor name
-      group
+      const smallName = group
         .text(Utils.shortenName(members[i].name, false))
-        .x(boxWidth / 2)
-        .y(txtTop + padding + 6 / numLines)
         .addClass("iwr-vis-group-item-profname-small")
         .attr("startOffset", "50%")
-        .attr("text-anchor", "middle")
         .attr("font-weight", "bold")
         .attr("font-size", "12px")
         .hide();
+      alignTextTop(smallName, boxWidth / 2, txtTop + padding + 6 / numLines);
     }
     // large professor name
     let dy = 0;
     for (const textLine of Utils.shortenName(members[i].name, true).split(
       "\n",
     )) {
-      group
+      const largeName = group
         .text(textLine)
-        .y(10 + dy)
-        .x(boxWidth / 2)
         .addClass("iwr-vis-group-item-profname-large")
         .attr("startOffset", "50%")
-        .attr("text-anchor", "middle")
         .attr("font-size", "20px");
-      dy += 25;
+      alignTextTop(largeName, boxWidth / 2, 6 + dy);
+      fitTextWidth(largeName, boxWidth - 10, 15);
+      dy += 23;
     }
     group.size(65, 20);
     group.move(200 - 65 / 2, 200 - 20 / 2);
@@ -389,13 +478,14 @@ function addGroups(
 const hideGroupCard = function () {
   const card = this.parent();
   card.parent().findOne(".iwr-vis-group-item").removeClass("frozenSegments");
-  card.css({ opacity: 0, visibility: "hidden" });
-  SVG("#iwr-vis-menu-svg").find(".iwr-vis-group-item").show();
+  card.hide();
+  cachedGroupItems.show();
 };
 
 function addGroupCard(svg, member, color, image_base_url) {
   const group_card = svg.group().addClass("iwr-vis-group-card");
   const card_size = 210;
+  const header_shift = 15.3;
   const bg_circle = group_card
     .circle(316)
     .cx(200)
@@ -404,57 +494,56 @@ function addGroupCard(svg, member, color, image_base_url) {
     .stroke("none");
   group_card
     .rect(card_size, card_size)
+    .radius(4)
     .cx(200)
     .cy(200)
     .fill(color)
     .stroke("none")
-    .filterWith(shadowFilter);
-  const close_button_size = 6;
+    .addClass("iwr-vis-group-card-box");
+  const close_button_size = 10;
   const close_button_padding = 3;
   const close_button_x =
     200 + card_size / 2 - close_button_size - close_button_padding;
   const close_button_y = 200 - card_size / 2 + close_button_padding;
   const close_button = group_card.group().addClass("iwr-vis-clickable");
   close_button
-    .rect(close_button_size, close_button_size)
+    .circle(close_button_size)
     .move(close_button_x, close_button_y)
-    .stroke("#ffffff")
-    .fill("#ffffff");
+    .stroke("none")
+    .fill("#e5e5e5");
   close_button
     .line(
-      close_button_x,
-      close_button_y,
-      close_button_x + close_button_size,
-      close_button_y + close_button_size,
+      close_button_x + 2,
+      close_button_y + 2,
+      close_button_x + close_button_size - 2,
+      close_button_y + close_button_size - 2,
     )
-    .stroke("#777777")
-    .attr({ "stroke-width": 0.5 });
+    .stroke("#555555")
+    .attr({ "stroke-width": 0.8 });
   close_button
     .line(
-      close_button_x + close_button_size,
-      close_button_y,
-      close_button_x,
-      close_button_y + close_button_size,
+      close_button_x + close_button_size - 2,
+      close_button_y + 2,
+      close_button_x + 2,
+      close_button_y + close_button_size - 2,
     )
-    .stroke("#777777")
-    .attr({ "stroke-width": 0.5 });
+    .stroke("#555555")
+    .attr({ "stroke-width": 0.8 });
   bg_circle.click(hideGroupCard);
   close_button.click(hideGroupCard);
   let y = 99;
   for (const textLine of member.group.split("\n")) {
-    group_card
+    const groupName = group_card
       .text(textLine)
-      .x(200)
-      .y(y)
       .attr("startOffset", "50%")
-      .attr("text-anchor", "middle")
-      .fill("#0000ff")
+      .fill("#2563eb")
       .attr("font-weight", "bold")
-      .attr("font-size", "12px")
-      .linkTo(member.website);
+      .attr("font-size", "12px");
+    normalizeTextHeight(groupName, 10.2, 9, 12);
+    alignTextLikeBaseline(groupName, 200, y + header_shift);
+    groupName.linkTo(member.website);
     y += 13;
   }
-  group_card.css({ opacity: 0, visibility: "hidden" });
   y += 10;
   group_card
     .image(image_base_url + member.image)
@@ -462,31 +551,32 @@ function addGroupCard(svg, member, color, image_base_url) {
     .move(160, y)
     .linkTo(member.website);
   y += 84;
-  group_card
+  const profName = group_card
     .text(member.name)
-    .x(200)
-    .y(y)
     .attr("startOffset", "50%")
-    .attr("text-anchor", "middle")
     .attr("font-weight", "bold")
     .attr("font-size", "12px");
+  normalizeTextHeight(profName, 10.2, 9, 12);
+  alignTextLikeBaseline(profName, 200, y + header_shift);
   y += 25;
-  const blurb = group_card.foreignObject(180, 95).attr({ x: 110, y: y });
-  blurb.add(
-    SVG(
-      '<div xmlns="http://www.w3.org/1999/xhtml" class="iwr-vis-group-card-html">' +
-        member.description +
-        "</div>",
-      true,
-    ),
+  const desc_margin = 10;
+  const desc_width = card_size - 2 * desc_margin;
+  const desc_x = 200 - desc_width / 2;
+  addWrappedDescription(
+    group_card,
+    member.description,
+    desc_x,
+    y,
+    desc_width,
+    95,
   );
+  group_card.hide();
 }
 
 const zoomGroups = function (e) {
   // only zoom in/out if all groups are displayed
-  const segments = SVG("#iwr-vis-menu-svg").find(".iwr-vis-segment-item");
-  const nHovered = segments.hasClass("hovered").filter(Boolean).length;
-  if (nHovered != segments.length) {
+  const nHovered = cachedSegments.hasClass("hovered").filter(Boolean).length;
+  if (nHovered != cachedSegments.length) {
     return;
   }
   const p = this.point(e.clientX, e.clientY);
@@ -505,12 +595,8 @@ const zoomGroups = function (e) {
 };
 
 const sortGroupsByProf = function () {
-  const group = SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-settings-menu-sort-by-group",
-  );
-  const prof = SVG("#iwr-vis-menu-svg").find(
-    ".iwr-vis-settings-menu-sort-by-prof",
-  );
+  const group = cachedSortByGroup;
+  const prof = cachedSortByProf;
   if (this.findOne(".iwr-vis-settings-menu-sort-by-prof") != null) {
     prof.fill("#777777");
     group.fill("#ffffff");
@@ -666,9 +752,17 @@ function create_iwr_vis(data) {
     10,
     "iwr-vis-application-item",
   );
-  resetAll();
   // settings menu
   addSettings(svg);
+  // cache DOM queries
+  cachedGroupCards = svg.find(".iwr-vis-group-card");
+  cachedGroupItems = svg.find(".iwr-vis-group-item");
+  cachedSegments = svg.find(".iwr-vis-segment-item");
+  cachedMethodItems = svg.find(".iwr-vis-method-item");
+  cachedApplicationItems = svg.find(".iwr-vis-application-item");
+  cachedSortByGroup = svg.find(".iwr-vis-settings-menu-sort-by-group");
+  cachedSortByProf = svg.find(".iwr-vis-settings-menu-sort-by-prof");
+  resetAll();
 }
 
 window.onload = function () {
