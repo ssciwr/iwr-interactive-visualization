@@ -1,0 +1,663 @@
+{
+  "image_base_url": "data/",
+  "group_color": "#ffffff",
+  "method_color": "#e13535",
+  "application_color": "#499bce",
+  "show_group_names": false,
+  "methods": [
+    "Mathematical and Numerical Analysis",
+    "Numerical Algorithms and Software",
+    "Data Analysis and Graphics",
+    "Machine Learning and Computer Vision",
+    "Arithmetic, Geometry and Topology"
+  ],
+  "applications": [
+    "Molecular Material Science",
+    "Medicine and Bioscience",
+    "Humanities",
+    "Astrophysics",
+    "Environmental Sciences",
+    "Engineering"
+  ],
+  "members": [
+    {
+      "name": "Prof. Dr. Peter Albers",
+      "group": "Symplectic Dynamics",
+      "website": "https://www.mathi.uni-heidelberg.de/~palbers/",
+      "description": "Peter Albers obtained his PhD from Leipzig University. After being a postdoc at NYU, Heinz Hopf lecturer at ETH Zürich, and von Neumann fellow at the IAS Princeton he accepted a tenure-track assistant professorship at Purdue University. In 2012 he moved to University of Münster and accepted in 2017 a Chair for Pure Mathematics at Heidelberg University.",
+      "image": "Albers_sw.webp",
+      "method_weights": [1, 0, 1, 0, 1],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Saeed Amirjalayer",
+      "group": "Computational Chemistry",
+      "website": "https://www.samirjalayer.de",
+      "description": "Saeed Amirjalayer received his PhD from Ruhr University Bochum in 2011. After two years as a fellow of the German National Academy of Sciences Leopoldina at the University of Amsterdam and ten years as a group leader at the University of Münster, he became full professor in Computational Chemistry at Heidelberg University in 2024, supported by the Heisenberg program of the DFG.",
+      "image": "Amirjalayer.webp",
+      "method_weights": [0, 1, 0, 1, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Artur Andrzejak",
+      "group": "Parallel and\nDistributed Systems",
+      "website": "https://pvs.ifi.uni-heidelberg.de/team/aa",
+      "description": "Artur Andrzejak received a PhD degree in computer science from ETH Zurich and a habilitation degree from FU Berlin. He worked at HP Labs Palo Alto in 2001–2002, at ZIB Berlin in 2003–2009, and was co-leading Data Mining Dep. at I2R Singapore in 2010. Since 2010 he holds the Chair for Parallel and Distributed Systems at Institute of Computer Science.",
+      "image": "Andrzejak_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Dr. Till Bärnighausen",
+      "group": "Global Health",
+      "website": "https://www.klinikum.uni-heidelberg.de/heidelberger-institut-fuer-global-health/",
+      "description": "Till Bärnighausen is Alexander von Humboldt Professor and Director of the Heidelberg Institute of Global Health (HIGH), Heidelberg University. He is also Adjunct Professor of Global Health at the Harvard T.H. Chan School of Public Health and Senior Faculty at the Wellcome Trust’s Africa Health Research Institute (AHRI) in South Africa.",
+      "image": "Bärnighausen-sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Sandra Barteit",
+      "group": "Digital Global Health",
+      "website": "https://ukhd.de/digitalGH/",
+      "description": "Dr. Sandra Barteit is the head of the Digital Global Health research group at the Heidelberg Institute of Global Health. Her research focuses on using artificial intelligence, data science, and sensor-based technologies to study the health impacts of climate change on vulnerable populations worldwide. She leads the PULSE-AI project, funded by the Carl Zeiss Foundation, as well as the DFG-funded project on the Development of Population-Health Cohorts. Dr. Barteit is also involved in the Data Science Initiative in Africa, manages the Global Health elective track, and teaches global health and research methods. She holds a Dr.sc.hum. in Global Health from Heidelberg University and has master's degrees in Data Analytics, Computational Linguistics, and Innovation and Entrepreneurship.",
+      "image": "Barteit.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 0, 1, 0, 1, 1]
+    },
+    {
+      "name": "Prof. Dr. Peter Bastian",
+      "group": "Parallel Computing",
+      "website": "https://conan.iwr.uni-heidelberg.de/",
+      "description": "Peter Bastian obtained his PhD from Heidelberg University. After four years at University of Stuttgart and his habilitation at Kiel University he was assistant professor at Heidelberg University and full professor at University of Stuttgart before he became a full professor at IWR in 2008. From 2011–2020 he served as the scientific director of HGS MathComp.",
+      "image": "Bastian_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Tristan Bereau",
+      "group": "Theoretical Physics",
+      "website": "https://tristanbereau.com/",
+      "description": "Tristan obtained his PhD at Carnegie Mellon University. He's held academic positions at the University of Basel, the Max Planck Institute for Polymer Research (Emmy Noether research group), and the University of Amsterdam. Tristan is currently professor at the Institute for Theoretical Physics, Heidelberg University. He works at the intersection of molecular simulations and machine learning.",
+      "image": "Bereau_sw.webp",
+      "method_weights": [0, 1, 0, 1, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Dr. h.c. mult. Hans Georg Bock",
+      "group": "Simulation and Optimization",
+      "website": "https://simopt.iwr.uni-heidelberg.de/home",
+      "description": "Hans Georg Bock studied Mathematics in Cologne and Bonn, where he obtained his doctoral degree. After a visiting professorship in Heidelberg, he became full professor for Applied Mathematics in Augsburg. Since 1991, he is full professor at IWR, Heidelberg. He is active as initiator, project leader and consultant of several research programs.",
+      "image": "Bock_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 1]
+    },
+    {
+      "name": "Prof. Dr. Gebhard Böckle",
+      "group": "Computational Arithmetic\nGeometry",
+      "website": "https://www.iwr.uni-heidelberg.de/groups/arith-geom/home",
+      "description": "Gebhard Böckle received his PhD from the University of Illinois at Urbana-Champaign in 1995. As a postdoc, he held positions in Essen, Strasbourg, Mannheim and the ETH Zürich. From 2003 to 2010 he was professor of Mathematics at the University of Duisburg-Essen. Since 2010 he leads the Computational Arithmetic Geometry group at Heidelberg University.",
+      "image": "Böckle_sw.webp",
+      "method_weights": [0, 0, 0, 0, 1],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Tobias Buck",
+      "group": "AstroAI Lab",
+      "website": "https://astroai-lab.de/",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. André Butz",
+      "group": "Atmospheric Physics",
+      "website": "https://www.iup.uni-heidelberg.de/de/research/ghg",
+      "description": "André Butz graduated with a PhD in physics from Heidelberg University. After a postdoctoral stay in Utrecht, he became Emmy-Noether fellow at Karlsruhe and, in 2016, he was appointed professor at Deutsches Zentrum für Luft- und Raumfahrt and Munich University. Since 2018, he is professor at the Institute of Environmental Physics in Heidelberg.",
+      "image": "Butz_sw.webp",
+      "method_weights": [0, 1, 1, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Peter Comba",
+      "group": "Theory and Modeling in Inorganic\nand Bioinorganic Chemistry",
+      "website": "https://www.uni-heidelberg.de/fakultaeten/chemgeo/aci/comba/",
+      "description": "Peter Comba obtained his diploma from ETH Zürich and a PhD from the Université de Neuchâtel. After three years at the Australian National University in Canberra, two years at the University of Lausanne and five years at the University of Basel, he got his current position in 1992 at the Inorganic Chemistry department and the IWR in Heidelberg.",
+      "image": "Comba_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Claudia Maria Denkinger",
+      "group": "Global Health Diagnostics",
+      "website": "https://denkglobaldx.org/",
+      "description": "Claudia Denkinger is Professor and Medical Director of the Department of Infectious Disease and Tropical Medicine, Heidelberg University. She is internationally recognized for her work on diagnostics for resource limited settings, and serves as an advisor to the WHO for tuberculosis and COVID diagnostics.",
+      "image": "Denkinger_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Andreas Dreuw",
+      "group": "Theoretical and Computational\nChemistry",
+      "website": "https://wwwagdreuw.iwr.uni-heidelberg.de/",
+      "description": "Andreas Dreuw obtained his PhD from Heidelberg University. After two years at the UC Berkeley, and eight years as Emmy-Noether and Heisenberg fellow at Goethe-University Frankfurt, he holds the Chair for Theoretical and Computational Chemistry at the IWR since 2011. At present, he is the managing director of the IWR.",
+      "image": "Dreuw_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Martin Dugas",
+      "group": "Medical Informatics",
+      "website": "https://www.klinikum.uni-heidelberg.de/mi/",
+      "description": "Since 2021 Martin Dugas is Director of the Institute for Medical Informatics [ukhd.de/imi] at Heidelberg University Hospital. He holds a doctoral degree in human medicine as well as a diploma in computer science. His research is focused on medical informations systems and data integration, specifically structured patient data. He received the venia legendi for Medical Informatics in 2002 at the University of Munich, Germany. From 2004 to 2005 he was a research fellow at Siemens Medical Health Services, USA. 2005-2021 he was professor of Medical Informatics at the University of Münster. In 2011 he and his team established the Portal of Medical Data Models, a research information infrastructure funded by the German Research Foundation.",
+      "image": "Dugas_sw.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Daniel Durstewitz",
+      "group": "Theoretical Neurosciences",
+      "website": "https://www.zi-mannheim.de/forschung/personen/person/1889.html",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Stefan Fischer",
+      "group": "Computational Biochemistry",
+      "website": "http://www.iwr.uni-heidelberg.de/groups/biocomp/fischer",
+      "description": "Stefan Fischer obtained his PhD in biophysics from Harvard University in 1992, in the theoretical chemistry group of Martin Karplus (2013 Nobel laureate), where he pioneered the development of computational methods for studying complex motions and reactions in proteins. Since 1999, he heads the Computational Biochemistry group at the IWR.",
+      "image": "Fischer_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [1, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Anette Frank",
+      "group": "Natural Language\nProcessing Group",
+      "website": "https://www.cl.uni-heidelberg.de/nlpgroup/",
+      "description": "Anette Frank obtained her PhD from the University of Stuttgart. After 4 years as a scientific researcher at the Xerox Research Centre Europe in Grenoble and 6 years as a senior researcher at the German Research Centre for Artificial Intelligence in Saarbrücken, she holds the Chair of Computational Linguistics at Heidelberg University. She has been appointed an ACL Fellow in 2021.",
+      "image": "Frank_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Roman Gold",
+      "group": "Compact objects:\ngravity and astrophysics",
+      "website": "https://www.roman-gold-web.com",
+      "description": "Roman Gold works on inference problems in Very-Long-Baseline Interferometry (in particular black hole images), theoretical source modeling of accretion of compact objects and gravitational waves (black holes and neutron stars) and associated computational methods (mainly PDEs, MCMC). He seeks to understand both the astrophysics and gravity of compact objects. He received his PhD from FSU Jena in 2011, became associate professor at SDU, Odense,DK  and joined Heidelberg University in 2024.",
+      "image": "Gold.webp",
+      "method_weights": [1, 1, 1, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Frauke Gräter",
+      "group": "Molecular Biomechanics",
+      "website": "https://www.h-its.org/research/mbm/",
+      "description": "Frauke  Gräter  is  head  of  the  research  group  “Molecular  Biomechanics” at the Heidelberg Institute for Theoretical Studies (HITS) since 2009, professor at IWR since 2013, and HITS Scientific Director 2021–2022. Before moving to Heidelberg, she was a Feodor Lynen  postdoc  fellow  at  Columbia  University  and  a  junior  group  leader at the Partner Institute for Computational Biology, Shanghai.",
+      "image": "Gräter_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [1, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Frederik Graw",
+      "group": "Modelling Infection & Immunity",
+      "website": "https://www.bioquant.uni-heidelberg.de/research/groups/grawlab.html",
+      "description": "Frederik Graw studied mathematics at the universities of Siegen and Freiburg, and obtained his PhD in Theoretical Immunology from the ETH Zurich in 2010. After a PostDoc at the Los Alamos National Laboratory he became a BIOMS group leader at IWR/Heidelberg University in 2012. Since 2019, he has been a Chica and Heinz Schaller fellow at the BioQuant/IWR.",
+      "image": "Graw_sw.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Lutz Greb",
+      "group": "Inorganic and Applied Computational Chemistry",
+      "website": "https://www.bioquant.uni-heidelberg.de/research/groups/grawlab.html",
+      "description": "Lutz Greb is a professor of inorganic chemistry at Heidelberg University, leading a research group renowned for advancing modern main-group chemistry, strong Lewis acids, and unusual bonding phenomena. He studied chemistry in Freiburg, completed his doctorate at KIT Karlsruhe, and expanded his expertise during postdoctoral work on molecular motors before establishing his independent group in Heidelberg. His research bridges computational predictions and experimental realization, focusing on molecular Lewis acidity, reactive main-group compounds, and applied computational chemistry. Greb is widely recognized for his role in shaping the current understanding of Lewis acidity and molecular reactivity.",
+      "image": "Greb_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Ganna (Anya) Gryn'ova",
+      "group": "Computational Carbon Chemistry",
+      "website": "https://www.h-its.org/research/ccc/",
+      "description": "Anya Gryn’ova received her PhD in computational chemistry from Australian National University in 2014. Next, she was a Marie Skłodowska-Curie Actions postdoctoral fellow at EPF Lausanne. In 2019, Dr. Gryn’ova started her junior research group “Computational Carbon Chemistry” at the Heidelberg Institute for Theoretical Studies and IWR.",
+      "image": "Grynova_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Eva Gutheil",
+      "group": "Multiphase Flows\nand Combustion",
+      "website": "https://wwwaggutheil.iwr.uni-heidelberg.de/",
+      "description": "Eva Gutheil received her PhD in Chemical Engineering (TU Darmstadt) and her second PhD in Thermal Energy Sciences (University of Stuttgart). After three post-doctoral years at UC San Diego and UC Irvine, about two years at DLR (German Aerospace Center) Stuttgart and four years at University of Stuttgart, she became full professor at Heidelberg University in 1998.",
+      "image": "Gutheil_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Fred Hamprecht",
+      "group": "Scientific AI",
+      "website": "https://sciai-lab.org/",
+      "description": "Fred studied chemistry at ETH Zürich, Imperial College and Cambridge University. Starting from work in quantum chemistry, he drifted into machine learning and computer vision and has happily worked in this domain ever since. He joined IWR in 2001, and co-founded the Heidelberg Collaboratory for Image Processing (HCI) in 2008.",
+      "image": "Hamprecht_sw.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 1]
+    },
+    {
+      "name": "Prof. Dr. Carl Herrmann",
+      "group": "Computational Regulatory\nGenomics Group",
+      "website": "https://www.hdsu.org",
+      "description": "Carl Herrmann studied engineering sciences, applied mathematics and theoretical physics in France, and holds a PhD on string theory and supergravity. He moved to bioinformatics and was appointed assistance professor in Bioinformatics at Aix-Marseille University. In 2012, he moved to Heidelberg and became professor of Bioinformatics at IPMB and BioQuant in 2023. He is member of the faculty of engineering sciences.",
+      "image": "Herrmann.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Roland Herzog",
+      "group": "Scientific Computing\nand Optimization",
+      "website": "https://scoop.iwr.uni-heidelberg.de/",
+      "description": "Roland Herzog obtained his PhD from the University of Bayreuth. After five years at the University of Graz and the Johann Radon Institute for Computational and Applied Mathematics in Linz, he was appointed professor for numerics of PDEs at Chemnitz University of Technology. Since 2021, he holds the Chair for Scientific Computing and Optimization at the IWR.",
+      "image": "Herzog_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 1]
+    },
+    {
+      "name": "Prof. Dr. Jürgen Hesser",
+      "group": "Data Analysis and Modeling\nin Medicine",
+      "website": "https://www.umm.uni-heidelberg.de/miism/",
+      "description": "Jürgen Hesser was Professor in Medical Technology at the University of Mannheim before he was appointed Professor in Experimental Radiation Oncology at the Medical Faculty Mannheim, Heidelberg University. Since August 2019, he heads the department for Data Analysis and Modeling in Medicine at the Mannheim Institute for Intelligent Systems in Medicine.",
+      "image": "Hesser_sw.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Vincent Heuveline",
+      "group": "Engineering Mathematics and\nComputing Lab (EMCL)",
+      "website": "https://emcl.iwr.uni-heidelberg.de/",
+      "description": "Vincent Heuveline is full professor for Scientific Computing and leads the Engineering Mathematics and Computing Lab (EMCL) at IWR. He is Director of the Computing Centre and Chief Information Officer (CIO) of Heidelberg University. Furthermore, he leads the Data Mining and Uncertainty Quantification group at the Heidelberg Institute for Theoretical Studies (HITS gGmbH).",
+      "image": "Heuveline_sw.webp",
+      "method_weights": [0, 1, 1, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Bernhard Höfle",
+      "group": "3DGeo – 3D Geospatial\nData Processing",
+      "website": "https://uni-heidelberg.de/3dgeo",
+      "description": "Bernhard Höfle is a geographer combining geoinformatics and physical geography. He obtained his Doctor of Natural Science (2007) from University of Innsbruck. He joined Heidelberg University as Group Leader and Junior Professor (2011–2017). Since 2017 he is Full Professor of GIScience and 3D Spatial Data Processing and Dean of Studies (Geography).",
+      "image": "Höfle_sw.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "PD Dr. Ahmad Hujeirat",
+      "group": "Theoretical and Computational\nAstrophysics",
+      "website": "https://www.iwr.uni-heidelberg.de/groups/compastro/home/",
+      "description": "Ahmad Hujeirat obtained his M.Sc. from the Technion, PhD in applied mathematics from Heidelberg University, habilitation in physics from Basel University and habilitation in Astronomy from Heidelberg University. After his stays at the MPIA, Basel University and the Weizmann Institute/Israel, he joined the IWR in 2011 to lead the independent CAAD-research group.",
+      "image": "Hujeirat_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Dr. h.c. mult. Willi Jäger",
+      "group": "Multiscale Analysis\nand Applications",
+      "website": "",
+      "description": "Study Math and Physics, Dipl./Diss. in Math, Uni Munich 1964/66, Habil. in Math, Uni Göttingen 1969, Assistant Munich 1964–66 and Göttingen 1966–70, Member Courant Inst. N.Y. 1969–70, Full Prof. Math, Uni. of Münster, 1970–74, Heidelberg University 1974–2008, Senior Prof. 2008–14, Founding Director IWR 1987–98), MATCH 2007–11, Coordinator BIOMS 2004–19",
+      "image": "Jäger_sw.webp",
+      "method_weights": [1, 0, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Bernd Jähne",
+      "group": "Air-Sea Interactions",
+      "website": "https://www.iup.uni-heidelberg.de/en/research/gw",
+      "description": "PhD 1980 and habilitation 1985 in physics at Heidelberg University, habilitation in computer science 1992 University of Hamburg-Harburg, 1988–2000 Research Professor at Scripps Institution of Oceanography, UCSD, 1994–2018 Chair for Image Processing at IWR and IUP. 2008–2017 coordinating director of the HCI, senior professor since Oct. 2018.",
+      "image": "Jähne_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Jan Johannes",
+      "group": "Statistics of Inverse Problems",
+      "website": "https://sip.math.uni-heidelberg.de/",
+      "description": "Jan Johannes obtained his PhD from Humboldt-Universität zu Berlin. After six years as Postdoctoral fellow in Toulouse (France) and Heidelberg, six years as Professor for Mathematical Statistics at Université catholique de Louvain (Belgium) and ENSAI in Rennes (France) he became Professor for Mathematical Statistics at Heidelberg University.",
+      "image": "Johannes_sw.webp",
+      "method_weights": [1, 0, 1, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Guido Kanschat",
+      "group": "Mathematical Methods\nof Simulation",
+      "website": "https://simweb.iwr.uni-heidelberg.de/",
+      "description": "Guido Kanschat received his PhD from Heidelberg University. After an appointment as visiting assistant professor in Minnesota, he became assistant, associate, and full professor at Texas A&M University. He holds the chair for Mathematical Methods of Simulation at the IWR since 2012 and serves as the Founding Dean of the Faculty of Engineering Sciences.",
+      "image": "Kanschat_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Ralf S. Klessen",
+      "group": "Theoretical Star\nFormation Studies",
+      "website": "http://www.klessen.org",
+      "description": "Ralf Klessen did his PhD in Heidelberg, worked as postdoc in Leiden and Santa Cruz, and as Emmy Noether fellow in Potsdam. Since 2006 he is professor for theoretical astrophysics at Heidelberg University. He obtained an ERC Advanced Grant in 2013 and an ERC Synergy Grant in 2019. Until summer 2021 he also was one of three speakers of the STRUCTURES Excellence Cluster.",
+      "image": "Klessen_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Hans Knüpfer",
+      "group": "Applied Analysis\n(CV/PDE)",
+      "website": "http://213.136.83.64/people/knuepfer/",
+      "description": "Hans Knüpfer obtained his PhD from the University of Bonn under the supervision of Felix Otto. After three years as Courant Instructor at New York University, two years at the Hausdorff Institute in Bonn, he holds the Chair for Calculus of Variations and Partial Differential Equations at the Institute for Applied Mathematics since 2013.",
+      "image": "Knüpfer_sw.webp",
+      "method_weights": [1, 0, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Georgia Koppe",
+      "group": "Machine Learning Human Beaviour",
+      "website": "https://www.zi-mannheim.de/forschung/personen/person/7111.html",
+      "description": "Georgia studied psychology at the Justus-Liebig-University of Gießen. She joined the Central Institute of Mental Health in Mannheim in 2011, and the Hector Institute for AI in Psychiatry in 2023 where she mainly worked on developing and applying machine learning models in the context of neuroscience and mental health. In 2024, she moved to the IWR, focusing on the study of human cognition and behavior.",
+      "image": "Koppe.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 1, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Ekaterina Kostina",
+      "group": "Numerical Optimization",
+      "website": "http://wwwagkostina.iwr.uni-heidelberg.de/Home.html",
+      "description": "Ekaterina Kostina is a Professor in Numerical Analysis. After obtaining a PhD in Mathematics from the Institute of Mathematics, Minsk, she worked there as a senior scientist. In 1997, she moved to Germany, where she was an assistant professor at the IWR. Between 2006 and 2015 she held a Professorship in Numerical Optimization at Marburg University.",
+      "image": "Kostina_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 1]
+    },
+    {
+      "name": "Prof. Dr. Kurt Kremer",
+      "group": "Polymer Theory",
+      "website": "https://www.mpip-mainz.mpg.de/de/kremer",
+      "description": "Kurt Kremer received his PhD 1983 at Cologne University. After PostDoc at Exxon Research and Engineering, USA, C1 Assistant at the Institute of Physics, Mainz, and senior staff scientist at the IFF at the Jülich Research Center, he 1995 became Director at the MPI for Polymer Research, and 2011 Honorary Professor at Heidelberg University.",
+      "image": "Kremer_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Susanne Krömker",
+      "group": "Visualization and\nNumerical Geometry",
+      "website": "https://vngg.iwr.uni-heidelberg.de/",
+      "description": "Susanne Krömker received received her PhD in mathematics from Heidelberg University in 1997. Subsequently, she was a research associate (C1) and afterwards became head of Visualization and Numerical Geometry Group (vNGG) at IWR. In the meantime she was head of computer graphics at HGS Mathematical and Computational Methods for the Sciences. ",
+      "image": "Krömker_sw.webp",
+      "method_weights": [0, 0, 1, 0, 1],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Ursula Kummer",
+      "group": "Modeling of\nBiological Processes",
+      "website": "https://www.cos.uni-heidelberg.de/de/forschungsgruppen/modellierung-biologischer-prozesse",
+      "description": "Ursula Kummer studied biochemistry, chemistry and physics at the Universities of Tübingen, Germany and Oregon, Eugene, USA, respectively. She became a group leader at EML Research gGmbH in Heidelberg in 2000. In 2007 she joined Heidelberg University as full professor. Currently, she is managing director of BIOQUANT.",
+      "image": "Kummer_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Anna Marciniak-Czochra",
+      "group": "Applied Analysis and\nModelling in Biosciences",
+      "website": "http://biostruct.uni-hd.de/",
+      "description": "Anna Marciniak-Czochra studied Mathematics at Warsaw University and obtained her PhD from Heidelberg University. In 2007 she received ERC starting grant, in 2008 was granted Emmy Noether group, and in 2011 a Dr. Habil. from Wroclaw University. She is a Professor of Applied Mathematics at Heidelberg University and a head of research group at IAM, IWR and BIOQUANT Center.",
+      "image": "Marciniak-Czochra_sw.webp",
+      "method_weights": [1, 0, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Benjamin Meder",
+      "group": "Molecular Genetics Laboratory",
+      "website": "https://www.klinikum.uni-heidelberg.de/personen/prof-dr-med-benjamin-meder-2774",
+      "description": "Benjamin Meder is Full Professor for Precision Digital Health, a research unit devoted to embark on digital and molecular profiles and targeted interventions to cure heart diseases. Clinically, he is head of the Institute for Cardiomyopathies at Heidelberg University and deputy Medical Director of the Department of Cardiology, Angiology, Pneumology. From 2018-2021 he was Visiting Prof. of Genetics at Stanford University. In 2018 he cofounded Informatics for Life, a large medical AI research cluster in Heidelberg.",
+      "image": "Meder.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [1, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Zahra Monfared",
+      "group": "Dynamical Systems and AI",
+      "website": "https://zmonfared.github.io/DSAIlab/",
+      "description": "Zahra Monfared is an independent BMBF Research Group Leader in Dynamical Systems and AI at Heidelberg University. She obtained her PhD in Applied Mathematics (Dynamical Systems) from Ferdowsi University of Mashhad, Iran and worked as a postdoctoral researcher at TUM and UHD. Her work mainly focuses on two research directions: Dynamical Systems for AI and AI for Dynamical Systems.",
+      "image": "Monfared.webp",
+      "method_weights": [1, 0, 0, 1, 1],
+      "application_weights": [0, 1, 0, 0, 1, 1]
+    },
+    {
+      "name": "Dr. Dylan Nelson",
+      "group": "Computational Galaxy Formation",
+      "website": "https://www.ita.uni-heidelberg.de/~dnelson/#group",
+      "description": "Dylan Nelson is an Emmy Noether research group leader at the Institute for Theoretical Astrophysics within the Center for Astronomy (ITA/ZAH) of Heidelberg University. He was previously a postdoctoral fellow at the Max Planck Institute for Astrophysics, after completing his PhD at Harvard University and his bachelor degrees at the University of California Berkeley.",
+      "image": "Nelson_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Dr. Florian Nieser",
+      "group": "Critical AI Engineering\nDigital Humanities and\nEducational Transfer",
+      "website": "https://www.uni-heidelberg.de/de/forschung/forschungsprofil/fields-of-focus/field-of-focus-iii/forschungsschwerpunkte/heidelberg-center-for-digital-humanities-hcdh/geschaeftsfuehrung-hcdh",
+      "description": "Florian Nieser is Managing Director of the Center for Digital Humanities Heidelberg (HCDH) at Heidelberg University. He obtained his PhD at the Eberhard-Karls University in Tübingen in German medieval studies on semiotic codings of heroic figures. His research areas following his doctorate mainly revolve around interdisciplinary fields of transmediality, digitality, and computational humanities. He is currently researching LLMs, their benefits for the humanities, applications in the interdisciplinary field and possible uses in the transfer sector. (Copyright of photography: Benjamin von Husen)",
+      "image": "Nieser.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Björn Ommer",
+      "group": "Computer Vision",
+      "website": "https://hci.iwr.uni-heidelberg.de/Staff/bommer",
+      "description": "Björn Ommer has been a professor for Scientific Computing at the IWR and leading the Computer Vision Group since 2009. He received his PhD from ETH Zurich and served as a postdoctoral scholar at UC Berkeley. He has served as one of the directors of the IWR and of the HCI. In 2021 he accepted a chair at the LMU Munich where he is now heading the Machine Vision & Learning Group.",
+      "image": "Ommer_sw.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 1, 1, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Barbara Paech",
+      "group": "Software Engineering",
+      "website": "https://se.ifi.uni-heidelberg.de/",
+      "description": "Barbara Paech holds a Habilitation in Computer Science from the TU München. Between 1999 and 2003 she was department head at the Fh IESE. Since 2003 she is professor at the University of Heidelberg. She is member of the DFG review board Software Engineering and founding member of the International Requirements Engineering Board.",
+      "image": "Paech_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Tilman Plehn",
+      "group": "Particle Phenomenology\nand Machine Learning",
+      "website": "https://www.thphys.uni-heidelberg.de/~plehn/?visible=group",
+      "description": "Tilman studied physics in Heidelberg, ETH Zürich, and Hamburg. As a PhD student he started working on precision predictions for and searches for new particles at the LHC. Following stages in Madison/Wisconsin, CERN, MPI Munich, and Edinburgh he came to Heidelberg, working mostly on Higgs physics. When the excitement about the Higgs discovery waned, he moved into modern machine learning, with a focus on LHC analysis, simulations, and inference.",
+      "image": "Plehn.webp",
+      "method_weights": [0, 1, 0, 1, 0],
+      "application_weights": [0, 0, 0, 1, 0, 1]
+    },
+    {
+      "name": "Prof. Dr. Irina Podtergera",
+      "group": "Slavic Linguistics",
+      "website": "https://www.slav.uni-heidelberg.de/personal/ipodtergera.html",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
+    {
+      "name": "Jun. Prof. Dr. Maria Beatrice Pozzetti",
+      "group": "Geometric Group Theory",
+      "website": "https://www.mathi.uni-heidelberg.de/~pozzetti/",
+      "description": "Beatrice Pozzetti obtained her PhD from ETH Zürich. After a semester at MSRI in Berkeley, and two years as postdoc at Warwick University, she joined the Mathematical Institute as Juniorprofessor. She is now tenure track Junior Professor in STRUCTURES, and Emmy Noether group leader at the Mathematical Institute. She joined IWR as associated member in November 2021.",
+      "image": "Pozzetti_sw.webp",
+      "method_weights": [0, 0, 0, 0, 1],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Dr. h.c. Ralf Rannacher",
+      "group": "Numerical Methods",
+      "website": "https://ganymed.math.uni-heidelberg.de/",
+      "description": "Rolf Rannacher obtained his PhD 1974 at the University of Frankfurt/Main and his Habilitation 1978 at the University of Bonn. After a 1-year stay at the University of Michigan, he was Prof. at the University of Erlangen and Saarbrücken. Since 1988 he is Prof. for Numerical Mathematics at Heidelberg University and after his retirement 2018 Senior Member of IWR.",
+      "image": "Rannacher_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Stefan Riezler",
+      "group": "Statistical Natural Language\nProcessing Group",
+      "website": "https://www.cl.uni-heidelberg.de/statnlpgroup/",
+      "description": "Stefan Riezler obtained his PhD from the University of Tübingen. After post-doctoral work at Brown University, he spent a decade in industry research labs in Silicon Valley (Xerox PARC, Google Research). Prof. Riezler is full professor at the Computational Linguistics department at Heidelberg University since 2010.",
+      "image": "Riezler_sw.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 1, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Joacim Rocklöv",
+      "group": "Artificial Intelligence in the\nResearch of Infectious Diseases\nImpacted by Climate Change",
+      "website": "https://csidlab.iwr.uni-heidelberg.de/index.html",
+      "description": "Joacim Rocklöv is a globally recognized researcher within the field of climate change and infectious diseases. He obtained his PhD from Umeå University in Sweden. In the year 2021 he was awarded an Alexander von Humboldt Professorship with the IWR and the Heidelberg Institute of Global Health. He now holds a chair for AI in infectious diseases impacted by climate change at IWR.",
+      "image": "Rocklöv_sw.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 1, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Kurt Roth",
+      "group": "Terrestrial Systems & Chaotic,\nComplex, and Evolving\nEnvironmental Systems",
+      "website": "http://ts.iup.uni-heidelberg.de/",
+      "description": "Kurt Roth obtained his doctoral degree from ETH Zürich, spent two years as postdoc at UC Riverside and six years as professor of soil physics at University of Hohenheim before he joined Heidelberg University as professor of experimental physics (environmental physics) in 1998. As of April 2021 he is retired.",
+      "image": "Roth_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Carsten Rother",
+      "group": "Computer Vision\nand Learning Lab",
+      "website": "https://hci.iwr.uni-heidelberg.de/vislearn/people/carsten-rother/",
+      "description": "Carsten Rother obtained his PhD in 2003 from the Royal Institute of Technology in Stockholm. He was then with Microsoft Research Cambridge/UK for 10 years, and after that he was Professor at TU Dresden. In 2017 he was appointed as Professor at Heidelberg University.",
+      "image": "Rother_sw.webp",
+      "method_weights": [0, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Julio Saez-Rodriguez",
+      "group": "Systems Biomedicine",
+      "website": "https://saezlab.org/",
+      "description": "",
+      "image": "",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Filip Sadlo",
+      "group": "Visual Computing",
+      "website": "https://vcg.iwr.uni-heidelberg.de/",
+      "description": "Filip Sadlo received his master’s and PhD degrees in computer science from ETH Zurich. In 2014, after six years at the Visualization Research Center of the University of Stuttgart, he moved to Heidelberg to chair the Visual Computing Group at the IWR.",
+      "image": "Sadlo_sw.webp",
+      "method_weights": [0, 1, 1, 0, 1],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Dr. Sven Sahle",
+      "group": "Methods in\nComputational Systems Biology",
+      "website": "https://www.bioquant.uni-heidelberg.de/groups/sahle",
+      "description": "Sven Sahle studied physics and obtained a PhD in theoretical chemistry at the University of Tübingen (Germany). He worked as a research associate at the ZKM (Centre for Art and Media Technology, Karlsruhe, Germany) and at EML Research gGmbH in Heidelberg before joining BIOQUANT as a junior group leader in 2007. His group focuses on methodological research and software for mathematical modeling of biological processes.",
+      "image": "Sahle_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Björn Malte Schäfer",
+      "group": "Sampling Methods and\nPhysics of MCMC",
+      "website": "https://www.ita.uni-heidelberg.de/~spirou/",
+      "description": "Björn Malte Schäfer works on inference problems in cosmology, in relation to dark energy and gravity. He graduated from LMU in 2005 and joined Heidelberg University in 2012 as a professor for fundamental physics.",
+      "image": "Schaefer.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 0, 0, 1, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Robert Scheichl",
+      "group": "Numerical Analysis and\nUncertainty Quantification",
+      "website": "https://katana.iwr.uni-heidelberg.de/",
+      "description": "Robert Scheichl obtained his PhD from the University of Bath, UK. After a year as Marie-Curie Fellow at Institut Francais du Petrole in Paris he returned to Bath spending 17 years as Lecturer, Senior Lecturer and Professor there. In 2018, he moved to Heidelberg where he holds the Chair of Numerical Analysis at the Institute for Applied Mathematics.",
+      "image": "Scheichl_sw.webp",
+      "method_weights": [1, 1, 0, 0, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Christoph Schnörr",
+      "group": "Image and Pattern Analysis",
+      "website": "https://ipa.math.uni-heidelberg.de/",
+      "description": "Christoph Schnörr received his doctoral degree from the Technical University of Karlsruhe. After appointments in Hamburg and Mannheim, he joined the Heidelberg University in 2008. He is member of the Institute for Applied Mathematics, co-director of the HCI and member of the Steering Committee of the Cluster of Excellence STRUCTURES.",
+      "image": "Schnörr_sw.webp",
+      "method_weights": [1, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Ulrich Schwarz",
+      "group": "Physics of Complex Biosystems",
+      "website": "https://www.thphys.uni-heidelberg.de/~biophys/",
+      "description": "After a PhD at the Max Planck Institute of Colloids and Interfaces at Potsdam and a postdoctoral stay at the Weizmann Institute at Israel, Ulrich Schwarz headed an Emmy Noether research group, first at Potsdam and later at Heidelberg. 2008 he was appointed professor for theoretical biophysics at Karlsruhe. 2009 he was appointed professor for theoretical physics at Heidelberg.",
+      "image": "Schwarz_sw.webp",
+      "method_weights": [1, 0, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Jun. Prof. Dr. Britta Velten",
+      "group": "Biological Data Science",
+      "website": "https://www.cos.uni-heidelberg.de/en/research-groups/biological-data-science",
+      "description": "Britta Velten obtained her PhD from ETH Zurich and the European Molecular Biology Laboratory (EMBL) working at the interface of statistics, machine learning and the life sciences. After 3 years as a Postdoc at the German Cancer Research Center (DKFZ) and the Wellcome Sanger Institute, she joined Heidelberg University as tenure-track professor in 2023.",
+      "image": "Velten_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Oriol Vendrell",
+      "group": "Theoretical Chemistry",
+      "website": "https://www.pci.uni-heidelberg.de//cms/index.html",
+      "description": "Oriol obtained his PhD from the UAB, Barcelona. He spent five years as a postdoctoral researcher at Heidelberg, both as a Humboldt and as a Marie-Curie fellow. After six years as a group leader at DESY, Hamburg, and two years as an assoc. Prof. of physics at Aarhus University, he holds the Chair of Theoretical Chemistry at the PCI since 2018.",
+      "image": "Vendrell_sw.webp",
+      "method_weights": [0, 1, 0, 0, 0],
+      "application_weights": [1, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Rebecca Wade",
+      "group": "Molecular and Cellular\nModeling Group",
+      "website": "https://www.h-its.org/research/mcm/",
+      "description": "Rebecca Wade obtained her doctorate from Oxford University. Following postdocs at the universities of Houston and Illinois, she was a group leader at EMBL in Heidelberg until she moved to Heidelberg Institute for Theoretical Studies (HITS) in 2001. She has been Professor for Computational Structural Biology at Heidelberg University since 2012.",
+      "image": "Wade_sw.webp",
+      "method_weights": [0, 0, 0, 0, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "PD Dr. med. Cleo-Aron Weis",
+      "group": "Computational Pathology Heidelberg",
+      "website": "https://github.com/cpheidelberg",
+      "description": "Cleo-Aron Weis completed his medical studies at the Medical Faculty Mannheim, Heidelberg University, earning his MD in 2014. Board-examined since 2019, he now serves as a senior consultant at the Institute of Pathology, University Hospital Heidelberg, where he leads the Computational Pathology section. His research focuses on the integration of image analysis and natural language processing into the interpretation of medical data, particularly in the field of pathology.",
+      "image": "Weis.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    },
+    {
+      "name": "Jun. Prof. Dr. Jakob Zech",
+      "group": "Machine Learning",
+      "website": "https://jakobzech.com/",
+      "description": "Jakob Zech is Juniorprofessor at the IWR Heidelberg since April 2020. He received a BSc in mathematics from the University of Technology in Vienna in 2012, and a MSc and PhD in mathematics from ETH Zürich in 2014 and 2018 respectively. Before joining the IWR, he was a Postdoctoral Fellow at MIT in the Aerospace Computational Design Laboratory.",
+      "image": "Zech_sw.webp",
+      "method_weights": [1, 0, 0, 1, 0],
+      "application_weights": [0, 0, 0, 0, 0, 0]
+    },
+    {
+      "name": "Prof. Dr. Alexander Zipf",
+      "group": "GIScience Research Group",
+      "website": "http://uni-heidelberg.de/gis",
+      "description": "Alexander Zipf is chair of GIScience since 2010. He is founding member of the Heidelberg Center for the Environment (HCE) and since 2019 managing director of the Heidelberg Institute for Geoinformation Technology (HeiGIT gGmbH). Before he was professor at Bonn University and in Mainz. He received his PhD from Heidelberg University. ",
+      "image": "Zipf_sw.webp",
+      "method_weights": [0, 0, 1, 0, 0],
+      "application_weights": [0, 0, 0, 0, 1, 0]
+    },
+    {
+      "name": "Prof. Dr. Frank Zöllner",
+      "group": "Computer Assisted Clinical Medicine",
+      "website": "https://www.umm.uni-heidelberg.de/miism/computer-assisted-clinical-medicine/",
+      "description": "Frank Zöllner received the diploma and a PhD degree (Dr.-Ing.) in computer science from Bielefeld University, Germany, and the venia legendi in medical physics from the Heidelberg University.  In 2017 he became adjunct Professor for medical physics at Heidelberg University. He leads the Computer Assisted Clinical Medicine group and the corefacility for preclinical MRI at the Medical Faculty Mannheim, Heidelberg University. His research interests are applying computational methods including machine learning to the fields of medical imaging and image analysis. ",
+      "image": "Zöllner_sw.webp",
+      "method_weights": [0, 0, 1, 1, 0],
+      "application_weights": [0, 1, 0, 0, 0, 0]
+    }
+  ]
+}
