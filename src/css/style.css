@@ -29,7 +29,7 @@ a.iwr-vis:active {
 
 .iwr-vis-group-card-html {
   font-size: 6px;
-  line-height: 6px;
+  line-height: 7px;
 }
 
 .iwr-vis-menu {
@@ -40,18 +40,30 @@ a.iwr-vis:active {
   height: 100%;
 }
 
+.iwr-vis-menu text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .iwr-vis-segment-item {
   cursor: pointer;
+  will-change: opacity;
 }
 
 .iwr-vis-group-item {
   cursor: pointer;
+  will-change: transform, opacity;
 }
 
 .iwr-vis-clickable {
   cursor: pointer;
 }
 
+.iwr-vis-segment-item-arc,
+.iwr-vis-group-item-box,
+.iwr-vis-group-card-box {
+  filter: drop-shadow(0 0 1px black);
+}
+
 .iwr-vis-group-item:hover .iwr-vis-group-item-box {
-  fill: #cccccc;
+  fill: #e8e8f0;
 }

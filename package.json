@@ -17,7 +17,6 @@
     "url": "https://github.com/ssciwr/iwr-interactive-visualization.git"
   },
   "dependencies": {
-    "@svgdotjs/svg.filter.js": "3.0.9",
     "@svgdotjs/svg.js": "3.2.5"
   },
   "devDependencies": {
