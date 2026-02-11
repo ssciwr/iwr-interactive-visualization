@@ -440,9 +440,9 @@ function addGroups(
           .attr("startOffset", "50%")
           .fill("#2563eb")
           .attr("font-weight", "bold")
-          .attr("font-size", "12px")
-          .hide();
+          .attr("font-size", "12px");
         alignTextTop(txt, boxWidth / 2, txtTop);
+        txt.hide();
         txtTop += dy;
       }
       // small professor name
@@ -451,9 +451,9 @@ function addGroups(
         .addClass("iwr-vis-group-item-profname-small")
         .attr("startOffset", "50%")
         .attr("font-weight", "bold")
-        .attr("font-size", "12px")
-        .hide();
+        .attr("font-size", "12px");
       alignTextTop(smallName, boxWidth / 2, txtTop + padding + 6 / numLines);
+      txt.hide();
     }
     // large professor name
     let dy = 0;
