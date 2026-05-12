@@ -106,7 +106,7 @@
       "group": "AstroAI Lab",
       "website": "https://astroai-lab.de/",
       "description": "",
-      "image": "",
+      "image": "Buck_webp.jpg",
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [0, 0, 0, 1, 0, 0]
     },
