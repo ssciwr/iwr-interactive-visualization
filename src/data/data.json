@@ -182,6 +182,15 @@
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 0, 1, 0, 0, 0]
     },
+     {
+      "name": "Prof. Dr. Holger Fröning",
+      "group": "SHardware and Artificial Intelligence (HAWAII) Lab",
+      "website": "https://hawaii.ziti.uni-heidelberg.de/",
+      "description": "Holger Fröning received his PhD from the University of Mannheim. He joined Heidelberg University as a junior professor in 2011 and was appointed professor of computing systems in 2018. From 2019 to 2022, he was dean of studies for computer science at Heidelberg University. Since 2023, he has served as managing director of the Institute of Computer Engineering (ZITI).",
+      "image": "Froening_webp.jpg",
+      "method_weights": [0, 1, 1, 1, 0],
+      "application_weights": [0, 0, 0, 0, 0, 1]
+    },
     {
       "name": "Dr. Roman Gold",
       "group": "Compact objects:\ngravity and astrophysics",
