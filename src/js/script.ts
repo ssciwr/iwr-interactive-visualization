@@ -37,6 +37,15 @@ function alignTextLikeBaseline(el, x, baselineY) {
   return alignTextTop(el, x, targetTop);
 }
 
+function alignTextMiddle(el, x, centerY, anchor = "middle") {
+  el.x(x).y(centerY).attr("text-anchor", anchor);
+  const bbox = el.bbox();
+  if (bbox.height > 0) {
+    el.dy(centerY - (bbox.y + bbox.height / 2));
+  }
+  return el;
+}
+
 function normalizeTextHeight(
   el,
   targetHeight,
@@ -649,12 +658,11 @@ function addSettings(svg) {
     .fill(bg_color)
     .attr({ "stroke-width": 0.5 });
   // group sorting options
-  settings_menu
+  const sortByHeader = settings_menu
     .text("Sort by")
-    .x(6)
-    .y(0)
     .attr("font-size", "8px")
     .fill(line_color);
+  alignTextTop(sortByHeader, 6, 4, "start");
   const sort_by_group = settings_menu.group().addClass("iwr-vis-clickable");
   sort_by_group
     .rect(8, 8)
@@ -664,12 +672,11 @@ function addSettings(svg) {
     .move(12, 24)
     .attr({ "stroke-width": 0.5 })
     .addClass("iwr-vis-settings-menu-sort-by-group");
-  sort_by_group
+  const sortByGroupLabel = sort_by_group
     .text("group name")
-    .x(24)
-    .y(16)
     .attr("font-size", "8px")
     .fill(line_color);
+  alignTextMiddle(sortByGroupLabel, 24, 28, "start");
   sort_by_group.click(sortGroupsByProf);
   const sort_by_prof = settings_menu.group().addClass("iwr-vis-clickable");
   sort_by_prof
@@ -680,12 +687,11 @@ function addSettings(svg) {
     .move(12, 24 + 12)
     .attr({ "stroke-width": 0.5 })
     .addClass("iwr-vis-settings-menu-sort-by-prof");
-  sort_by_prof
+  const sortByProfLabel = sort_by_prof
     .text("professor name")
-    .x(24)
-    .y(28)
     .attr("font-size", "8px")
     .fill(line_color);
+  alignTextMiddle(sortByProfLabel, 24, 40, "start");
   sort_by_prof.click(sortGroupsByProf);
   settings_menu.transform({
     translateX: 400 - width - padding,
