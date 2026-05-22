@@ -1,1 +1,1 @@
-import "./js/script.ts";
+import "./js/script";

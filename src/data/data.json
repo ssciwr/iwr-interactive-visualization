@@ -106,7 +106,7 @@
       "group": "AstroAI Lab",
       "website": "https://astroai-lab.de/",
       "description": "",
-      "image": "Buck_webp.jpg",
+      "image": "Buck.webp",
       "method_weights": [0, 0, 0, 1, 0],
       "application_weights": [0, 0, 0, 1, 0, 0]
     },
@@ -182,12 +182,12 @@
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 0, 1, 0, 0, 0]
     },
-     {
+    {
       "name": "Prof. Dr. Holger Fröning",
-      "group": "SHardware and Artificial Intelligence (HAWAII) Lab",
+      "group": "Hardware and Artificial Intelligence\n(HAWAII) Lab",
       "website": "https://hawaii.ziti.uni-heidelberg.de/",
       "description": "Holger Fröning received his PhD from the University of Mannheim. He joined Heidelberg University as a junior professor in 2011 and was appointed professor of computing systems in 2018. From 2019 to 2022, he was dean of studies for computer science at Heidelberg University. Since 2023, he has served as managing director of the Institute of Computer Engineering (ZITI).",
-      "image": "Froening_webp.jpg",
+      "image": "Froening.webp",
       "method_weights": [0, 1, 1, 1, 0],
       "application_weights": [0, 0, 0, 0, 0, 1]
     },
@@ -664,7 +664,7 @@
       "group": "Computer Assisted Clinical Medicine",
       "website": "https://www.umm.uni-heidelberg.de/miism/computer-assisted-clinical-medicine/",
       "description": "Frank Zöllner received the diploma and a PhD degree (Dr.-Ing.) in computer science from Bielefeld University, Germany, and the venia legendi in medical physics from the Heidelberg University.  In 2017 he became adjunct Professor for medical physics at Heidelberg University. He leads the Computer Assisted Clinical Medicine group and the corefacility for preclinical MRI at the Medical Faculty Mannheim, Heidelberg University. His research interests are applying computational methods including machine learning to the fields of medical imaging and image analysis. ",
-      "image": "Zöllner_sw.webp",
+      "image": "Zoellner_sw.webp",
       "method_weights": [0, 0, 1, 1, 0],
       "application_weights": [0, 1, 0, 0, 0, 0]
     }
