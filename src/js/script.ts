@@ -80,37 +80,74 @@ function fitTextWidth(el, maxWidth, minFontSize = 12) {
   el.attr("font-size", `${next}px`);
 }
 
-function wrapTextLines(svg, text, maxWidth, fontSize) {
-  const lines = [];
-  const measure = svg
-    .text("")
+// a hidden text node used for measuring the rendered width of strings
+let measureNode = null;
+function widthMeasurer(svg, fontSize) {
+  if (measureNode == null) {
+    measureNode = svg.root().text("").opacity(0);
+  }
+  measureNode
     .attr("font-size", `${fontSize}px`)
-    .attr("font-family", "Arial, Helvetica, sans-serif")
-    .opacity(0);
-  const widthOf = (s) => {
-    measure.text(s);
-    return measure.bbox().width;
+    .attr("font-family", "Arial, Helvetica, sans-serif");
+  return (s) => {
+    measureNode.text(s);
+    return measureNode.bbox().width;
   };
+}
+
+// pack words into lines no wider than `budget`
+function packWords(words, budget, widthOf) {
+  const lines = [];
+  let line = words[0];
+  for (let i = 1; i < words.length; i++) {
+    if (widthOf(`${line} ${words[i]}`) <= budget) {
+      line += ` ${words[i]}`;
+    } else {
+      lines.push(line);
+      line = words[i];
+    }
+  }
+  lines.push(line);
+  return lines;
+}
+
+function wrapTextLines(svg, text, maxWidth, fontSize) {
+  const widthOf = widthMeasurer(svg, fontSize);
+  const lines = [];
   for (const paragraph of text.split("\n")) {
     const words = paragraph.trim().split(/\s+/).filter(Boolean);
     if (words.length === 0) {
       lines.push("");
-      continue;
+    } else {
+      lines.push(...packWords(words, maxWidth, widthOf));
     }
-    let line = words[0];
-    for (let i = 1; i < words.length; i++) {
-      const candidate = `${line} ${words[i]}`;
-      if (widthOf(candidate) <= maxWidth) {
-        line = candidate;
-      } else {
-        lines.push(line);
-        line = words[i];
-      }
-    }
-    lines.push(line);
   }
-  measure.remove();
   return lines;
+}
+
+function balancedWrapLines(svg, text, maxWidth, fontSize) {
+  const widthOf = widthMeasurer(svg, fontSize);
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    return [words[0] ?? ""];
+  }
+
+  const lineCount = packWords(words, maxWidth, widthOf).length;
+  if (lineCount === 1) {
+    return [words.join(" ")];
+  }
+
+  let lo = 0;
+  let hi = maxWidth;
+  for (let i = 0; i < 16 && hi - lo > 0.5; i++) {
+    const mid = (lo + hi) / 2;
+    if (packWords(words, mid, widthOf).length <= lineCount) {
+      hi = mid;
+    } else {
+      lo = mid;
+    }
+  }
+  return packWords(words, hi, widthOf);
 }
 
 function normalizedFontSize(
@@ -434,7 +471,8 @@ function addGroups(
       .addClass("iwr-vis-group-item-box");
     if (show_groups === true) {
       // group name
-      const numLines = countLines(members[i].group);
+      const groupLines = balancedWrapLines(svg, members[i].group, 190, 12);
+      const numLines = groupLines.length;
       let txtTop = 0;
       const dy = 11;
       if (numLines === 1) {
@@ -442,7 +480,7 @@ function addGroups(
       } else if (numLines === 2) {
         txtTop = 4;
       }
-      for (const textLine of members[i].group.split("\n")) {
+      for (const textLine of groupLines) {
         const txt = group
           .text(textLine)
           .addClass("iwr-vis-group-item-groupname")
@@ -541,7 +579,7 @@ function addGroupCard(svg, member, color, image_base_url) {
   bg_circle.click(hideGroupCard);
   close_button.click(hideGroupCard);
   let y = 99;
-  for (const textLine of member.group.split("\n")) {
+  for (const textLine of balancedWrapLines(svg, member.group, 190, 12)) {
     const groupName = group_card
       .text(textLine)
       .attr("startOffset", "50%")
