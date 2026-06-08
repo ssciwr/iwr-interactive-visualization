@@ -301,6 +301,44 @@ const highlightSegments = function () {
   );
 };
 
+function textArcRadius(radius, startAngle, endAngle) {
+  return startAngle > 70 && endAngle < 290 ? radius + 2 : radius - 3;
+}
+
+function computeSegmentFontSize(
+  svg,
+  segmentDefinitions,
+  maxFontSize,
+  minFontSize = 1,
+) {
+  const measure = svg
+    .text("")
+    .attr("font-size", `${maxFontSize}px`)
+    .attr("font-family", "Arial, Helvetica, sans-serif")
+    .opacity(0);
+  let fontSize = maxFontSize;
+  for (const { names, radius } of segmentDefinitions) {
+    const delta = 360 / (names.length + 1);
+    const angleRadians = (delta * Math.PI) / 180;
+    for (let i = 0; i < names.length; i++) {
+      const startAngle = (i + 0.5) * delta;
+      const endAngle = (i + 1.5) * delta;
+      const availableWidth =
+        textArcRadius(radius, startAngle, endAngle) * angleRadians * 0.95;
+      measure.text(names[i]);
+      const labelWidth = measure.bbox().width;
+      if (labelWidth > 0 && labelWidth > availableWidth) {
+        fontSize = Math.min(
+          fontSize,
+          (maxFontSize * availableWidth) / labelWidth,
+        );
+      }
+    }
+  }
+  measure.remove();
+  return Math.max(minFontSize, fontSize);
+}
+
 function addSegments(
   svg,
   label,
@@ -310,6 +348,7 @@ function addSegments(
   radius,
   width,
   segmentClass,
+  fontSize,
 ) {
   const delta = 360 / (names.length + 1);
   for (let i = 0; i < names.length; i++) {
@@ -344,7 +383,7 @@ function addSegments(
       .addClass("iwr-vis-segment-item-text")
       .attr("startOffset", "50%")
       .attr("text-anchor", "middle")
-      .attr("font-size", "8.8px");
+      .attr("font-size", `${fontSize}px`);
   }
   // label
   const groupLabel = svg.group();
@@ -736,6 +775,15 @@ function create_iwr_vis(data) {
     data.group_color,
     data.image_base_url,
   );
+  const segmentFontSize = computeSegmentFontSize(
+    svg,
+    [
+      { names: data.methods, radius: 168 },
+      { names: data.applications, radius: 188 },
+    ],
+    8.8,
+  );
+
   // methods
   addSegments(
     svg,
@@ -746,6 +794,7 @@ function create_iwr_vis(data) {
     168,
     10,
     "iwr-vis-method-item",
+    segmentFontSize,
   );
   // applications
   addSegments(
@@ -757,6 +806,7 @@ function create_iwr_vis(data) {
     188,
     10,
     "iwr-vis-application-item",
+    segmentFontSize,
   );
   // settings menu
   addSettings(svg);
