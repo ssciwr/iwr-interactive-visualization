@@ -11,7 +11,9 @@ Implemented in javascript and SVG using [svg.js](https://svgjs.dev/)
 - [main](https://github.com/ssciwr/iwr-interactive-visualization/tree/main) branch contains the source code
   - contents can be edited in [src/data/data.json](https://github.com/ssciwr/iwr-interactive-visualization/blob/main/src/data/data.json)
 - [gh-pages](https://github.com/ssciwr/iwr-interactive-visualization/tree/gh-pages) branch contains the generated website
-- uses [npm](https://www.npmjs.com/) and [webpack](https://webpack.js.org/) to manage the build and dependencies
+- uses [pnpm](https://pnpm.io/) and [webpack](https://webpack.js.org/) to manage the build and dependencies
+
+Webpack uses `esbuild-loader` to transpile TypeScript. `pnpm run typecheck` runs the TypeScript 7 compiler; the `typescript` dependency supplies the TypeScript 6 API needed by `typescript-eslint` until it supports TypeScript 7.
 
 ## Online preview
 
@@ -57,6 +59,8 @@ Other commands:
   - `pnpm run clean`
 - build website in `dist` folder
   - `pnpm run build`
+- check TypeScript types
+  - `pnpm run typecheck`
 - start a http-server serving files from the `dist` folder at `http://localhost:8080/` & open in browser
   - `pnpm run serve`
 - monitor changes to source code & automatically re-build modified files

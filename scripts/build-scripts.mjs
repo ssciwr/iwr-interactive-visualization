@@ -13,7 +13,8 @@ export function buildScripts() {
       rules: [
         {
           test: /\.tsx?$/,
-          use: "ts-loader",
+          loader: "esbuild-loader",
+          options: { target: "es2015" },
           exclude: /node_modules/,
         },
       ],
@@ -24,10 +25,20 @@ export function buildScripts() {
     mode: "production",
   };
 
-  webpack(webpackConfig, (err, stats) => {
-    if (err || stats.hasErrors()) {
-      console.error(err);
-    }
-    console.log(stats.toString());
+  return new Promise((resolve, reject) => {
+    webpack(webpackConfig, (err, stats) => {
+      if (err) {
+        reject(err);
+      } else if (!stats || stats.hasErrors()) {
+        reject(
+          new Error(
+            stats?.toString("errors-only") ?? "Webpack produced no build stats",
+          ),
+        );
+      } else {
+        console.log(stats.toString());
+        resolve();
+      }
+    });
   });
 }

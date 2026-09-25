@@ -3,9 +3,10 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "es6",
-    "lib": ["es2022"],
+    "lib": ["es2022", "dom"],
     "target": "es6",
     "strict": false,
+    "skipLibCheck": true,
     "allowJs": true,
     "moduleResolution": "bundler"
   }

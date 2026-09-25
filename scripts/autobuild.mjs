@@ -7,7 +7,7 @@ chokidar.watch("src").on("change", (path) => {
   console.log(`- ${path} modified`);
   if (path.startsWith("src/js")) {
     console.log(`  -> buildScripts()`);
-    buildScripts();
+    buildScripts().catch(console.error);
   } else {
     console.log(`  -> buildStatic()`);
     buildStatic();
